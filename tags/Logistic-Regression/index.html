@@ -29,7 +29,7 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Lich&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Logistic Regression</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-16T18:50:05.000Z" title="1/16/2025, 6:50:05 PM">2025-01-16</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-01-18T03:21:53.869Z" title="1/18/2025, 3:21:53 AM">2025-01-18</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/16/Machine-Learning-3/">About Machine Learning ( Part 3: Logistic Regression )</a></p><div class="content"><h2 id="Classification-Problem"><a href="#Classification-Problem" class="headerlink" title="Classification Problem"></a>Classification Problem</h2><p>In machine learning, when we are predicting a discrete label, such as determining whether an email is spam or not, we are dealing with a classification problem. Logistic regression is commonly used for <strong>binary classification</strong> tasks, where the goal is to predict one of two classes, typically represented as 0 or 1.</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Lich&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Logistic Regression</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-16T18:50:05.000Z" title="1/16/2025, 6:50:05 PM">2025-01-16</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-01-18T06:09:59.116Z" title="1/18/2025, 6:09:59 AM">2025-01-18</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/16/Machine-Learning-3/">About Machine Learning ( Part 3: Logistic Regression )</a></p><div class="content"><h2 id="Classification-Problem"><a href="#Classification-Problem" class="headerlink" title="Classification Problem"></a>Classification Problem</h2><p>In machine learning, when we are predicting a discrete label, such as determining whether an email is spam or not, we are dealing with a classification problem. Logistic regression is commonly used for <strong>binary classification</strong> tasks, where the goal is to predict one of two classes, typically represented as 0 or 1.</p>
 <p>The logistic function (also called the <strong>sigmoid function</strong>) is the core of logistic regression, as it maps input features to probabilities between 0 and 1. These probabilities represent the likelihood of the sample belonging to a particular class.</p>
 <p>The logistic function is defined as:</p>
 <p>$$<br>\sigma(z) &#x3D; \frac{1}{1 + e^{-z}}<br>$$</p>
@@ -93,7 +93,70 @@
 <li>$\lambda$ is the learning rate, which controls the step size during optimization.</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://github.com/kongchenglc/Machine-Learning-Examples/blob/master/logistic-regression3.py">Demo Code</a></p>
-<h2 id="Confusion-Matrix"><a href="#Confusion-Matrix" class="headerlink" title="Confusion Matrix"></a>Confusion Matrix</h2></div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/avatar.jpeg" alt="Lich"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Lich</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">15</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Lich&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Lich</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+<h2 id="Confusion-Matrix"><a href="#Confusion-Matrix" class="headerlink" title="Confusion Matrix"></a>Confusion Matrix</h2><!-- ![](../img/ML3-2.png) -->
+
+<p>The confusion matrix is a table that summarizes the performance of a classifier on a set of test data for which the true values are known.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Predicted Positive</th>
+<th>Predicted Negative</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Actual Positive</strong></td>
+<td>True Positive (TP)</td>
+<td>False Negative (FN)</td>
+</tr>
+<tr>
+<td><strong>Actual Negative</strong></td>
+<td>False Positive (FP)</td>
+<td>True Negative (TN)</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>True Positive (TP):</strong> Correctly predicted positive instances.</li>
+<li><strong>True Negative (TN):</strong> Correctly predicted negative instances.</li>
+<li><strong>False Positive (FP):</strong> Negative instances incorrectly predicted as positive.</li>
+<li><strong>False Negative (FN):</strong> Positive instances incorrectly predicted as negative.</li>
+</ul>
+<h3 id="Accuracy"><a href="#Accuracy" class="headerlink" title="Accuracy"></a>Accuracy</h3><p>Accuracy measures the proportion of correctly classified instances (both positive and negative) out of all predictions.</p>
+<p><strong>Formula:</strong><br>$$<br>\text{Accuracy} &#x3D; \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}<br>$$</p>
+<p><strong>When to use Accuracy:</strong></p>
+<ul>
+<li>When the dataset is balanced, meaning the number of positive and negative instances is roughly equal.</li>
+</ul>
+<hr>
+<h3 id="Precision-Positive-Predictive-Value"><a href="#Precision-Positive-Predictive-Value" class="headerlink" title="Precision (Positive Predictive Value)"></a>Precision (Positive Predictive Value)</h3><p>Precision quantifies the proportion of positive predictions that are correct.</p>
+<p><strong>Formula:</strong><br>$$<br>\text{Precision} &#x3D; \frac{\text{TP}}{\text{TP} + \text{FP}}<br>$$</p>
+<p><strong>Use case for Precision:</strong></p>
+<ul>
+<li>When false positives have a high cost (e.g., flagging legitimate emails as spam).</li>
+</ul>
+<hr>
+<h3 id="Recall-Sensitivity-or-True-Positive-Rate"><a href="#Recall-Sensitivity-or-True-Positive-Rate" class="headerlink" title="Recall (Sensitivity or True Positive Rate)"></a>Recall (Sensitivity or True Positive Rate)</h3><p>Recall measures the proportion of actual positives that are correctly identified.</p>
+<p><strong>Formula:</strong><br>$$<br>\text{Recall} &#x3D; \frac{\text{TP}}{\text{TP} + \text{FN}}<br>$$</p>
+<p><strong>Use case for Recall:</strong></p>
+<ul>
+<li>When false negatives have a high cost (e.g., failing to detect a disease in medical testing).</li>
+</ul>
+<hr>
+<h3 id="F1-Score-Harmonic-Mean-of-Precision-and-Recall"><a href="#F1-Score-Harmonic-Mean-of-Precision-and-Recall" class="headerlink" title="F1-Score (Harmonic Mean of Precision and Recall)"></a>F1-Score (Harmonic Mean of Precision and Recall)</h3><p>The F1-Score combines Precision and Recall into a single metric, especially useful when you need to balance the trade-off between the two.</p>
+<p><strong>Formula:</strong><br>$$<br>F_1 &#x3D; 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}<br>$$</p>
+<p><strong>Why use F1-Score?</strong></p>
+<ul>
+<li>It is beneficial when dealing with imbalanced datasets, as it considers both false positives and false negatives.</li>
+</ul>
+<hr>
+<h3 id="Key-Insights"><a href="#Key-Insights" class="headerlink" title="Key Insights"></a>Key Insights</h3><ul>
+<li><strong>Accuracy</strong> works well on balanced datasets but may be misleading when classes are imbalanced.</li>
+<li><strong>Precision</strong> is crucial when false positives are costly.</li>
+<li><strong>Recall</strong> is critical when false negatives are costly.</li>
+<li><strong>F1-Score</strong> provides a balanced measure when both Precision and Recall are important.</li>
+</ul>
+<p>By carefully analyzing the confusion matrix and the derived metrics, you can fine-tune your model for optimal performance, depending on the specific requirements of your application.</p>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/avatar.jpeg" alt="Lich"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Lich</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">15</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Lich&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Lich</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
