@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>About Machine Learning ( Part 4: Decision Tree ) - Lich&#039;s Blog</title><link rel="manifest" href="/blog/manifest.json"><meta name="application-name" content="Lich&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Lich&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="A Decision Tree is a supervised learning algorithm used for both classification and regression tasks. It organizes data into a tree-like structure, where each internal node represents a decision based"><meta property="og:type" content="blog"><meta property="og:title" content="About Machine Learning ( Part 4: Decision Tree )"><meta property="og:url" content="https://kongchenglc.github.io/blog/2025/01/21/Machine-Learning-4/"><meta property="og:site_name" content="Lich&#039;s Blog"><meta property="og:description" content="A Decision Tree is a supervised learning algorithm used for both classification and regression tasks. It organizes data into a tree-like structure, where each internal node represents a decision based"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kongchenglc.github.io/blog/img/ML4-1.png"><meta property="og:image" content="https://kongchenglc.github.io/blog/img/ML4-2.png"><meta property="og:image" content="https://kongchenglc.github.io/blog/img/ML4-3.png"><meta property="article:published_time" content="2025-01-21T15:50:57.000Z"><meta property="article:modified_time" content="2025-01-22T00:32:10.503Z"><meta property="article:author" content="Lich"><meta property="article:tag" content="Machine Learning"><meta property="article:tag" content="Decision Tree"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://kongchenglc.github.io/blog/img/ML4-1.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kongchenglc.github.io/blog/2025/01/21/Machine-Learning-4/"},"headline":"About Machine Learning ( Part 4: Decision Tree )","image":["https://kongchenglc.github.io/blog/img/ML4-1.png","https://kongchenglc.github.io/blog/img/ML4-2.png","https://kongchenglc.github.io/blog/img/ML4-3.png"],"datePublished":"2025-01-21T15:50:57.000Z","dateModified":"2025-01-22T00:32:10.503Z","author":{"@type":"Person","name":"Lich"},"publisher":{"@type":"Organization","name":"Lich's Blog","logo":{"@type":"ImageObject","url":{"text":"Lich's Blog"}}},"description":"A Decision Tree is a supervised learning algorithm used for both classification and regression tasks. It organizes data into a tree-like structure, where each internal node represents a decision based"}</script><link rel="canonical" href="https://kongchenglc.github.io/blog/2025/01/21/Machine-Learning-4/"><link rel="icon" href="/blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Lich&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-21T15:50:57.000Z" title="1/21/2025, 3:50:57 PM">2025-01-21</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-01-22T00:32:10.503Z" title="1/22/2025, 12:32:10 AM">2025-01-22</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">About Machine Learning ( Part 4: Decision Tree )</h1><div class="content"><p>A Decision Tree is a supervised learning algorithm used for both classification and regression tasks. It organizes data into a tree-like structure, where each internal node represents a decision based on a feature, and each leaf node provides a prediction. Decision trees are simple, interpretable, and capable of handling both categorical and numerical data.</p>
+<h1 id="Classification-Tree"><a href="#Classification-Tree" class="headerlink" title="Classification Tree"></a>Classification Tree</h1><p>A <strong>Classification Tree</strong> is a decision tree used for classifying data into distinct categories or classes. The main objective of a classification tree is to predict the category or class to which a given input belongs based on various features.</p>
+<p><img src="/blog/./img/ML4-1.png"></p>
+<h2 id="How-Does-a-Classification-Tree-Work"><a href="#How-Does-a-Classification-Tree-Work" class="headerlink" title="How Does a Classification Tree Work?"></a>How Does a Classification Tree Work?</h2><p>The tree is constructed in the following steps:</p>
+<ol>
+<li><strong>Select the best feature</strong>: The first step is to choose the feature that best splits the data. This is usually done by calculating the <strong>Entropy</strong>, such as Information Gain, or Gini Index.</li>
+<li><strong>Split the data</strong>: The chosen feature is used to split the dataset into two or more subsets. The splitting process continues recursively until the stopping criteria are met (e.g., maximum depth reached or all data in a node belong to the same class).</li>
+<li><strong>Predict the class</strong>: The leaf nodes represent the predicted class labels, which are determined based on the majority class in that node.</li>
+</ol>
+<h2 id="Entropy"><a href="#Entropy" class="headerlink" title="Entropy"></a>Entropy</h2><p><strong>Entropy</strong> measures the disorder or uncertainty in a dataset. It quantifies the impurity of a dataset. If the dataset is perfectly pure (i.e., all samples belong to the same class), <strong>the entropy is 0</strong>. If the dataset has an equal distribution of all possible classes, the entropy reaches its maximum value.</p>
+<p>The formula for entropy $H(S)$ of a set $S$ is:</p>
+<p>$$<br>H(S) &#x3D; - \sum_{x \in S} p(x) \log_2 p(x)<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$S$ is the dataset.</li>
+<li>$p(x)$ is the proportion of instances in $S$ that belong to class $x$.</li>
+</ul>
+<p>For binary classification (i.e., two classes, say “Yes” and “No”), the entropy simplifies to:</p>
+<p>$$<br>H(S) &#x3D; - p(+) \log_2 p(+) - p(-) \log_2 p(-)<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$p(+)$ is the proportion of “Yes” labels in the dataset.</li>
+<li>$p(-)$ is the proportion of “No” labels in the dataset.</li>
+</ul>
+<p>Interpretation of Entropy:</p>
+<ul>
+<li>If the entire dataset belongs to one class (e.g., all “Yes” or all “No”), then the entropy is 0 because there is no uncertainty.</li>
+<li>If the dataset has an equal distribution of both classes (e.g., $p(+) &#x3D; p(-) &#x3D; 0.5$), the entropy is 1 because there is maximum uncertainty.</li>
+</ul>
+<p>For example, in the case of a <strong>Tennis Playing</strong> dataset, if the target variable (whether a person will play tennis or not) is evenly split between “Yes” and “No”, the entropy will be:</p>
+<p>$$<br>H(S) &#x3D; - 0.5 \log_2 0.5 - 0.5 \log_2 0.5 &#x3D; 1<br>$$</p>
+<p>This means the data is maximally <strong>uncertain</strong> (a 50&#x2F;50 chance of playing or not playing).</p>
+<p><img src="/blog/./img/ML4-2.png" alt="https://en.wikipedia.org/wiki/Binary_entropy_function"></p>
+<h2 id="Information-Gain"><a href="#Information-Gain" class="headerlink" title="Information Gain"></a>Information Gain</h2><p><strong>Information Gain (IG)</strong> measures how well an attribute (or feature) separates the dataset into distinct classes. It is based on the difference in <strong>entropy</strong> before and after the split. The goal is to reduce uncertainty or disorder in the data as much as possible by selecting the attribute.</p>
+<p>The formula for <strong>Information Gain</strong> when splitting a dataset $S$ based on an attribute $A$ is:</p>
+<p>$$<br>IG(S, A) &#x3D; H(S) - \sum_{v \in V(A)} \frac{|S_v|}{|S|} H(S_v)<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$H(S)$ is the entropy of the dataset $S$ before the split.</li>
+<li>$H(S_v)$ is the entropy of the subset $S_v$.</li>
+<li>$V(A)$ is the set of all possible values for attribute $A$.</li>
+<li>$\frac{|S_v|}{|S|}$ is the proportion of the data in subset $S_v$ relative to the entire dataset $S$. ( Weighted )</li>
+</ul>
+<p>The higher the information gain, the better the attribute is at reducing uncertainty and distinguishing between different classes. A high information gain indicates that the attribute is good at separating the data into pure subsets.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/kongchenglc/Machine-Learning-Examples/blob/master/decision-tree1.py">Code Demo</a></p>
+<h2 id="Gini-Index"><a href="#Gini-Index" class="headerlink" title="Gini Index"></a>Gini Index</h2><p><strong>Gini Index</strong> is another measure used to evaluate the quality of a split in a decision tree. It measures the impurity or disorder of a dataset, with a lower Gini index indicating a purer dataset.</p>
+<p>The <strong>Gini index</strong> for a dataset ( S ) is calculated as:</p>
+<p>$$<br>Gini(S) &#x3D; 1 - \sum_{i&#x3D;1}^{C} p_i^2<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>( C ) is the number of classes in the target variable.</li>
+<li>( p_i ) is the proportion of the samples in the dataset ( S ) that belong to class ( i ).</li>
+</ul>
+<p>Interpretation:</p>
+<ul>
+<li>If all the data points belong to a single class, the Gini index is 0, indicating a pure node.</li>
+<li>If the data points are evenly distributed among all classes, the Gini index is maximized (impure node). For binary classification, the maximum value is 0.5.</li>
+</ul>
+<h2 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h2><p><strong>Overfitting</strong> occurs when a decision tree becomes too complex, capturing noise in the data instead of general patterns. It performs well on training data but poorly on new data.</p>
+<blockquote>
+<p>Given a hypothesis space $H$, a hypothesis $h \in H$ is said to overfit the training data if there exists some alternative hypothesis $h’ \in H$, such that $h$ has a smaller error than $h’$ over the training examples, but $h’$ has a smaller error than $h$ over the entire distribution of instances.<br>– Tom Mitchell</p>
+</blockquote>
+<p><strong>Causes:</strong> Noisy data or insufficient data can lead to overfitting.</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li><strong>Stop growing</strong> the tree once it reaches a certain depth.</li>
+<li><strong>Prune</strong> the tree by removing branches with little importance.</li>
+</ol>
+<h2 id="Pruning"><a href="#Pruning" class="headerlink" title="Pruning"></a>Pruning</h2><p>Pruning reduces tree complexity by removing unnecessary nodes.</p>
+<p><strong>Process</strong>:</p>
+<ol>
+<li>Turn a node into a leaf with the most common value in that subset.</li>
+<li>Test the accuracy of the pruned tree.</li>
+<li>If accuracy improves, keep the change; if not, restore the node.</li>
+</ol>
+<p><strong>Data Splits</strong>:</p>
+<ul>
+<li><strong>Training set</strong> for building the tree.</li>
+<li><strong>Testing set</strong> for evaluating performance.</li>
+<li><strong>Pruning set</strong> for pruning decisions.</li>
+</ul>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Simplifies the model.</li>
+<li>Reduces overfitting and improves generalization.</li>
+<li>Results in better test data performance.</li>
+</ul>
+<h1 id="Regression-Tree"><a href="#Regression-Tree" class="headerlink" title="Regression Tree"></a>Regression Tree</h1><p>A <strong>Regression Tree</strong> is a type of decision tree used for predicting continuous target variables. Unlike classification trees that predict discrete labels, regression trees predict numerical values. Here’s how the process works:</p>
+<ol>
+<li><p><strong>Choosing Features and Split Values</strong></p>
+<ul>
+<li>The goal is to find the best feature and threshold to split the data. This is done by minimizing the variance or mean squared error (MSE) within each subset after the split.</li>
+<li>For example, given a feature $X$ and target $Y$, we want to find a threshold $t$ to split the data into two subsets: $X \leq t$ and $X &gt; t$. The split that minimizes the variance within each subset is chosen.</li>
+</ul>
+</li>
+<li><p><strong>Splitting the Data</strong></p>
+<ul>
+<li>Once the best feature and threshold are identified, the data is split into two subsets based on this threshold.</li>
+<li>This is a recursive process, where each subset is further split until a stopping condition (e.g., maximum depth or minimum sample size) is met.</li>
+</ul>
+</li>
+<li><p><strong>Recursive Splitting</strong></p>
+<ul>
+<li>At each node, the algorithm continues splitting based on the feature that minimizes the variance.</li>
+<li>For example, a tree might first split the data based on $X &#x3D; 5$, then further split the subset $X &gt; 5$ based on $X &#x3D; 7$.</li>
+</ul>
+</li>
+<li><p><strong>Leaf Nodes and Predictions</strong></p>
+<ul>
+<li>When the tree reaches the stopping condition, each leaf node represents a final prediction, which is the mean target value of the data points in that node.</li>
+<li>For instance, if a leaf node contains values $Y &#x3D; 10, 12, 14$, the prediction for that leaf would be the average $12$.</li>
+</ul>
+</li>
+<li><p><strong>Prediction for New Data</strong></p>
+<ul>
+<li>For new data, the tree traverses from the root to a leaf node, where the predicted value is the mean of the target values in that leaf.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Bagging-vs-Boosting"><a href="#Bagging-vs-Boosting" class="headerlink" title="Bagging vs Boosting"></a>Bagging vs Boosting</h1><p>In machine learning, <strong>Bagging</strong> and <strong>Boosting</strong> are two popular ensemble techniques used to improve the performance of models. These methods <strong>combine the predictions of multiple base learners to form a stronger model</strong>, but they approach this goal in different ways.</p>
+<h2 id="Bagging-Bootstrap-Aggregating"><a href="#Bagging-Bootstrap-Aggregating" class="headerlink" title="Bagging (Bootstrap Aggregating)"></a>Bagging (Bootstrap Aggregating)</h2><p><strong>Bagging</strong> is an ensemble technique that reduces variance by training multiple base learners independently on different subsets of the data and then combining their predictions.</p>
+<h3 id="1-How-Bagging-Works"><a href="#1-How-Bagging-Works" class="headerlink" title="1. How Bagging Works"></a>1. <strong>How Bagging Works</strong></h3><ol>
+<li><strong>Data Sampling</strong>: Multiple subsets of the training data are created by random sampling with replacement (bootstrap sampling).</li>
+<li><strong>Train Multiple Models</strong>: Each subset is used to train a separate model, typically the same type of model (e.g., decision trees).</li>
+<li><strong>Combine Predictions</strong>: For classification problems, the final prediction is the class that receives the most votes from all base learners (majority voting). For regression problems, the final prediction is the average of all base learner predictions.</li>
+</ol>
+<h3 id="2-Advantages"><a href="#2-Advantages" class="headerlink" title="2. Advantages"></a>2. <strong>Advantages</strong></h3><ul>
+<li>Reduces overfitting, particularly with high-variance models (e.g., decision trees).</li>
+<li>Works well with unstable base learners.</li>
+</ul>
+<h3 id="3-Disadvantages"><a href="#3-Disadvantages" class="headerlink" title="3. Disadvantages"></a>3. <strong>Disadvantages</strong></h3><ul>
+<li>Doesn’t perform as well when base learners are weak or the model complexity is too high.</li>
+</ul>
+<h3 id="4-Example-Algorithm"><a href="#4-Example-Algorithm" class="headerlink" title="4. Example Algorithm"></a>4. <strong>Example Algorithm</strong></h3><ul>
+<li><strong>Random Forest</strong>: A popular implementation of Bagging, where base learners are decision trees trained on random subsets of features.</li>
+</ul>
+<h2 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h2><p><strong>Boosting</strong> is an ensemble technique that improves weak learners by iteratively training them on the data and adjusting the weights to focus on the mistakes of previous models.</p>
+<h3 id="1-How-Boosting-Works"><a href="#1-How-Boosting-Works" class="headerlink" title="1. How Boosting Works"></a>1. <strong>How Boosting Works</strong></h3><ol>
+<li><strong>Train the First Model</strong>: Train a base learner on the training data.</li>
+<li><strong>Calculate Error</strong>: Calculate the errors made by the first model.</li>
+<li><strong>Adjust Weights</strong>: Increase the weights of the misclassified data points, so that the next model will focus more on them.</li>
+<li><strong>Train Subsequent Models</strong>: Train the next model using the updated weights.</li>
+<li><strong>Combine Predictions</strong>: The final prediction is a weighted average (regression) or a weighted vote (classification) of all base learners.</li>
+</ol>
+<h3 id="2-Advantages-1"><a href="#2-Advantages-1" class="headerlink" title="2. Advantages"></a>2. <strong>Advantages</strong></h3><ul>
+<li>Reduces bias, improving model accuracy by focusing on hard-to-predict examples.</li>
+<li>Works well with weak learners that have high bias.</li>
+</ul>
+<h3 id="3-Disadvantages-1"><a href="#3-Disadvantages-1" class="headerlink" title="3. Disadvantages"></a>3. <strong>Disadvantages</strong></h3><ul>
+<li>Can overfit if data is noisy or contains outliers.</li>
+<li>Computationally expensive since models are trained sequentially.</li>
+</ul>
+<h3 id="4-Example-Algorithms"><a href="#4-Example-Algorithms" class="headerlink" title="4. Example Algorithms"></a>4. <strong>Example Algorithms</strong></h3><ul>
+<li><strong>AdaBoost</strong>: A widely used Boosting algorithm that adjusts sample weights based on misclassifications.</li>
+<li><strong>Gradient Boosting</strong>: An improved version of Boosting that optimizes the model using gradient descent.</li>
+<li><strong>XGBoost</strong>: A highly efficient implementation of Gradient Boosting, popular in machine learning competitions.</li>
+</ul>
+<p><img src="/blog/./img/ML4-3.png"></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>About Machine Learning ( Part 4: Decision Tree )</p><p><a href="https://kongchenglc.github.io/blog/2025/01/21/Machine-Learning-4/">https://kongchenglc.github.io/blog/2025/01/21/Machine-Learning-4/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Lich</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-01-21</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-01-22</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/blog/tags/Machine-Learning/">Machine Learning</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/Decision-Tree/">Decision Tree</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/blog/2025/01/16/Machine-Learning-3/"><span class="level-item">About Machine Learning ( Part 3: Logistic Regression )</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><script src="https://utteranc.es/client.js" repo="kongchenglc/blog" issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/avatar.jpeg" alt="Lich"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Lich</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">16</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Classification-Tree"><span class="level-left"><span class="level-item">1</span><span class="level-item">Classification Tree</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#How-Does-a-Classification-Tree-Work"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">How Does a Classification Tree Work?</span></span></a></li><li><a class="level is-mobile" href="#Entropy"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">Entropy</span></span></a></li><li><a class="level is-mobile" href="#Information-Gain"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Information Gain</span></span></a></li><li><a class="level is-mobile" href="#Gini-Index"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">Gini Index</span></span></a></li><li><a class="level is-mobile" href="#Overfitting"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">Overfitting</span></span></a></li><li><a class="level is-mobile" href="#Pruning"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">Pruning</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Regression-Tree"><span class="level-left"><span class="level-item">2</span><span class="level-item">Regression Tree</span></span></a></li><li><a class="level is-mobile" href="#Bagging-vs-Boosting"><span class="level-left"><span class="level-item">3</span><span class="level-item">Bagging vs Boosting</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Bagging-Bootstrap-Aggregating"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">Bagging (Bootstrap Aggregating)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-How-Bagging-Works"><span class="level-left"><span class="level-item">3.1.1</span><span class="level-item">1. How Bagging Works</span></span></a></li><li><a class="level is-mobile" href="#2-Advantages"><span class="level-left"><span class="level-item">3.1.2</span><span class="level-item">2. Advantages</span></span></a></li><li><a class="level is-mobile" href="#3-Disadvantages"><span class="level-left"><span class="level-item">3.1.3</span><span class="level-item">3. Disadvantages</span></span></a></li><li><a class="level is-mobile" href="#4-Example-Algorithm"><span class="level-left"><span class="level-item">3.1.4</span><span class="level-item">4. Example Algorithm</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Boosting"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">Boosting</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-How-Boosting-Works"><span class="level-left"><span class="level-item">3.2.1</span><span class="level-item">1. How Boosting Works</span></span></a></li><li><a class="level is-mobile" href="#2-Advantages-1"><span class="level-left"><span class="level-item">3.2.2</span><span class="level-item">2. Advantages</span></span></a></li><li><a class="level is-mobile" href="#3-Disadvantages-1"><span class="level-left"><span class="level-item">3.2.3</span><span class="level-item">3. Disadvantages</span></span></a></li><li><a class="level is-mobile" href="#4-Example-Algorithms"><span class="level-left"><span class="level-item">3.2.4</span><span class="level-item">4. Example Algorithms</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/blog/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Lich&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Lich</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/blog/js/column.js"></script><script src="/blog/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/blog/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/blog/js/pjax.js"></script><!--!--><script data-pjax src="/blog/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/blog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/blog/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
