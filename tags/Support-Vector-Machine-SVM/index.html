@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Tag: Support Vector Machine (SVM) - Lich&#039;s Blog</title><link rel="manifest" href="/blog/manifest.json"><meta name="application-name" content="Lich&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Lich&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Lich&#039;s Blog"><meta property="og:url" content="https://kongchenglc.github.io/blog"><meta property="og:site_name" content="Lich&#039;s Blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kongchenglc.github.io/blog/img/og_image.png"><meta property="article:author" content="Lich"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://kongchenglc.github.io/blog/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kongchenglc.github.io/blog"},"headline":"Lich's Blog","image":["https://kongchenglc.github.io/blog/img/og_image.png"],"author":{"@type":"Person","name":"Lich"},"publisher":{"@type":"Organization","name":"Lich's Blog","logo":{"@type":"ImageObject","url":{"text":"Lich's Blog"}}},"description":""}</script><link rel="icon" href="/blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Lich&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Support Vector Machine (SVM)</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-02T15:50:57.000Z" title="2/2/2025, 3:50:57 PM">2025-02-02</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-02-02T22:34:02.300Z" title="2/2/2025, 10:34:02 PM">2025-02-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/02/Machine-Learning-5/">About Machine Learning ( Part 5: Support Vector Machine )</a></p><div class="content"><h1 id="Support-Vector-Machine-SVM"><a href="#Support-Vector-Machine-SVM" class="headerlink" title="Support Vector Machine (SVM)"></a>Support Vector Machine (SVM)</h1><p>Support Vector Machines (SVM) are one of the most powerful supervised learning algorithms used for classification and regression tasks.</p>
+<h2 id="The-Hyperplane"><a href="#The-Hyperplane" class="headerlink" title="The Hyperplane"></a>The Hyperplane</h2><p>In a binary classification problem, the goal of SVM is to find a <strong>hyperplane</strong> that best separates two classes. Given a training dataset:</p>
+<p>$$<br>D &#x3D; \left{ (\mathbf{x}_1, y_1), (\mathbf{x}_2, y_2), \dots, (\mathbf{x}_n, y_n) \right}, \quad \mathbf{x}_i \in \mathbb{R}^d, \quad y_i \in {-1, +1}<br>$$</p>
+<ul>
+<li>$\mathbf{x}_i$: $d$-dimensional feature vector (e.g., pixel values in an image).</li>
+<li>$y_i$: Class label ($+1$ for “cat”, $-1$ for “dog”).</li>
+</ul>
+<h2 id="The-Hyperplane-1"><a href="#The-Hyperplane-1" class="headerlink" title="The Hyperplane"></a>The Hyperplane</h2><p>A hyperplane in $\mathbb{R}^d$ is defined as:</p>
+<p>$$<br>\mathbf{w} \cdot \mathbf{x} + b &#x3D; 0, \quad \mathbf{x} \in \mathbb{R}^d<br>$$</p>
+<ul>
+<li>$\mathbf{w}$: <strong>Weight vector</strong> (normal to the hyperplane).</li>
+<li>$b$: <strong>Bias term</strong> (shifts the hyperplane away from the origin).</li>
+<li>$\mathbf{x}$: Any point in the feature space.</li>
+</ul>
+<h3 id="Example-2D-Hyperplane"><a href="#Example-2D-Hyperplane" class="headerlink" title="Example: 2D Hyperplane"></a>Example: 2D Hyperplane</h3><p>Consider a 2D hyperplane $2x_1 + 3x_2 - 12 &#x3D; 0$:</p>
+<ul>
+<li><strong>Normal Vector</strong>: $\mathbf{w} &#x3D; [2, 3]$.</li>
+<li><strong>Bias</strong>: $b &#x3D; -12$.</li>
+</ul>
+<p><em>The weight vector $\mathbf{w}$ is perpendicular to the hyperplane.</em></p>
+<p><img src="/blog/./img/ML5-2.png" alt="2x+3y-12=0"></p>
+<h2 id="Margin-Maximization"><a href="#Margin-Maximization" class="headerlink" title="Margin Maximization"></a>Margin Maximization</h2><p>The distance from a sample $\mathbf{x}_i$ to the hyperplane is:</p>
+<p>$$<br>\text{Distance} &#x3D; \frac{|\mathbf{w} \cdot \mathbf{x}_i + b|}{|\mathbf{w}|}.<br>$$</p>
+<p>SVM seeks the hyperplane that <strong>maximizes the minimum margin</strong> between classes:</p>
+<p>$$<br>\max_{\mathbf{w}, b} \left( \frac{2}{|\mathbf{w}|} \right) \quad \text{subject to} \quad y_i(\mathbf{w} \cdot \mathbf{x}_i + b) \geq 1, , \forall i.<br>$$</p>
+<p>This is equivalent to minimizing $|\mathbf{w}|^2$, a convex optimization problem solvable via quadratic programming.</p>
+<h1 id="Optimize"><a href="#Optimize" class="headerlink" title="Optimize"></a>Optimize</h1><h2 id="Linear-Separation-with-Hard-Margin"><a href="#Linear-Separation-with-Hard-Margin" class="headerlink" title="Linear Separation with Hard Margin"></a>Linear Separation with Hard Margin</h2><p>When data is perfectly linearly separable, SVM seeks the hyperplane with maximum margin:</p>
+<p>$$<br>\min_{\mathbf{w}, b} \frac{1}{2}|\mathbf{w}|^2 \quad \text{subject to} \quad y_i(\mathbf{w}^T\mathbf{x}_i + b) \geq 1, , \forall i<br>$$</p>
+<p><strong>Geometric Interpretation</strong>:<br>The margin width is $\frac{2}{|\mathbf{w}|}$. Maximizing margin &#x3D; minimizing $|\mathbf{w}|$.</p>
+<p><strong>The Limitation</strong>:</p>
+<p>Fails catastrophically when:</p>
+<ul>
+<li>Data has noise&#x2F;outliers</li>
+<li>Classes are inherently non-separable</li>
+</ul>
+<h2 id="Soft-Margin-SVM"><a href="#Soft-Margin-SVM" class="headerlink" title="Soft Margin SVM"></a>Soft Margin SVM</h2><p>Allow controlled violations using slack variables $\xi_i$:</p>
+<p>$$<br>\begin{aligned}<br>\min_{\mathbf{w}, b, \xi} &amp;\quad \frac{1}{2}|\mathbf{w}|^2 + C\sum_{i&#x3D;1}^n \xi_i \<br>\text{s.t.} &amp;\quad y_i(\mathbf{w}^T\mathbf{x}_i + b) \geq 1 - \xi_i \<br>&amp;\quad \xi_i \geq 0, \quad \forall i<br>\end{aligned}<br>$$</p>
+<ul>
+<li><strong>$C$</strong>: Penalty weight (Large $C$ ≈ Hard Margin)</li>
+<li><strong>$\xi_i$</strong>: How much the $i$-th sample violates the margin</li>
+</ul>
+<h3 id="Lagrangian-Formulation"><a href="#Lagrangian-Formulation" class="headerlink" title="Lagrangian Formulation"></a>Lagrangian Formulation</h3><p>Convert constraints into the objective function:</p>
+<p>$$<br>\mathcal{L} &#x3D; \frac{1}{2}|\mathbf{w}|^2 + C\sum_{i&#x3D;1}^n \xi_i - \sum_{i&#x3D;1}^n \alpha_i[y_i(\mathbf{w}^T\mathbf{x}<em>i + b) - 1 + \xi_i] - \sum</em>{i&#x3D;1}^n \mu_i\xi_i<br>$$</p>
+<h4 id="Key-Derivations"><a href="#Key-Derivations" class="headerlink" title="Key Derivations:"></a>Key Derivations:</h4><ol>
+<li><p><strong>Primal Variables</strong></p>
+<ul>
+<li>$\frac{\partial \mathcal{L}}{\partial \mathbf{w}} &#x3D; 0 \Rightarrow \mathbf{w} &#x3D; \sum \alpha_i y_i \mathbf{x}_i$</li>
+<li>$\frac{\partial \mathcal{L}}{\partial b} &#x3D; 0 \Rightarrow \sum \alpha_i y_i &#x3D; 0$</li>
+<li>$\frac{\partial \mathcal{L}}{\partial \xi_i} &#x3D; 0 \Rightarrow \alpha_i + \mu_i &#x3D; C$</li>
+</ul>
+</li>
+<li><p><strong>Dual Problem</strong><br>Substitute back to get:</p>
+</li>
+</ol>
+<p>$$<br>\max_{\alpha} \sum_{i&#x3D;1}^n \alpha_i - \frac{1}{2}\sum_{i,j} \alpha_i \alpha_j y_i y_j \mathbf{x}_i^T \mathbf{x}_j \<br>\text{s.t.} \quad 0 \leq \alpha_i \leq C, \quad \sum \alpha_i y_i &#x3D; 0<br>$$</p>
+<h3 id="Interpretation-of-alpha-i"><a href="#Interpretation-of-alpha-i" class="headerlink" title="Interpretation of $\alpha_i$"></a>Interpretation of $\alpha_i$</h3><table>
+<thead>
+<tr>
+<th>$\alpha_i$ Range</th>
+<th>Sample Status</th>
+<th>$\xi_i$ Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$&#x3D;0$</td>
+<td>Outside margin</td>
+<td>0</td>
+</tr>
+<tr>
+<td>$(0, C)$</td>
+<td>On margin</td>
+<td>0</td>
+</tr>
+<tr>
+<td>$&#x3D;C$</td>
+<td>Inside margin</td>
+<td>$&gt;0$</td>
+</tr>
+</tbody></table>
+<p><strong>Decision Function</strong>:</p>
+<p>$$<br>f(\mathbf{x}) &#x3D; \text{sign}\left( \sum_{\alpha_i &gt; 0} \alpha_i y_i \mathbf{x}_i^T \mathbf{x} + b \right)<br>$$</p>
+<h2 id="Nonlinear-Classification-with-Kernel-Trick"><a href="#Nonlinear-Classification-with-Kernel-Trick" class="headerlink" title="Nonlinear Classification with Kernel Trick"></a>Nonlinear Classification with Kernel Trick</h2><h3 id="The-Fundamental-Idea"><a href="#The-Fundamental-Idea" class="headerlink" title="The Fundamental Idea"></a>The Fundamental Idea</h3><p><strong>Problem</strong>: Many datasets require nonlinear boundaries.<br><strong>Solution</strong>: Map data to higher dimension $\phi(\mathbf{x})$ where linear separation becomes possible.</p>
+<p><strong>Example Transformation</strong>:<br>For $\mathbf{x} &#x3D; [x_1, x_2]$, use $\phi(\mathbf{x}) &#x3D; [x_1, x_2, x_1^2 + x_2^2]$</p>
+<h3 id="The-Computational-Challenge"><a href="#The-Computational-Challenge" class="headerlink" title="The Computational Challenge"></a>The Computational Challenge</h3><p>Direct computation of $\phi(\mathbf{x}_i)^T \phi(\mathbf{x}_j)$ in high dimensions is intractable.</p>
+<p><strong>Key Insight</strong>: Many ML algorithms (like SVM) only need inner products, not explicit coordinates.</p>
+<h3 id="Kernel-Functions-to-the-Rescue"><a href="#Kernel-Functions-to-the-Rescue" class="headerlink" title="Kernel Functions to the Rescue"></a>Kernel Functions to the Rescue</h3><p>Replace $\phi(\mathbf{x}_i)^T \phi(\mathbf{x}_j)$ with kernel $K(\mathbf{x}_i, \mathbf{x}_j)$:</p>
+<p><strong>Updated Dual Problem</strong>:</p>
+<p>$$<br>\max_{\alpha} \sum_{i&#x3D;1}^n \alpha_i - \frac{1}{2}\sum_{i,j} \alpha_i \alpha_j y_i y_j K(\mathbf{x}_i, \mathbf{x}_j)<br>$$</p>
+<h4 id="Common-Kernels"><a href="#Common-Kernels" class="headerlink" title="Common Kernels:"></a>Common Kernels:</h4><table>
+<thead>
+<tr>
+<th>Kernel</th>
+<th>Formula</th>
+<th>Characteristics</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Linear</td>
+<td>$K(\mathbf{x}, \mathbf{z}) &#x3D; \mathbf{x}^T\mathbf{z}$</td>
+<td>No transformation</td>
+</tr>
+<tr>
+<td>Polynomial</td>
+<td>$(\mathbf{x}^T\mathbf{z} + c)^d$</td>
+<td>Captures polynomial interactions</td>
+</tr>
+<tr>
+<td>RBF</td>
+<td>$\exp(-\gamma |\mathbf{x}-\mathbf{z}|^2)$</td>
+<td>Infinite-dimensional mapping</td>
+</tr>
+<tr>
+<td>Sigmoid</td>
+<td>$\tanh(\alpha \mathbf{x}^T\mathbf{z} + c)$</td>
+<td>Mimics neural networks</td>
+</tr>
+</tbody></table>
+<h3 id="3-4-Why-Kernels-Work-Mercer’s-Theorem"><a href="#3-4-Why-Kernels-Work-Mercer’s-Theorem" class="headerlink" title="3.4 Why Kernels Work: Mercer’s Theorem"></a>3.4 Why Kernels Work: Mercer’s Theorem</h3><p>A valid kernel must:</p>
+<ol>
+<li>Be symmetric: $K(\mathbf{x}, \mathbf{z}) &#x3D; K(\mathbf{z}, \mathbf{x})$</li>
+<li>Produce positive semi-definite Gram matrix</li>
+</ol>
+<p><strong>Practical Check</strong>: If SVM training converges, your kernel is valid.</p>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/avatar.jpeg" alt="Lich"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Lich</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">16</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Lich&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Lich</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/blog/js/column.js"></script><script src="/blog/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/blog/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/blog/js/pjax.js"></script><!--!--><script data-pjax src="/blog/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/blog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/blog/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
