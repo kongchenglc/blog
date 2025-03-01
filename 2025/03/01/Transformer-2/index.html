@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Transformer ( Part 2: Multi-Head Attention ) - Lich&#039;s Blog</title><link rel="manifest" href="/blog/manifest.json"><meta name="application-name" content="Lich&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Lich&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Before the Transformer, sequence models like RNNs and LSTMs suffered from long-term dependency issues and low parallelization efficiency. Self-Attention was introduced as an alternative, allowing for"><meta property="og:type" content="blog"><meta property="og:title" content="Transformer ( Part 2: Multi-Head Attention )"><meta property="og:url" content="https://kongchenglc.github.io/blog/2025/03/01/Transformer-2/"><meta property="og:site_name" content="Lich&#039;s Blog"><meta property="og:description" content="Before the Transformer, sequence models like RNNs and LSTMs suffered from long-term dependency issues and low parallelization efficiency. Self-Attention was introduced as an alternative, allowing for"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kongchenglc.github.io/blog/img/Transformer2-1.png"><meta property="og:image" content="https://kongchenglc.github.io/blog/img/Transformer2-2.png"><meta property="article:published_time" content="2025-03-01T14:51:44.000Z"><meta property="article:modified_time" content="2025-03-01T21:48:21.398Z"><meta property="article:author" content="Lich"><meta property="article:tag" content="Machine Learning"><meta property="article:tag" content="LLM"><meta property="article:tag" content="NLP"><meta property="article:tag" content="Transformer"><meta property="article:tag" content="Multi-Head Attention"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://kongchenglc.github.io/blog/img/Transformer2-1.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kongchenglc.github.io/blog/2025/03/01/Transformer-2/"},"headline":"Transformer ( Part 2: Multi-Head Attention )","image":["https://kongchenglc.github.io/blog/img/Transformer2-1.png","https://kongchenglc.github.io/blog/img/Transformer2-2.png"],"datePublished":"2025-03-01T14:51:44.000Z","dateModified":"2025-03-01T21:48:21.398Z","author":{"@type":"Person","name":"Lich"},"publisher":{"@type":"Organization","name":"Lich's Blog","logo":{"@type":"ImageObject","url":{"text":"Lich's Blog"}}},"description":"Before the Transformer, sequence models like RNNs and LSTMs suffered from long-term dependency issues and low parallelization efficiency. Self-Attention was introduced as an alternative, allowing for"}</script><link rel="canonical" href="https://kongchenglc.github.io/blog/2025/03/01/Transformer-2/"><link rel="icon" href="/blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Lich&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-01T14:51:44.000Z" title="3/1/2025, 2:51:44 PM">2025-03-01</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-01T21:48:21.398Z" title="3/1/2025, 9:48:21 PM">2025-03-01</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Transformer ( Part 2: Multi-Head Attention )</h1><div class="content"><p>Before the Transformer, sequence models like RNNs and LSTMs suffered from <strong>long-term dependency issues</strong> and <strong>low parallelization efficiency</strong>. Self-Attention was introduced as an alternative, allowing for <strong>parallel computation</strong> and capturing <strong>long-range dependencies</strong>.</p>
+<p>However, a single-head Self-Attention mechanism has a limitation:<br><strong>It can only focus on one type of relationship or pattern in the data.</strong>  </p>
+<p>Multi-Head Attention overcomes this by <strong>using multiple attention heads</strong> that capture different aspects of the input, improving the model’s expressiveness.</p>
+<h1 id="Single-Head-Self-Attention"><a href="#Single-Head-Self-Attention" class="headerlink" title="Single-Head Self-Attention"></a>Single-Head Self-Attention</h1><p>Before diving into Multi-Head Attention, let’s first understand how a single-head Self-Attention works.</p>
+<h2 id="Query-Key-Value"><a href="#Query-Key-Value" class="headerlink" title="Query, Key, Value"></a>Query, Key, Value</h2><p>In Self-Attention, each input vector is mapped into three vectors:</p>
+<ul>
+<li><strong>Query (Q)</strong>: Represents the feature to search for.</li>
+<li><strong>Key (K)</strong>: Represents candidate features.</li>
+<li><strong>Value (V)</strong>: Represents the actual information to be aggregated.</li>
+</ul>
+<p>Each token in the input has a corresponding $(Q, K, V)$ triplet.</p>
+<h2 id="Computing-Attention-Scores"><a href="#Computing-Attention-Scores" class="headerlink" title="Computing Attention Scores"></a>Computing Attention Scores</h2><p>For a given Query $Q$ and Key $K$, we compute a similarity score using <strong>scaled dot-product attention</strong>:</p>
+<p>$$<br>\text{Attention}(Q, K, V) &#x3D; \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V<br>$$</p>
+<p>where:</p>
+<ul>
+<li>$QK^T$ computes similarity between Query and Key.</li>
+<li>$\sqrt{d_k}$ scales down the values to prevent large gradients.</li>
+<li><code>softmax</code> ensures that attention weights sum to 1.</li>
+<li>The weights are applied to the Value $V$.</li>
+</ul>
+<p><img src="/blog/./img/Transformer2-1.png" alt="https://arxiv.org/pdf/1706.03762"></p>
+<h1 id="Multi-Head-Attention-Mechanism"><a href="#Multi-Head-Attention-Mechanism" class="headerlink" title="Multi-Head Attention Mechanism"></a>Multi-Head Attention Mechanism</h1><p>A single-head Self-Attention mechanism <strong>only captures one perspective</strong> of the input relationships. Multi-Head Attention <strong>uses multiple heads</strong> to process different aspects of the sequence in parallel.</p>
+<h2 id="Computation-Process-of-Multi-Head-Attention"><a href="#Computation-Process-of-Multi-Head-Attention" class="headerlink" title="Computation Process of Multi-Head Attention"></a>Computation Process of Multi-Head Attention</h2><p>Multi-Head Attention follows these steps:</p>
+<ol>
+<li><p><strong>Linear Projections</strong>:  </p>
+<ul>
+<li><p>The input embedding $X$ has a dimension of $d_{\text{model}}$ (e.g., 512).  </p>
+</li>
+<li><p>For each attention head, separate <strong>Query, Key, and Value</strong> vectors are computed using different linear transformations:</p>
+<p>$$<br>Q_i &#x3D; X W_i^Q, \quad K_i &#x3D; X W_i^K, \quad V_i &#x3D; X W_i^V<br>$$</p>
+<p>where $W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d_{\text{model}} \times d_k}$ are learnable parameters.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Compute Attention for Each Head</strong>:<br>Each attention head performs scaled dot-product attention:</p>
+<p>$$<br>\text{head}_i &#x3D; \text{Attention}(Q_i, K_i, V_i) &#x3D; \text{softmax}\left(\frac{Q_i K_i^T}{\sqrt{d_k}}\right) V_i<br>$$</p>
+</li>
+<li><p><strong>Concatenation &amp; Final Transformation</strong>:<br>The outputs from all heads are concatenated and passed through a final linear transformation:</p>
+<p>$$<br>\text{MultiHead}(Q, K, V) &#x3D; \text{Concat}(\text{head}_1, …, \text{head}_h) W^O<br>$$</p>
+<p>where $W^O \in \mathbb{R}^{h d_k \times d_{\text{model}}}$ is a trainable projection matrix.</p>
+</li>
+</ol>
+<p><img src="/blog/./img/Transformer2-2.png" alt="https://poloclub.github.io/transformer-explainer/"></p>
+<h2 id="Trainable-Projection-Matrix-W-O"><a href="#Trainable-Projection-Matrix-W-O" class="headerlink" title="Trainable Projection Matrix $W^O$"></a>Trainable Projection Matrix $W^O$</h2><p>The final output of Multi-Head Attention is obtained by concatenating the outputs of all attention heads and applying a <strong>linear transformation</strong> using a projection matrix $W^O$. The matrix $W^O \in \mathbb{R}^{h d_k \times d_{\text{model}}}$ is a learnable parameter, meaning it is updated during training. Let’s break down what this means:</p>
+<ul>
+<li><strong>$h$</strong> represents the number of attention heads in the Multi-Head Attention mechanism. Each attention head processes the input in parallel, and having multiple heads allows the model to capture various relationships and features from the data. </li>
+<li><strong>$d_k$</strong> is the dimension of each attention head. Since the attention mechanism splits the model dimension ($d_{\text{model}}$) evenly across all heads, $d_k &#x3D; \frac{d_{\text{model}}}{h}$.</li>
+<li><strong>$\mathbb{R}$</strong> refers to the set of real numbers. The notation $\mathbb{R}^{h d_k \times d_{\text{model}}}$ indicates that $W^O$ is a matrix with dimensions $h d_k$ by $d_{\text{model}}$, where the number of rows is the total dimension of all attention heads concatenated together, and the number of columns is the original model dimension.</li>
+</ul>
+<p><strong>Why is this Computation Necessary?</strong></p>
+<p>After the attention scores are computed and applied to the Values for each head, the outputs of all heads are concatenated. This concatenated output has a shape of $L \times h d_k$, where $L$ is the sequence length and $h d_k$ is the combined dimension of all attention heads. However, we want the final output of Multi-Head Attention to have the same dimension as the original input, $d_{\text{model}}$.</p>
+<p>To achieve this, we use the projection matrix $W^O$, which transforms the concatenated vector back to the desired $d_{\text{model}}$ dimension. This ensures that the output from the Multi-Head Attention layer has the same dimension as the input, allowing it to be passed on to subsequent layers in the Transformer network without any dimension mismatch.</p>
+<p>In short, the projection matrix $W^O$ enables the transformation of the concatenated attention head outputs into a final output with the same dimensionality as the input, ensuring consistency throughout the model.</p>
+<h2 id="Summary-of-Multi-Head-Attention-Formula"><a href="#Summary-of-Multi-Head-Attention-Formula" class="headerlink" title="Summary of Multi-Head Attention Formula"></a>Summary of Multi-Head Attention Formula</h2><p>$$<br>\text{MultiHead}(Q, K, V) &#x3D; \text{Concat}(\text{head}_1, …, \text{head}_h) W^O<br>$$</p>
+<p>$$<br>\text{head}_i &#x3D; \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)<br>$$</p>
+<p>where:</p>
+<ul>
+<li>$h$ is the number of attention heads.</li>
+<li>$d_k &#x3D; d_{\text{model}} &#x2F; h$ is the dimension of each head.</li>
+<li>$W^Q, W^K, W^V, W^O$ are learnable parameters.</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Transformer ( Part 2: Multi-Head Attention )</p><p><a href="https://kongchenglc.github.io/blog/2025/03/01/Transformer-2/">https://kongchenglc.github.io/blog/2025/03/01/Transformer-2/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Lich</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-03-01</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-03-01</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/blog/tags/Machine-Learning/">Machine Learning</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/LLM/">LLM</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/NLP/">NLP</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/Transformer/">Transformer</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/Multi-Head-Attention/">Multi-Head Attention</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/blog/2025/02/24/Machine-Learning-10/"><span class="level-item">Machine-Learning-10</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><script src="https://utteranc.es/client.js" repo="kongchenglc/blog" issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Lich"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Lich</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">21</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Single-Head-Self-Attention"><span class="level-left"><span class="level-item">1</span><span class="level-item">Single-Head Self-Attention</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Query-Key-Value"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Query, Key, Value</span></span></a></li><li><a class="level is-mobile" href="#Computing-Attention-Scores"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">Computing Attention Scores</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Multi-Head-Attention-Mechanism"><span class="level-left"><span class="level-item">2</span><span class="level-item">Multi-Head Attention Mechanism</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Computation-Process-of-Multi-Head-Attention"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">Computation Process of Multi-Head Attention</span></span></a></li><li><a class="level is-mobile" href="#Trainable-Projection-Matrix-W-O"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Trainable Projection Matrix $W^O$</span></span></a></li><li><a class="level is-mobile" href="#Summary-of-Multi-Head-Attention-Formula"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">Summary of Multi-Head Attention Formula</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/blog/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Lich&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Lich</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/blog/js/column.js"></script><script src="/blog/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/blog/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/blog/js/pjax.js"></script><!--!--><script data-pjax src="/blog/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/blog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/blog/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo injector body_end start --><script src="/blog/js/custom-css.js"></script><!-- hexo injector body_end end --></body></html>
