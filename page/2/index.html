@@ -29,8 +29,302 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Lich&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-10T18:13:21.000Z" title="1/10/2025, 6:13:21 PM">2025-01-10</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-02T02:15:09.129Z" title="3/2/2025, 2:15:09 AM">2025-03-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Music/">Music</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/10/Shuffle-Some-Blues/">Shuffle-Some-Blues</a></p><div class="content"><p>Blues has this casual, laid-back vibe that’s so fun to play. Maybe you’re into it too! In this post, I’m going to share a bit about the magic of blues piano.</p>
-<h1 id="Notes-Within-the-Harmony"><a href="#Notes-Within-the-Harmony" class="headerlink" title="Notes Within the Harmony"></a>Notes Within the Harmony</h1><p>Lately, I’ve been practicing blues piano in E, and as I started learning the C-based twelve-bar blues, I discovered something cool: the intervals between notes in the blues scale follow a pattern of 3-2-1-1-3-2 (in terms of semitones).</p></div><a class="article-more button is-small is-size-7" href="/blog/2025/01/10/Shuffle-Some-Blues/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-07T16:41:21.000Z" title="1/7/2025, 4:41:21 PM">2025-01-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-02T02:15:09.128Z" title="3/2/2025, 2:15:09 AM">2025-03-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/07/Machine-Learning-2/">About Machine Learning ( Part 2: Linear Regression )</a></p><div class="content"><h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><p>In prediction tasks, we often use independent features to predict a dependent variable. If we have a dataset:</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Lich&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-21T15:50:57.000Z" title="1/21/2025, 3:50:57 PM">2025-01-21</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-08T01:15:15.490Z" title="3/8/2025, 1:15:15 AM">2025-03-08</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/21/Machine-Learning-4/">About Machine Learning ( Part 4: Decision Tree )</a></p><div class="content"><p>A Decision Tree is a supervised learning algorithm used for both classification and regression tasks. It organizes data into a tree-like structure, where each internal node represents a decision based on a feature, and each leaf node provides a prediction. Decision trees are simple, interpretable, and capable of handling both categorical and numerical data.</p>
+<h1 id="Classification-Tree"><a href="#Classification-Tree" class="headerlink" title="Classification Tree"></a>Classification Tree</h1><p>A <strong>Classification Tree</strong> is a decision tree used for classifying data into distinct categories or classes. The main objective of a classification tree is to predict the category or class to which a given input belongs based on various features.</p>
+<p><img src="/blog/./img/ML4-1.png"></p>
+<h2 id="How-Does-a-Classification-Tree-Work"><a href="#How-Does-a-Classification-Tree-Work" class="headerlink" title="How Does a Classification Tree Work?"></a>How Does a Classification Tree Work?</h2><p>The tree is constructed in the following steps:</p>
+<ol>
+<li><strong>Select the best feature</strong>: The first step is to choose the feature that best splits the data. This is usually done by calculating the <strong>Entropy</strong>, such as Information Gain, or Gini Index.</li>
+<li><strong>Split the data</strong>: The chosen feature is used to split the dataset into two or more subsets. The splitting process continues recursively until the stopping criteria are met (e.g., maximum depth reached or all data in a node belong to the same class).</li>
+<li><strong>Predict the class</strong>: The leaf nodes represent the predicted class labels, which are determined based on the majority class in that node.</li>
+</ol>
+<h2 id="Entropy"><a href="#Entropy" class="headerlink" title="Entropy"></a>Entropy</h2><p><strong>Entropy</strong> measures the disorder or uncertainty in a dataset. It quantifies the impurity of a dataset. If the dataset is perfectly pure (i.e., all samples belong to the same class), <strong>the entropy is 0</strong>. If the dataset has an equal distribution of all possible classes, the entropy reaches its maximum value.</p>
+<p>The formula for entropy $H(S)$ of a set $S$ is:</p>
+<p>$$<br>H(S) &#x3D; - \sum_{x \in S} p(x) \log_2 p(x)<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$S$ is the dataset.</li>
+<li>$p(x)$ is the proportion of instances in $S$ that belong to class $x$.</li>
+</ul>
+<p>For binary classification (i.e., two classes, say “Yes” and “No”), the entropy simplifies to:</p>
+<p>$$<br>H(S) &#x3D; - p(+) \log_2 p(+) - p(-) \log_2 p(-)<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$p(+)$ is the proportion of “Yes” labels in the dataset.</li>
+<li>$p(-)$ is the proportion of “No” labels in the dataset.</li>
+</ul>
+<p>Interpretation of Entropy:</p>
+<ul>
+<li>If the entire dataset belongs to one class (e.g., all “Yes” or all “No”), then the entropy is 0 because there is no uncertainty.</li>
+<li>If the dataset has an equal distribution of both classes (e.g., $p(+) &#x3D; p(-) &#x3D; 0.5$), the entropy is 1 because there is maximum uncertainty.</li>
+</ul>
+<p>For example, in the case of a <strong>Tennis Playing</strong> dataset, if the target variable (whether a person will play tennis or not) is evenly split between “Yes” and “No”, the entropy will be:</p>
+<p>$$<br>H(S) &#x3D; - 0.5 \log_2 0.5 - 0.5 \log_2 0.5 &#x3D; 1<br>$$</p>
+<p>This means the data is maximally <strong>uncertain</strong> (a 50&#x2F;50 chance of playing or not playing).</p>
+<p><img src="/blog/./img/ML4-2.png" alt="https://en.wikipedia.org/wiki/Binary_entropy_function"></p>
+<h2 id="Information-Gain"><a href="#Information-Gain" class="headerlink" title="Information Gain"></a>Information Gain</h2><p><strong>Information Gain (IG)</strong> measures how well an attribute (or feature) separates the dataset into distinct classes. It is based on the difference in <strong>entropy</strong> before and after the split. The goal is to reduce uncertainty or disorder in the data as much as possible by selecting the attribute.</p>
+<p>The formula for <strong>Information Gain</strong> when splitting a dataset $S$ based on an attribute $A$ is:</p>
+<p>$$<br>IG(S, A) &#x3D; H(S) - \sum_{v \in V(A)} \frac{|S_v|}{|S|} H(S_v)<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$H(S)$ is the entropy of the dataset $S$ before the split.</li>
+<li>$H(S_v)$ is the entropy of the subset $S_v$.</li>
+<li>$V(A)$ is the set of all possible values for attribute $A$.</li>
+<li>$\frac{|S_v|}{|S|}$ is the proportion of the data in subset $S_v$ relative to the entire dataset $S$. ( Weighted )</li>
+</ul>
+<p>The higher the information gain, the better the attribute is at reducing uncertainty and distinguishing between different classes. A high information gain indicates that the attribute is good at separating the data into pure subsets.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/kongchenglc/Machine-Learning-Examples/blob/master/decision-tree1.py">Code Demo</a></p>
+<h2 id="Gini-Index"><a href="#Gini-Index" class="headerlink" title="Gini Index"></a>Gini Index</h2><p><strong>Gini Index</strong> is another measure used to evaluate the quality of a split in a decision tree. It measures the impurity or disorder of a dataset, with a lower Gini index indicating a purer dataset.</p>
+<p>The <strong>Gini index</strong> for a dataset ( S ) is calculated as:</p>
+<p>$$<br>Gini(S) &#x3D; 1 - \sum_{i&#x3D;1}^{C} p_i^2<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>( C ) is the number of classes in the target variable.</li>
+<li>( p_i ) is the proportion of the samples in the dataset ( S ) that belong to class ( i ).</li>
+</ul>
+<p>Interpretation:</p>
+<ul>
+<li>If all the data points belong to a single class, the Gini index is 0, indicating a pure node.</li>
+<li>If the data points are evenly distributed among all classes, the Gini index is maximized (impure node). For binary classification, the maximum value is 0.5.</li>
+</ul>
+<h2 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h2><p><strong>Overfitting</strong> occurs when a decision tree becomes too complex, capturing noise in the data instead of general patterns. It performs well on training data but poorly on new data.</p>
+<blockquote>
+<p>Given a hypothesis space $H$, a hypothesis $h \in H$ is said to overfit the training data if there exists some alternative hypothesis $h’ \in H$, such that $h$ has a smaller error than $h’$ over the training examples, but $h’$ has a smaller error than $h$ over the entire distribution of instances.<br>– Tom Mitchell</p>
+</blockquote>
+<p><strong>Causes:</strong> Noisy data or insufficient data can lead to overfitting.</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li><strong>Stop growing</strong> the tree once it reaches a certain depth.</li>
+<li><strong>Prune</strong> the tree by removing branches with little importance.</li>
+</ol>
+<h2 id="Pruning"><a href="#Pruning" class="headerlink" title="Pruning"></a>Pruning</h2><p>Pruning reduces tree complexity by removing unnecessary nodes.</p>
+<p><strong>Process</strong>:</p>
+<ol>
+<li>Turn a node into a leaf with the most common value in that subset.</li>
+<li>Test the accuracy of the pruned tree.</li>
+<li>If accuracy improves, keep the change; if not, restore the node.</li>
+</ol>
+<p><strong>Data Splits</strong>:</p>
+<ul>
+<li><strong>Training set</strong> for building the tree.</li>
+<li><strong>Testing set</strong> for evaluating performance.</li>
+<li><strong>Pruning set</strong> for pruning decisions.</li>
+</ul>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Simplifies the model.</li>
+<li>Reduces overfitting and improves generalization.</li>
+<li>Results in better test data performance.</li>
+</ul>
+<h1 id="Regression-Tree"><a href="#Regression-Tree" class="headerlink" title="Regression Tree"></a>Regression Tree</h1><p>A <strong>Regression Tree</strong> is a type of decision tree used for predicting continuous target variables. Unlike classification trees that predict discrete labels, regression trees predict numerical values. Here’s how the process works:</p>
+<ol>
+<li><p><strong>Choosing Features and Split Values</strong></p>
+<ul>
+<li>The goal is to find the best feature and threshold to split the data. This is done by minimizing the variance or mean squared error (MSE) within each subset after the split.</li>
+<li>For example, given a feature $X$ and target $Y$, we want to find a threshold $t$ to split the data into two subsets: $X \leq t$ and $X &gt; t$. The split that minimizes the variance within each subset is chosen.</li>
+</ul>
+</li>
+<li><p><strong>Splitting the Data</strong></p>
+<ul>
+<li>Once the best feature and threshold are identified, the data is split into two subsets based on this threshold.</li>
+<li>This is a recursive process, where each subset is further split until a stopping condition (e.g., maximum depth or minimum sample size) is met.</li>
+</ul>
+</li>
+<li><p><strong>Recursive Splitting</strong></p>
+<ul>
+<li>At each node, the algorithm continues splitting based on the feature that minimizes the variance.</li>
+<li>For example, a tree might first split the data based on $X &#x3D; 5$, then further split the subset $X &gt; 5$ based on $X &#x3D; 7$.</li>
+</ul>
+</li>
+<li><p><strong>Leaf Nodes and Predictions</strong></p>
+<ul>
+<li>When the tree reaches the stopping condition, each leaf node represents a final prediction, which is the mean target value of the data points in that node.</li>
+<li>For instance, if a leaf node contains values $Y &#x3D; 10, 12, 14$, the prediction for that leaf would be the average $12$.</li>
+</ul>
+</li>
+<li><p><strong>Prediction for New Data</strong></p>
+<ul>
+<li>For new data, the tree traverses from the root to a leaf node, where the predicted value is the mean of the target values in that leaf.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Bagging-vs-Boosting"><a href="#Bagging-vs-Boosting" class="headerlink" title="Bagging vs Boosting"></a>Bagging vs Boosting</h1><p>In machine learning, <strong>Bagging</strong> and <strong>Boosting</strong> are two popular ensemble techniques used to improve the performance of models. These methods <strong>combine the predictions of multiple base learners to form a stronger model</strong>, but they approach this goal in different ways.</p>
+<h2 id="Bagging-Bootstrap-Aggregating"><a href="#Bagging-Bootstrap-Aggregating" class="headerlink" title="Bagging (Bootstrap Aggregating)"></a>Bagging (Bootstrap Aggregating)</h2><p><strong>Bagging</strong> is an ensemble technique that reduces variance by training multiple base learners independently on different subsets of the data and then combining their predictions.</p>
+<h3 id="1-How-Bagging-Works"><a href="#1-How-Bagging-Works" class="headerlink" title="1. How Bagging Works"></a>1. <strong>How Bagging Works</strong></h3><ol>
+<li><strong>Data Sampling</strong>: Multiple subsets of the training data are created by random sampling with replacement (bootstrap sampling).</li>
+<li><strong>Train Multiple Models</strong>: Each subset is used to train a separate model, typically the same type of model (e.g., decision trees).</li>
+<li><strong>Combine Predictions</strong>: For classification problems, the final prediction is the class that receives the most votes from all base learners (majority voting). For regression problems, the final prediction is the average of all base learner predictions.</li>
+</ol>
+<h3 id="2-Advantages"><a href="#2-Advantages" class="headerlink" title="2. Advantages"></a>2. <strong>Advantages</strong></h3><ul>
+<li>Reduces overfitting, particularly with high-variance models (e.g., decision trees).</li>
+<li>Works well with unstable base learners.</li>
+</ul>
+<h3 id="3-Disadvantages"><a href="#3-Disadvantages" class="headerlink" title="3. Disadvantages"></a>3. <strong>Disadvantages</strong></h3><ul>
+<li>Doesn’t perform as well when base learners are weak or the model complexity is too high.</li>
+</ul>
+<h3 id="4-Example-Algorithm"><a href="#4-Example-Algorithm" class="headerlink" title="4. Example Algorithm"></a>4. <strong>Example Algorithm</strong></h3><ul>
+<li><strong>Random Forest</strong>: A popular implementation of Bagging, where base learners are decision trees trained on random subsets of features.</li>
+</ul>
+<h2 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h2><p><strong>Boosting</strong> is an ensemble technique that improves weak learners by iteratively training them on the data and adjusting the weights to focus on the mistakes of previous models.</p>
+<h3 id="1-How-Boosting-Works"><a href="#1-How-Boosting-Works" class="headerlink" title="1. How Boosting Works"></a>1. <strong>How Boosting Works</strong></h3><ol>
+<li><strong>Train the First Model</strong>: Train a base learner on the training data.</li>
+<li><strong>Calculate Error</strong>: Calculate the errors made by the first model.</li>
+<li><strong>Adjust Weights</strong>: Increase the weights of the misclassified data points, so that the next model will focus more on them.</li>
+<li><strong>Train Subsequent Models</strong>: Train the next model using the updated weights.</li>
+<li><strong>Combine Predictions</strong>: The final prediction is a weighted average (regression) or a weighted vote (classification) of all base learners.</li>
+</ol>
+<h3 id="2-Advantages-1"><a href="#2-Advantages-1" class="headerlink" title="2. Advantages"></a>2. <strong>Advantages</strong></h3><ul>
+<li>Reduces bias, improving model accuracy by focusing on hard-to-predict examples.</li>
+<li>Works well with weak learners that have high bias.</li>
+</ul>
+<h3 id="3-Disadvantages-1"><a href="#3-Disadvantages-1" class="headerlink" title="3. Disadvantages"></a>3. <strong>Disadvantages</strong></h3><ul>
+<li>Can overfit if data is noisy or contains outliers.</li>
+<li>Computationally expensive since models are trained sequentially.</li>
+</ul>
+<h3 id="4-Example-Algorithms"><a href="#4-Example-Algorithms" class="headerlink" title="4. Example Algorithms"></a>4. <strong>Example Algorithms</strong></h3><ul>
+<li><strong>AdaBoost</strong>: A widely used Boosting algorithm that adjusts sample weights based on misclassifications.</li>
+<li><strong>Gradient Boosting</strong>: An improved version of Boosting that optimizes the model using gradient descent.</li>
+<li><strong>XGBoost</strong>: A highly efficient implementation of Gradient Boosting, popular in machine learning competitions.</li>
+</ul>
+<p><img src="/blog/./img/ML4-3.png"></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-16T18:50:05.000Z" title="1/16/2025, 6:50:05 PM">2025-01-16</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-08T01:15:15.490Z" title="3/8/2025, 1:15:15 AM">2025-03-08</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/16/Machine-Learning-3/">About Machine Learning ( Part 3: Logistic Regression )</a></p><div class="content"><h2 id="Classification-Problem"><a href="#Classification-Problem" class="headerlink" title="Classification Problem"></a>Classification Problem</h2><p>In machine learning, when we are predicting a discrete label, such as determining whether an email is spam or not, we are dealing with a classification problem. Logistic regression is commonly used for <strong>binary classification</strong> tasks, where the goal is to predict one of two classes, typically represented as 0 or 1.</p>
+<p>The logistic function (also called the <strong>sigmoid function</strong>) is the core of logistic regression, as it maps input features to probabilities between 0 and 1. These probabilities represent the likelihood of the sample belonging to a particular class.</p>
+<p>The logistic function is defined as:</p>
+<p>$$<br>\sigma(z) &#x3D; \frac{1}{1 + e^{-z}}<br>$$</p>
+<p>Where $z &#x3D; \omega_0 + \mathbf{\omega}^T \mathbf{x}$, the linear combination of the input features $\mathbf{x}$ and the model’s parameters $\mathbf{\omega}$.</p>
+<h2 id="Model-Representation"><a href="#Model-Representation" class="headerlink" title="Model Representation"></a>Model Representation</h2><p>In logistic regression, we aim to predict the probability that an observation $\mathbf{x}$ belongs to class 1. The predicted probability is given by the following equation:</p>
+<p>$$<br>p(C &#x3D; 1|\mathbf{x}) &#x3D; \sigma(\omega_0 + \mathbf{\omega}^T \mathbf{x}) &#x3D; \frac{1}{1 + e^{-(\omega_0 + \mathbf{\omega}^T \mathbf{x})}}<br>$$</p>
+<p>where:</p>
+<ul>
+<li>$p(C &#x3D; 1|\mathbf{x})$: The probability that the class label $C$ is 1, given the input features $\mathbf{x}$.</li>
+<li>$\omega_0$: The <strong>bias</strong> term, which helps adjust the output independently of the input features.</li>
+<li>$\mathbf{\omega}$: The <strong>weight vector</strong> that contains the coefficients for each feature.</li>
+<li>$\mathbf{\omega}^T \mathbf{x}$: The <strong>dot product</strong> between the weight vector $\mathbf{\omega}$ and the feature vector $\mathbf{x}$, representing the weighted sum of the input features.</li>
+</ul>
+<h2 id="Decision-Boundary"><a href="#Decision-Boundary" class="headerlink" title="Decision Boundary"></a>Decision Boundary</h2><p>In binary classification, the <strong>decision boundary</strong> is the point where the model predicts equal probabilities for both classes, meaning the probability of being in class 0 is 0.5 and the probability of being in class 1 is also 0.5. This boundary helps separate the two classes.</p>
+<p>We calculate this boundary by setting the predicted probability equal to 0.5:</p>
+<p>$$<br>p(C &#x3D; 1|\mathbf{x}) &#x3D; 0.5<br>$$</p>
+<p><img src="/blog/./img/ML3-1.png"></p>
+<p>This happens when the output of the logistic function equals 0.5. Solving for the decision boundary, we get:</p>
+<p>$$<br>\sigma(\omega_0 + \mathbf{\omega}^T \mathbf{x}) &#x3D; 0.5<br>$$</p>
+<p>This implies:</p>
+<p>$$<br>\omega_0 + \mathbf{\omega}^T \mathbf{x} &#x3D; 0<br>$$</p>
+<p>This equation represents the decision boundary where the model will predict a 50% chance of the sample belonging to either class. Points on this boundary are classified as uncertain.</p>
+<h2 id="Maximum-Likelihood-Estimation-MLE"><a href="#Maximum-Likelihood-Estimation-MLE" class="headerlink" title="Maximum Likelihood Estimation (MLE)"></a>Maximum Likelihood Estimation (MLE)</h2><p>In logistic regression, the goal is to find the parameters $\mathbf{\omega} &#x3D; (\omega_0, \omega_1, …, \omega_d)$ that maximize the likelihood of observing the training data. The likelihood function $L(\mathbf{\omega})$ is the probability of the observed labels given the feature vectors.</p>
+<p>If We assume that the data is independent and<br>identically distributed (IDD). The likelihood function will be:</p>
+<p>$$<br>L(\mathbf{\omega}) &#x3D; \prod_{i&#x3D;1}^{N} p(t_i | \mathbf{x}_i; \mathbf{\omega})<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$N$: The number of training samples.</li>
+<li>$t_i$: The actual label for the $i$-th sample.</li>
+<li>$\mathbf{x}_i$: The feature vector for the $i$-th sample.</li>
+<li>$p(t_i | \mathbf{x}_i; \mathbf{\omega})$: The probability of observing label $t_i$ given the features $\mathbf{x}_i$ and parameters $\mathbf{\omega}$.</li>
+</ul>
+<p>Maximizing this likelihood function helps us find the optimal values for the model’s parameters.</p>
+<h2 id="Log-Likelihood-Function"><a href="#Log-Likelihood-Function" class="headerlink" title="Log-Likelihood Function"></a>Log-Likelihood Function</h2><p>However, when we have many samples ($N$ is large) and each probability $p(t_i | \mathbf{x}_i; \mathbf{\omega})$ is a value less than 1, the product of these probabilities becomes very small. This leads to a problem called <strong>Numerical Underflow</strong>, where the computer cannot handle such small numbers.</p>
+<p>So, maximizing the likelihood function directly is difficult due to the product of probabilities. Instead, we take the <strong>log-likelihood</strong>, which simplifies the optimization by turning the product into a sum:</p>
+<p>$$<br>\ln(L(\mathbf{\omega})) &#x3D; \sum_{i&#x3D;1}^{N} \left[ t_i \ln(p(t_i &#x3D; 1|\mathbf{x}_i; \mathbf{\omega})) + (1 - t_i) \ln(1 - p(t_i &#x3D; 1|\mathbf{x}_i; \mathbf{\omega})) \right]<br>$$</p>
+<p>This form assumes a <strong>binary classification</strong> scenario, where each label $t_i$ can only be either 0 or 1. In such a case:</p>
+<ul>
+<li>If $t_i &#x3D; 1$, we calculate the log of the predicted probability for class 1: $\ln(p(t_i &#x3D; 1|\mathbf{x}_i; \mathbf{\omega}))$.</li>
+<li>If $t_i &#x3D; 0$, we calculate the log of the probability of class 0, which is $1 - p(t_i &#x3D; 1|\mathbf{x}_i; \mathbf{\omega})$: $\ln(1 - p(t_i &#x3D; 1|\mathbf{x}_i; \mathbf{\omega}))$.</li>
+</ul>
+<p>This reflects the basic assumption of binary classification in logistic regression, where the goal is to predict the probability of an input sample belonging to class 1 (or class 0, which is just the complement of class 1).</p>
+<h2 id="Gradient-Descent-for-Optimization"><a href="#Gradient-Descent-for-Optimization" class="headerlink" title="Gradient Descent for Optimization"></a>Gradient Descent for Optimization</h2><p>We use <strong>gradient descent</strong> to maximize the log-likelihood function. Gradient descent involves computing the gradient of the log-likelihood with respect to the parameters $\mathbf{\omega}$, and then updating the parameters in the direction that increases the log-likelihood.</p>
+<p>The gradient of the log-likelihood function with respect to each parameter $\omega_d$ is:</p>
+
+$$
+\frac{\partial \ln(L(\mathbf{\omega}))}{\partial \omega_d} = \sum_{i=1}^{N} ( t_i - p(C = 1 \mid \mathbf{x}_i; \mathbf{\omega})) x_{i,d}
+$$
+
+
+<p>Where:</p>
+<ul>
+<li>$x_{i,d}$ is the $d$-th feature of the $i$-th sample.</li>
+<li>$p(C &#x3D; 1|\mathbf{x}_i; \mathbf{\omega})$ is the predicted probability of class 1 for the $i$-th sample.</li>
+<li>$t_i$ is the <strong>true label</strong> of the $i$-th sample, where $t_i &#x3D; 1$ if the sample belongs to class 1 (positive class), and $t_i &#x3D; 0$ if it belongs to class 0 (negative class).</li>
+</ul>
+<p>Explanation:</p>
+<ul>
+<li>The term $(t_i - p(C &#x3D; 1|\mathbf{x}_i; \mathbf{\omega}))$ represents the <strong>error</strong> between the true label and the predicted probability for the $i$-th sample.</li>
+<li>The product of this error and the corresponding feature $x_{i,d}$ allows us to adjust the weight $\omega_d$ based on how the feature $x_{i,d}$ contributes to the error.</li>
+</ul>
+<p>By summing over all $N$ samples, the gradient is computed for each parameter $\omega_d$. Using the gradient, we update the parameters $\mathbf{\omega}$ using the following rule:</p>
+<p>$$<br>\omega_d \leftarrow \omega_d - \lambda \frac{\partial \ln(L(\mathbf{\omega}))}{\partial \omega_d}<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$\lambda$ is the learning rate, which controls the step size during optimization.</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://github.com/kongchenglc/Machine-Learning-Examples/blob/master/logistic-regression3.py">Demo Code</a></p>
+<h2 id="Confusion-Matrix"><a href="#Confusion-Matrix" class="headerlink" title="Confusion Matrix"></a>Confusion Matrix</h2><!-- ![](../img/ML3-2.png) -->
+
+<p>The confusion matrix is a table that summarizes the performance of a classifier on a set of test data for which the true values are known.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Predicted Positive</th>
+<th>Predicted Negative</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Actual Positive</strong></td>
+<td>True Positive (TP)</td>
+<td>False Negative (FN)</td>
+</tr>
+<tr>
+<td><strong>Actual Negative</strong></td>
+<td>False Positive (FP)</td>
+<td>True Negative (TN)</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>True Positive (TP):</strong> Correctly predicted positive instances.</li>
+<li><strong>True Negative (TN):</strong> Correctly predicted negative instances.</li>
+<li><strong>False Positive (FP):</strong> Negative instances incorrectly predicted as positive.</li>
+<li><strong>False Negative (FN):</strong> Positive instances incorrectly predicted as negative.</li>
+</ul>
+<h3 id="Accuracy"><a href="#Accuracy" class="headerlink" title="Accuracy"></a>Accuracy</h3><p>Accuracy measures the proportion of correctly classified instances (both positive and negative) out of all predictions.</p>
+<p><strong>Formula:</strong></p>
+<p>$$<br>\text{Accuracy} &#x3D; \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}<br>$$</p>
+<p><strong>When to use Accuracy:</strong></p>
+<ul>
+<li>When the dataset is balanced, meaning the number of positive and negative instances is roughly equal.</li>
+</ul>
+<hr>
+<h3 id="Precision-Positive-Predictive-Value"><a href="#Precision-Positive-Predictive-Value" class="headerlink" title="Precision (Positive Predictive Value)"></a>Precision (Positive Predictive Value)</h3><p>Precision quantifies the proportion of positive predictions that are correct.</p>
+<p><strong>Formula:</strong></p>
+<p>$$<br>\text{Precision} &#x3D; \frac{\text{TP}}{\text{TP} + \text{FP}}<br>$$</p>
+<p><strong>Use case for Precision:</strong></p>
+<ul>
+<li>When false positives have a high cost (e.g., flagging legitimate emails as spam).</li>
+</ul>
+<hr>
+<h3 id="Recall-Sensitivity-or-True-Positive-Rate"><a href="#Recall-Sensitivity-or-True-Positive-Rate" class="headerlink" title="Recall (Sensitivity or True Positive Rate)"></a>Recall (Sensitivity or True Positive Rate)</h3><p>Recall measures the proportion of actual positives that are correctly identified.</p>
+<p><strong>Formula:</strong></p>
+<p>$$<br>\text{Recall} &#x3D; \frac{\text{TP}}{\text{TP} + \text{FN}}<br>$$</p>
+<p><strong>Use case for Recall:</strong></p>
+<ul>
+<li>When false negatives have a high cost (e.g., failing to detect a disease in medical testing).</li>
+</ul>
+<hr>
+<h3 id="F1-Score-Harmonic-Mean-of-Precision-and-Recall"><a href="#F1-Score-Harmonic-Mean-of-Precision-and-Recall" class="headerlink" title="F1-Score (Harmonic Mean of Precision and Recall)"></a>F1-Score (Harmonic Mean of Precision and Recall)</h3><p>The F1-Score combines Precision and Recall into a single metric, especially useful when you need to balance the trade-off between the two.</p>
+<p><strong>Formula:</strong></p>
+<p>$$<br>F_1 &#x3D; 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}<br>$$</p>
+<p><strong>Why use F1-Score?</strong></p>
+<ul>
+<li>It is beneficial when dealing with imbalanced datasets, as it considers both false positives and false negatives.</li>
+</ul>
+<hr>
+<h3 id="Key-Insights"><a href="#Key-Insights" class="headerlink" title="Key Insights"></a>Key Insights</h3><ul>
+<li><strong>Accuracy</strong> works well on balanced datasets but may be misleading when classes are imbalanced.</li>
+<li><strong>Precision</strong> is crucial when false positives are costly.</li>
+<li><strong>Recall</strong> is critical when false negatives are costly.</li>
+<li><strong>F1-Score</strong> provides a balanced measure when both Precision and Recall are important.</li>
+</ul>
+<p>By carefully analyzing the confusion matrix and the derived metrics, you can fine-tune your model for optimal performance, depending on the specific requirements of your application.</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-10T18:13:21.000Z" title="1/10/2025, 6:13:21 PM">2025-01-10</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-08T01:15:15.490Z" title="3/8/2025, 1:15:15 AM">2025-03-08</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Music/">Music</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/10/Shuffle-Some-Blues/">Shuffle-Some-Blues</a></p><div class="content"><p>Blues has this casual, laid-back vibe that’s so fun to play. Maybe you’re into it too! In this post, I’m going to share a bit about the magic of blues piano.</p>
+<h1 id="Notes-Within-the-Harmony"><a href="#Notes-Within-the-Harmony" class="headerlink" title="Notes Within the Harmony"></a>Notes Within the Harmony</h1><p>Lately, I’ve been practicing blues piano in E, and as I started learning the C-based twelve-bar blues, I discovered something cool: the intervals between notes in the blues scale follow a pattern of 3-2-1-1-3-2 (in terms of semitones).</p></div><a class="article-more button is-small is-size-7" href="/blog/2025/01/10/Shuffle-Some-Blues/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-07T16:41:21.000Z" title="1/7/2025, 4:41:21 PM">2025-01-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-08T01:15:15.489Z" title="3/8/2025, 1:15:15 AM">2025-03-08</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/07/Machine-Learning-2/">About Machine Learning ( Part 2: Linear Regression )</a></p><div class="content"><h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><p>In prediction tasks, we often use independent features to predict a dependent variable. If we have a dataset:</p>
 <p>$$<br>{ x_d^{(i)}, t^{(i)} }<br>$$</p>
 <p>where:</p>
 <ul>
@@ -182,7 +476,7 @@
 </ul>
 <p>The <strong>$\lambda$</strong> parameter allows you to control the trade-off between fitting the data well and keeping the model simple.</p>
 <p><img src="/blog/./img/ML2-3.png"></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-06T11:29:21.000Z" title="1/6/2025, 11:29:21 AM">2025-01-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-02T02:15:09.128Z" title="3/2/2025, 2:15:09 AM">2025-03-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/06/Machine-Learning-1/">About Machine Learning ( Part 1: Gradient Descent )</a></p><div class="content"><h1 id="Data-Science"><a href="#Data-Science" class="headerlink" title="Data Science"></a>Data Science</h1><h2 id="Target-Variable"><a href="#Target-Variable" class="headerlink" title="Target Variable"></a>Target Variable</h2><p>The target variable is the variable the model aims to predict or explain. It’s also called the dependent variable or label.</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-06T11:29:21.000Z" title="1/6/2025, 11:29:21 AM">2025-01-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-08T01:15:15.489Z" title="3/8/2025, 1:15:15 AM">2025-03-08</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/06/Machine-Learning-1/">About Machine Learning ( Part 1: Gradient Descent )</a></p><div class="content"><h1 id="Data-Science"><a href="#Data-Science" class="headerlink" title="Data Science"></a>Data Science</h1><h2 id="Target-Variable"><a href="#Target-Variable" class="headerlink" title="Target Variable"></a>Target Variable</h2><p>The target variable is the variable the model aims to predict or explain. It’s also called the dependent variable or label.</p>
 <h2 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h2><p>Attributes are the features or variables that describe each instance in a dataset. They are also known as features, columns, or independent variables.</p>
 <h2 id="Instances"><a href="#Instances" class="headerlink" title="Instances"></a>Instances</h2><p>Instances represent individual samples or data points in a dataset. They are also referred to as samples, rows, or observations.</p>
 <h1 id="Design-of-Experiments"><a href="#Design-of-Experiments" class="headerlink" title="Design of Experiments"></a>Design of Experiments</h1><h2 id="Strategy-of-Experiments"><a href="#Strategy-of-Experiments" class="headerlink" title="Strategy of Experiments"></a>Strategy of Experiments</h2><ol>
@@ -301,13 +595,13 @@
 <li><strong>Slow Convergence</strong>: Compared to deterministic methods, GA can be slower, especially for problems with a clear gradient or simpler structure.</li>
 </ol>
 <p><img src="/blog/./img/ML1-5.png"></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-12-04T23:05:04.000Z" title="12/4/2024, 11:05:04 PM">2024-12-04</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-02T02:15:09.128Z" title="3/2/2025, 2:15:09 AM">2025-03-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/12/04/About-Project-Management-Part-4/">About Project Management ( Part 4 )</a></p><div class="content"><h1 id="Outsourcing"><a href="#Outsourcing" class="headerlink" title="Outsourcing"></a>Outsourcing</h1><h2 id="Outsourcing-Project-Work"><a href="#Outsourcing-Project-Work" class="headerlink" title="Outsourcing Project Work"></a>Outsourcing Project Work</h2><h3 id="Advantages-of-Outsourcing"><a href="#Advantages-of-Outsourcing" class="headerlink" title="Advantages of Outsourcing"></a>Advantages of Outsourcing</h3><ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-12-04T23:05:04.000Z" title="12/4/2024, 11:05:04 PM">2024-12-04</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-08T01:15:15.489Z" title="3/8/2025, 1:15:15 AM">2025-03-08</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/12/04/About-Project-Management-Part-4/">About Project Management ( Part 4 )</a></p><div class="content"><h1 id="Outsourcing"><a href="#Outsourcing" class="headerlink" title="Outsourcing"></a>Outsourcing</h1><h2 id="Outsourcing-Project-Work"><a href="#Outsourcing-Project-Work" class="headerlink" title="Outsourcing Project Work"></a>Outsourcing Project Work</h2><h3 id="Advantages-of-Outsourcing"><a href="#Advantages-of-Outsourcing" class="headerlink" title="Advantages of Outsourcing"></a>Advantages of Outsourcing</h3><ul>
 <li><strong>Cost reduction</strong>: Outsourcing can lead to significant cost savings, as it allows companies to leverage lower labor costs in other countries.</li>
 <li><strong>Focus on Core Competencies</strong>: Outsourcing non-core activities allows companies to focus on their primary business functions.</li>
 <li><strong>Access to Expertise</strong>: Outsourcing to specialized service providers can provide access to expertise that may not be readily available within the organization.</li>
 <li><strong>Scalability</strong>: Outsourcing can facilitate scalability, as service providers can quickly increase or decrease resources as needed.</li>
 <li><strong>Risk Management</strong>: Outsourcing can help manage risks associated with new or untested technologies or markets.</li>
-</ul></div><a class="article-more button is-small is-size-7" href="/blog/2024/12/04/About-Project-Management-Part-4/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-11-14T12:30:45.000Z" title="11/14/2024, 12:30:45 PM">2024-11-14</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-02T02:15:09.128Z" title="3/2/2025, 2:15:09 AM">2025-03-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/11/14/About-Project-Management-Part-3/">About Project Management ( Part 3 )</a></p><div class="content"><h1 id="Managing-Risk"><a href="#Managing-Risk" class="headerlink" title="Managing Risk"></a>Managing Risk</h1><h2 id="Risk-Management-Process"><a href="#Risk-Management-Process" class="headerlink" title="Risk Management Process"></a>Risk Management Process</h2><p>Risk Defined:</p>
+</ul></div><a class="article-more button is-small is-size-7" href="/blog/2024/12/04/About-Project-Management-Part-4/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-11-14T12:30:45.000Z" title="11/14/2024, 12:30:45 PM">2024-11-14</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-08T01:15:15.489Z" title="3/8/2025, 1:15:15 AM">2025-03-08</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/11/14/About-Project-Management-Part-3/">About Project Management ( Part 3 )</a></p><div class="content"><h1 id="Managing-Risk"><a href="#Managing-Risk" class="headerlink" title="Managing Risk"></a>Managing Risk</h1><h2 id="Risk-Management-Process"><a href="#Risk-Management-Process" class="headerlink" title="Risk Management Process"></a>Risk Management Process</h2><p>Risk Defined:</p>
 <ul>
 <li>An uncertain event or condition that if it occurs, has a <strong>positive or negative effect</strong> on project objectives.</li>
 <li><strong>No</strong> amount of planning can overcome or control risk.</li>
@@ -327,7 +621,7 @@
 <li>Prepares the project manager to take appropriate action</li>
 <li>Provides better control over the future</li>
 <li>Improves chances of reaching project objectives on time, within budget, and of meeting required performance.</li>
-</ul></div><a class="article-more button is-small is-size-7" href="/blog/2024/11/14/About-Project-Management-Part-3/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-24T19:11:18.000Z" title="10/24/2024, 7:11:18 PM">2024-10-24</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-02T02:15:09.128Z" title="3/2/2025, 2:15:09 AM">2025-03-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/10/24/About-Project-Management-Part-2/">About Project Management ( Part 2 )</a></p><div class="content"><h1 id="Cost-and-Time-Estimation"><a href="#Cost-and-Time-Estimation" class="headerlink" title="Cost and Time Estimation"></a>Cost and Time Estimation</h1><p>Is a trade-off, balancing the benefits of better accuracy against the costs of secured increased accuracy.</p>
+</ul></div><a class="article-more button is-small is-size-7" href="/blog/2024/11/14/About-Project-Management-Part-3/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-24T19:11:18.000Z" title="10/24/2024, 7:11:18 PM">2024-10-24</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-08T01:15:15.489Z" title="3/8/2025, 1:15:15 AM">2025-03-08</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/10/24/About-Project-Management-Part-2/">About Project Management ( Part 2 )</a></p><div class="content"><h1 id="Cost-and-Time-Estimation"><a href="#Cost-and-Time-Estimation" class="headerlink" title="Cost and Time Estimation"></a>Cost and Time Estimation</h1><p>Is a trade-off, balancing the benefits of better accuracy against the costs of secured increased accuracy.</p>
 <h2 id="Types-of-Estimates"><a href="#Types-of-Estimates" class="headerlink" title="Types of Estimates"></a>Types of Estimates</h2><h3 id="Top-down-macro-estimates"><a href="#Top-down-macro-estimates" class="headerlink" title="Top-down (macro) estimates"></a>Top-down (macro) estimates</h3><ul>
 <li>Analogy</li>
 <li>Group consensus</li>
@@ -343,7 +637,7 @@
 <li>To determine whether the project is worth doing.</li>
 <li>To develop cash flow needs.</li>
 <li>To determine how well the project is progressing.</li>
-</ul></div><a class="article-more button is-small is-size-7" href="/blog/2024/10/24/About-Project-Management-Part-2/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-24T12:30:25.000Z" title="10/24/2024, 12:30:25 PM">2024-10-24</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-02T02:15:09.128Z" title="3/2/2025, 2:15:09 AM">2025-03-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/10/24/About-Project-Management-Part-1/">About Project Management ( Part 1 )</a></p><div class="content"><h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h2 id="What-Is-a-Project"><a href="#What-Is-a-Project" class="headerlink" title="What Is a Project?"></a>What Is a Project?</h2><p>Project Defined (according to PMI):</p>
+</ul></div><a class="article-more button is-small is-size-7" href="/blog/2024/10/24/About-Project-Management-Part-2/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-24T12:30:25.000Z" title="10/24/2024, 12:30:25 PM">2024-10-24</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-08T01:15:15.489Z" title="3/8/2025, 1:15:15 AM">2025-03-08</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/10/24/About-Project-Management-Part-1/">About Project Management ( Part 1 )</a></p><div class="content"><h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h2 id="What-Is-a-Project"><a href="#What-Is-a-Project" class="headerlink" title="What Is a Project?"></a>What Is a Project?</h2><p>Project Defined (according to PMI):</p>
 <ul>
 <li>A temporary endeavor undertaken to create a unique product, service, or result.</li>
 </ul>
@@ -354,7 +648,7 @@
 <li>Involves several departments and professionals.</li>
 <li>Involves doing something never done before.</li>
 <li>Has specific time, cost, and performance<br>requirements.</li>
-</ul></div><a class="article-more button is-small is-size-7" href="/blog/2024/10/24/About-Project-Management-Part-1/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-20T23:11:20.000Z" title="10/20/2024, 11:11:20 PM">2024-10-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-02T02:15:09.128Z" title="3/2/2025, 2:15:09 AM">2025-03-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Technical-Tutorials/">Technical Tutorials</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/10/20/Chrome-Extension/">Chrome Extension Development</a></p><div class="content"><blockquote>
+</ul></div><a class="article-more button is-small is-size-7" href="/blog/2024/10/24/About-Project-Management-Part-1/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-20T23:11:20.000Z" title="10/20/2024, 11:11:20 PM">2024-10-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-08T01:15:15.489Z" title="3/8/2025, 1:15:15 AM">2025-03-08</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Technical-Tutorials/">Technical Tutorials</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/10/20/Chrome-Extension/">Chrome Extension Development</a></p><div class="content"><blockquote>
 <p>This blog will walk you through how to develop a Chrome Extension. From concepts to practical examples, this guide will help you create your own Chrome Extension.</p>
 </blockquote>
 <h1 id="What-can-Chrome-Extension-do"><a href="#What-can-Chrome-Extension-do" class="headerlink" title="What can Chrome Extension do?"></a>What can Chrome Extension do?</h1><p>A Chrome extension is a small software program that customizes the Chrome browser. It can:</p>
@@ -385,89 +679,7 @@
 
 <h1 id="Practice"><a href="#Practice" class="headerlink" title="Practice"></a>Practice</h1><h2 id="Build-Tool"><a href="#Build-Tool" class="headerlink" title="Build Tool"></a>Build Tool</h2><p>Recommenad using <a target="_blank" rel="noopener" href="https://parceljs.org/">parcel</a> to build the Chrome extension.</p>
 <h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>All right, I think you have know about the Chrome extension development. This is a demo of Chrome extension development, available in my GitHub repository. It includes both <a target="_blank" rel="noopener" href="https://github.com/kongchenglc/LLamaChromeSidebar">Frontend</a> and <a target="_blank" rel="noopener" href="https://github.com/kongchenglc/LLamaChromeSidebarBackend">Backend</a> implementations.</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-17T12:34:18.000Z" title="10/17/2024, 12:34:18 PM">2024-10-17</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-02T02:15:09.129Z" title="3/2/2025, 2:15:09 AM">2025-03-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Technical-Tutorials/">Technical Tutorials</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/10/17/hello-llm/">Empowering Software with LLMs: Integration, Deployment, and Automation</a></p><div class="content"><blockquote>
-<p>Large Language Models (LLMs) are revolutionizing industries. This blog walks you through integrating LLMs into a web application, deploying them to the cloud, and automating workflows. Follow along to kickstart LLMs in your projects effectively.</p>
-</blockquote>
-<hr>
-<h1 id="What-Are-LLMs"><a href="#What-Are-LLMs" class="headerlink" title="What Are LLMs?"></a>What Are LLMs?</h1><p>LLMs (Large Language Models) like GPT-4, Llama, and others are powerful tools for generating human-like text, analyzing context, and solving complex problems. They can be used for a wide range of tasks such as chatbots, content creation, code generation, and more.</p>
-<p>In this guide, we will explore two key approaches for integrating LLMs into a software project:</p>
-<ol>
-<li>Deploying an LLM on your own infrastructure.</li>
-<li>Using third-party inference APIs.</li>
-</ol>
-<hr>
-<h1 id="Approaches-to-LLM-Integration"><a href="#Approaches-to-LLM-Integration" class="headerlink" title="Approaches to LLM Integration"></a>Approaches to LLM Integration</h1><h2 id="Deploying-LLMs-Yourself"><a href="#Deploying-LLMs-Yourself" class="headerlink" title="Deploying LLMs Yourself"></a>Deploying LLMs Yourself</h2><p>If you prefer full control over data privacy, customization, and cost, deploying LLMs on your infrastructure is the best option. Tools like <strong>Ollama</strong> and frameworks from <strong>Hugging Face</strong> make this feasible.</p>
-<h3 id="Example-Deploying-Ollama-Locally"><a href="#Example-Deploying-Ollama-Locally" class="headerlink" title="Example: Deploying Ollama Locally"></a>Example: Deploying Ollama Locally</h3><p>Ollama allows you to run LLMs locally, providing a balance between performance and privacy.</p>
-<ol>
-<li>Installing Ollama: Go to the official website of <a target="_blank" rel="noopener" href="https://ollama.com/download">Ollama</a>.</li>
-<li>Follow the guide to install llama on your machine.</li>
-<li>Use ollama in your code.</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ollama</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load a model (e.g., Llama2)</span></span><br><span class="line">model = ollama.load_model(<span class="string">&quot;llama2&quot;</span>)</span><br><span class="line">response = model.predict(<span class="string">&quot;Explain quantum mechanics in simple terms.&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(response)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Using-Third-Party-Inference-APIs"><a href="#Using-Third-Party-Inference-APIs" class="headerlink" title="Using Third-Party Inference APIs"></a>Using Third-Party Inference APIs</h2><p>Third-party APIs like <strong>Hugging Face Inference API</strong> or <strong>OpenAI</strong> offer pre-trained LLMs without the need to manage infrastructure.</p>
-<h3 id="Example-Using-Hugging-Face-API"><a href="#Example-Using-Hugging-Face-API" class="headerlink" title="Example: Using Hugging Face API"></a>Example: Using Hugging Face API</h3><p>To integrate with Hugging Face:</p>
-<ol>
-<li>Obtain an API token and store it securely (e.g., in an <code>.env</code> file).</li>
-<li>Use the provided SDK or HTTP requests to call the API.</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">HfInference</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@huggingface/inference&#x27;</span></span><br><span class="line"><span class="keyword">const</span> inference = <span class="keyword">new</span> <span class="title class_">HfInference</span>(process.<span class="property">env</span>.<span class="property">HF_API_TOKEN</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="title function_">await</span> (<span class="keyword">const</span> chunk <span class="keyword">of</span> inference.<span class="title function_">chatCompletionStream</span>(&#123;</span><br><span class="line">  <span class="attr">model</span>: <span class="string">&#x27;meta-llama/Llama-3.2-1B-Instruct&#x27;</span>,</span><br><span class="line">  messages,</span><br><span class="line">  <span class="attr">max_tokens</span>: <span class="number">2048</span>,</span><br><span class="line">&#125;)) &#123;</span><br><span class="line">  <span class="comment">// process chunk</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="Example-Streaming-AI-Responses"><a href="#Example-Streaming-AI-Responses" class="headerlink" title="Example: Streaming AI Responses"></a>Example: Streaming AI Responses</h3><p><strong>Real-Time Response Streaming</strong> improves interactivity by delivering incremental responses to users. This is particularly useful for chatbots or applications where immediate feedback is crucial.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// koa2 server</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">query</span>(<span class="params">messages, ctx</span>) &#123;</span><br><span class="line">  ctx.<span class="title function_">set</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/plain; charset=utf-8&#x27;</span>)</span><br><span class="line">  ctx.<span class="title function_">set</span>(<span class="string">&#x27;Transfer-Encoding&#x27;</span>, <span class="string">&#x27;chunked&#x27;</span>)</span><br><span class="line"></span><br><span class="line">  ctx.<span class="property">status</span> = <span class="number">200</span></span><br><span class="line">  ctx.<span class="property">res</span>.<span class="title function_">writeHead</span>(<span class="number">200</span>, &#123;</span><br><span class="line">    <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;text/plain; charset=utf-8&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Transfer-Encoding&#x27;</span>: <span class="string">&#x27;chunked&#x27;</span>,</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> <span class="title function_">await</span> (<span class="keyword">const</span> chunk <span class="keyword">of</span> inference.<span class="title function_">chatCompletionStream</span>(&#123;</span><br><span class="line">    <span class="attr">model</span>: <span class="string">&#x27;meta-llama/Llama-3.2-1B-Instruct&#x27;</span>,</span><br><span class="line">    messages,</span><br><span class="line">    <span class="attr">max_tokens</span>: <span class="number">2048</span>,</span><br><span class="line">  &#125;)) &#123;</span><br><span class="line">    <span class="keyword">const</span> content = chunk.<span class="property">choices</span>[<span class="number">0</span>]?.<span class="property">delta</span>?.<span class="property">content</span> || <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> (content) &#123;</span><br><span class="line">      ctx.<span class="property">res</span>.<span class="title function_">write</span>(content)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ctx.<span class="property">res</span>.<span class="title function_">end</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="Web-Application-Development"><a href="#Web-Application-Development" class="headerlink" title="Web Application Development"></a>Web Application Development</h1><p>Building a web application with LLMs involves a solid development and deployment strategy, including CI&#x2F;CD pipelines, frontend hosting, backend servers, and database integration.</p>
-<h2 id="CI-CD-Pipeline"><a href="#CI-CD-Pipeline" class="headerlink" title="CI&#x2F;CD Pipeline"></a>CI&#x2F;CD Pipeline</h2><h3 id="Frontend-Deployment-to-AWS-S3"><a href="#Frontend-Deployment-to-AWS-S3" class="headerlink" title="Frontend Deployment to AWS S3"></a>Frontend Deployment to AWS S3</h3><ol>
-<li>Create an IAM user and grant S3 full access.</li>
-<li>Generate access keys and store them as GitHub repository secrets.</li>
-<li>Automate deployment with GitHub Actions.</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">GitHub</span> <span class="string">Actions</span> <span class="string">Build</span> <span class="string">and</span> <span class="string">Deploy</span> <span class="string">Demo</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">master</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build-and-deploy:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">code</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">&amp;&amp;</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">clean</span> <span class="string">&amp;&amp;</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">AWS</span> <span class="string">CLI</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          pip install awscli</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">to</span> <span class="string">S3</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          aws s3 sync ./dist s3://$&#123;&#123; secrets.AWS_S3_BUCKET &#125;&#125; --delete</span></span><br><span class="line"><span class="string"></span>        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">AWS_ACCESS_KEY_ID:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.AWS_ACCESS_KEY</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">AWS_SECRET_ACCESS_KEY:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.AWS_SECRET_ACCESS_KEY</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">AWS_REGION:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.AWS_REGION</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">AWS_S3_BUCKET:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.AWS_S3_BUCKET</span> <span class="string">&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Backend-Deployment-to-EC2"><a href="#Backend-Deployment-to-EC2" class="headerlink" title="Backend Deployment to EC2"></a>Backend Deployment to EC2</h3><p>Use Amazon Linux for the instance, and install necessary tools.</p>
-<hr>
-<h2 id="Database-Setup"><a href="#Database-Setup" class="headerlink" title="Database Setup"></a>Database Setup</h2><h3 id="MongoDB-Integration"><a href="#MongoDB-Integration" class="headerlink" title="MongoDB Integration"></a>MongoDB Integration</h3><ol>
-<li>Store your MongoDB connection string in a <code>.env</code> file to keep it secure.</li>
-<li>Whitelist the server’s IP in the MongoDB Atlas dashboard.</li>
-</ol>
-<hr>
-<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>By following these steps, you can successfully integrate, deploy, and automate LLMs in your web application. Whether you choose to deploy an LLM yourself for greater control or use third-party APIs for convenience, this guide provides the foundation to get started.</p>
-<blockquote>
-<p>This is a demo of integrating LLM APIs, available in my GitHub repository. It includes both <a target="_blank" rel="noopener" href="https://github.com/kongchenglc/OTUHealthCareBackEnd">Backend</a> and <a target="_blank" rel="noopener" href="https://github.com/kongchenglc/OTUHealthCareH5">Frontend</a> implementations.</p>
-</blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-09-16T12:34:18.000Z" title="9/16/2024, 12:34:18 PM">2024-09-16</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-02T02:15:09.129Z" title="3/2/2025, 2:15:09 AM">2025-03-02</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Technical-Tutorials/">Technical Tutorials</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2024/09/16/post-ur-blog-automaticly/">Automatically Post Your Blog</a></p><div class="content"><blockquote>
-<p>This blog describes a quick and easy way to set up your own website and automate the process of posting new blogs.</p>
-</blockquote>
-<h1 id="What-is-Hexo"><a href="#What-is-Hexo" class="headerlink" title="What is Hexo?"></a>What is Hexo?</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> is a fast, simple, and powerful blog framework built with Node.js.</p>
-<h1 id="What-is-GitHub-Pages"><a href="#What-is-GitHub-Pages" class="headerlink" title="What is GitHub Pages?"></a>What is GitHub Pages?</h1><p><a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a> is a static site hosting service provided by GitHub. It allows you to host your website directly from a GitHub repository. You can configure this feature in the repository’s <strong>Settings ➔ Pages</strong> section.</p>
-<h1 id="What-is-GitHub-Actions"><a href="#What-is-GitHub-Actions" class="headerlink" title="What is GitHub Actions?"></a>What is GitHub Actions?</h1><p>GitHub Actions is a continuous integration and continuous delivery (CI&#x2F;CD) platform that enables you to automate your build, test, and deployment workflows. You can set up workflows to automatically build and test every pull request or deploy merged pull requests to production.</p>
-<h1 id="Automatically-Post-Your-Blog"><a href="#Automatically-Post-Your-Blog" class="headerlink" title="Automatically Post Your Blog"></a>Automatically Post Your Blog</h1><p>By using Hexo to generate static files from markdown, and deploying them with GitHub Actions, you can automate the process of publishing your blog to GitHub Pages.</p>
-<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="Deployment-Repository"><a href="#Deployment-Repository" class="headerlink" title="Deployment Repository"></a>Deployment Repository</h3><ol>
-<li>Create a public repository on GitHub and enable GitHub Pages in the <strong>Settings ➔ Pages</strong> section. Every time you push to the main branch, GitHub Pages will automatically deploy the static files from the root directory of the main branch to the website.</li>
-</ol>
-<h3 id="Source-Code-Repository"><a href="#Source-Code-Repository" class="headerlink" title="Source Code Repository"></a>Source Code Repository</h3><ol>
-<li>Create a new GitHub repository for your blog’s source code. You can keep this repository private.</li>
-<li>Initialize Hexo in this repository and start writing your blogs in markdown files.</li>
-<li>Set up GitHub Actions in the source code repository. I recommend using the public action <code>JamesIves/github-pages-deploy-action@v4</code> to deploy the static files generated by Hexo. Here’s the YAML configuration for your workflow: <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">GitHub</span> <span class="string">Actions</span> <span class="string">Build</span> <span class="string">and</span> <span class="string">Deploy</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">    <span class="attr">push:</span></span><br><span class="line">        <span class="attr">branches:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">    <span class="attr">build-and-deploy:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    </span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">code</span></span><br><span class="line">          <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line"></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">          <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line"></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span></span><br><span class="line">          <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">&amp;&amp;</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">clean</span> <span class="string">&amp;&amp;</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">Pages</span></span><br><span class="line">          <span class="attr">uses:</span> <span class="string">JamesIves/github-pages-deploy-action@v4</span></span><br><span class="line">          <span class="attr">with:</span></span><br><span class="line">            <span class="attr">folder:</span> <span class="string">public</span></span><br><span class="line">            <span class="attr">repository-name:</span> <span class="string">github_username/development_repo_name</span></span><br><span class="line">            <span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line">            <span class="attr">token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.BLOG_BUILD</span> <span class="string">&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
-<li>Create a <strong>fine-grained personal access token</strong> from your account’s <strong>Settings ➔ Developer settings ➔ Personal access tokens ➔ Tokens (classic)</strong>. This token will be used to access the source code repository.</li>
-<li>In this source code repository’s <strong>Settings ➔ Secrets and variables ➔ Actions</strong> section, create a new secret named <code>BLOG_BUILD</code> and set its value to your personal access token. This will be used to deploy the static files to the deployment repository.</li>
-</ol>
-<h1 id="Additional-Features"><a href="#Additional-Features" class="headerlink" title="Additional Features"></a>Additional Features</h1><h2 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h2><p>Hexo supports many comment plugins. I am using the <strong>Utterances</strong> plugin for this blog.</p>
-<h3 id="Steps-to-Use-Utterances"><a href="#Steps-to-Use-Utterances" class="headerlink" title="Steps to Use Utterances"></a>Steps to Use Utterances</h3><ol>
-<li>Visit <a target="_blank" rel="noopener" href="https://github.com/apps/utterances">Utterances GitHub page</a>.</li>
-<li>Click <strong>Install</strong>.</li>
-<li>Select the repository you want to use Utterances with.</li>
-<li>Go to <a target="_blank" rel="noopener" href="https://utteranc.es/">Utterances site</a>.</li>
-<li>Fill in the form with the necessary details.</li>
-<li>Add the following code to your <code>post.ejs</code> file.</li>
-</ol>
-<blockquote>
-<p><strong>Note</strong>: If you don’t have a <code>post.ejs</code> file, you can create one in your theme’s layout directory. For example: <code>themes/default/layout/post.ejs</code>.</p>
-</blockquote>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/blog/">Previous</a></div><div class="pagination-next"><a href="/blog/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/blog/">1</a></li><li><a class="pagination-link is-current" href="/blog/page/2/">2</a></li><li><a class="pagination-link" href="/blog/page/3/">3</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Lich"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Lich</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">21</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Lich&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Lich</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/blog/">Previous</a></div><div class="pagination-next"><a href="/blog/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/blog/">1</a></li><li><a class="pagination-link is-current" href="/blog/page/2/">2</a></li><li><a class="pagination-link" href="/blog/page/3/">3</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Lich"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Lich</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">32</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Lich&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Lich</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
