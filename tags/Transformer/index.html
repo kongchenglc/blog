@@ -29,124 +29,15 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Cheng&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Transformer</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-11T21:05:34.000Z" title="3/11/2025, 9:05:34 PM">2025-03-11</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/11/Transformer-3/">Transformer ( Part 3: Transformer Architecture )</a></p><div class="content"><h1 id="Encoder-Decoder"><a href="#Encoder-Decoder" class="headerlink" title="Encoder &amp; Decoder"></a>Encoder &amp; Decoder</h1><p>The Transformer consists of two main parts: an <strong>encoder</strong> and a <strong>decoder</strong>. They are connected by Cross-Attention.</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Cheng&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Transformer</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-11T21:05:34.000Z" title="3/11/2025, 9:05:34 PM">2025-03-11</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:14:09.241Z" title="3/12/2025, 1:14:09 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/11/Transformer-3/">Transformer ( Part 3: Transformer Architecture )</a></p><div class="content"><h1 id="Encoder-Decoder"><a href="#Encoder-Decoder" class="headerlink" title="Encoder &amp; Decoder"></a>Encoder &amp; Decoder</h1><p>The Transformer consists of two main parts: an <strong>encoder</strong> and a <strong>decoder</strong>. They are connected by Cross-Attention.</p>
 <ul>
 <li><strong>Encoder</strong>: Processes the input sequence using multiple layers of self-attention and feed-forward networks.</li>
 <li><strong>Decoder</strong>: Takes the encoder’s output and generates the target sequence using self-attention and cross-attention mechanisms.</li>
 </ul>
 <p>The Transformer Architecture:</p>
-<p><img src="/blog/./img/Transformer3-1.png" alt="https://arxiv.org/pdf/1706.03762"></p>
-<h1 id="Token-Embedding"><a href="#Token-Embedding" class="headerlink" title="Token Embedding"></a>Token Embedding</h1><ul>
-<li>Converts input tokens into dense vector representations.</li>
-<li>Typically implemented using <strong>word embeddings</strong>.</li>
-<li>Works alongside <strong>positional encoding</strong> to maintain sequence order.</li>
-</ul>
-<p><a href="https://kongchenglc.github.io/blog/2025/02/09/Transformer-1/">More details</a></p>
-<h1 id="Positional-Encoding"><a href="#Positional-Encoding" class="headerlink" title="Positional Encoding"></a>Positional Encoding</h1><p>Since Transformers do not process sequences sequentially like RNNs, positional encodings add order information to embeddings.</p>
-<p>The formula for positional encoding is:</p>
-<p>$$<br>PE_{(pos, 2i)} &#x3D; \sin(pos &#x2F; 10000^{2i&#x2F;d})<br>$$</p>
-<p>$$<br>PE_{(pos, 2i+1)} &#x3D; \cos(pos &#x2F; 10000^{2i&#x2F;d})<br>$$</p>
-<p>where $pos$ is the position in the sequence, $i$ is the dimension index, and $d$ is the embedding size.</p>
-<h1 id="Self-Attention-Mechanism"><a href="#Self-Attention-Mechanism" class="headerlink" title="Self-Attention Mechanism"></a>Self-Attention Mechanism</h1><p>The core of the Transformer is the <strong>self-attention mechanism</strong>, which computes relationships between tokens within a sequence.</p>
-<ol>
-<li><p>The input embeddings are transformed into <strong>Query (Q), Key (K), and Value (V)</strong> matrices:</p>
-<p>$$<br>Q &#x3D; XW^Q, \quad K &#x3D; XW^K, \quad V &#x3D; XW^V<br>$$</p>
-</li>
-<li><p>The attention scores are computed using the <strong>scaled dot-product attention</strong>:</p>
-<p>$$<br>\text{Attention}(Q, K, V) &#x3D; \text{softmax} \left(\frac{QK^T}{\sqrt{d_k}}\right) V<br>$$</p>
-<p>where $\sqrt{d_k}$ is a scaling factor to prevent large gradients.</p>
-</li>
-<li><p>The result is a weighted sum of the values $V$.</p>
-</li>
-</ol>
-<p><a href="https://kongchenglc.github.io/blog/2025/03/01/Transformer-2/?t=1741741190500">More details</a></p>
-<h1 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h1><p>Instead of a single attention function, Transformers use <strong>multi-head attention</strong>, which allows the model to learn multiple attention patterns.</p>
-<p>$$<br>\text{MultiHead}(Q, K, V) &#x3D; \text{Concat}(\text{head}_1, …, \text{head}_h) W^O<br>$$</p>
-<p>Each attention head captures different aspects of relationships in the sequence.</p>
-<h1 id="Feed-Forward-Network-FFN"><a href="#Feed-Forward-Network-FFN" class="headerlink" title="Feed-Forward Network (FFN)"></a>Feed-Forward Network (FFN)</h1><p>Each Transformer layer contains a <strong>feed-forward network</strong>:</p>
-<p>$$<br>FFN(x) &#x3D; \max(0, xW_1 + b_1) W_2 + b_2<br>$$</p>
-<p>This introduces non-linearity and improves representation power.</p>
-<h1 id="Residual-Connections-Layer-Normalization"><a href="#Residual-Connections-Layer-Normalization" class="headerlink" title="Residual Connections &amp; Layer Normalization"></a>Residual Connections &amp; Layer Normalization</h1><ul>
-<li><p><strong>Residual connections</strong> help prevent vanishing gradients:</p>
-<p>$$<br>\text{Layer Output} &#x3D; \text{LayerNorm}(x + \text{SubLayer}(x))<br>$$</p>
-</li>
-<li><p><strong>Layer Normalization</strong> stabilizes training and ensures consistent distribution across different batches.</p>
-</li>
-</ul>
-<h1 id="Cross-Attention-in-Decoder"><a href="#Cross-Attention-in-Decoder" class="headerlink" title="Cross-Attention in Decoder"></a>Cross-Attention in Decoder</h1><p>The decoder has an additional attention layer:</p>
-<ul>
-<li>The <strong>Query</strong> comes from the decoder.</li>
-<li>The <strong>Key</strong> and <strong>Value</strong> come from the encoder output.</li>
-<li>This enables the decoder to focus on relevant encoded information.</li>
-</ul>
-<h1 id="Masking-Mechanisms"><a href="#Masking-Mechanisms" class="headerlink" title="Masking Mechanisms"></a>Masking Mechanisms</h1><ul>
-<li><strong>Padding Mask</strong>: Prevents attention from being applied to padding tokens. (Encoder)</li>
-<li><strong>Look-Ahead Mask</strong>: Ensures that the decoder only attends to previous tokens, maintaining <strong>auto-regressive</strong> generation. (Decoder)</li>
-</ul>
-<h1 id="GPT’s-Decoder-Only-Architecture"><a href="#GPT’s-Decoder-Only-Architecture" class="headerlink" title="GPT’s Decoder-Only Architecture"></a>GPT’s Decoder-Only Architecture</h1><p>Unlike the standard Transformer model, GPT removes the encoder and relies solely on <strong>stacked decoder layers</strong>. This makes it an <strong>autoregressive model</strong>, meaning it generates text token by token, predicting each next token based on previous ones. This <strong>decoder-only Transformer</strong> is designed for autoregressive text generation, making it highly effective for applications like chatbots, code generation, and creative writing.</p>
-<p><a target="_blank" rel="noopener" href="https://poloclub.github.io/transformer-explainer/">Visualization</a></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-01T14:51:44.000Z" title="3/1/2025, 2:51:44 PM">2025-03-01</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/01/Transformer-2/">Transformer ( Part 2: Multi-Head Attention )</a></p><div class="content"><p>Before the Transformer, sequence models like RNNs and LSTMs suffered from <strong>long-term dependency issues</strong> and <strong>low parallelization efficiency</strong>. Self-Attention was introduced as an alternative, allowing for <strong>parallel computation</strong> and capturing <strong>long-range dependencies</strong>.</p>
+<p><img src="/blog/./img/Transformer3-1.png" alt="https://arxiv.org/pdf/1706.03762"></p></div><a class="article-more button is-small is-size-7" href="/blog/2025/03/11/Transformer-3/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-01T14:51:44.000Z" title="3/1/2025, 2:51:44 PM">2025-03-01</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:14:09.241Z" title="3/12/2025, 1:14:09 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/01/Transformer-2/">Transformer ( Part 2: Multi-Head Attention )</a></p><div class="content"><p>Before the Transformer, sequence models like RNNs and LSTMs suffered from <strong>long-term dependency issues</strong> and <strong>low parallelization efficiency</strong>. Self-Attention was introduced as an alternative, allowing for <strong>parallel computation</strong> and capturing <strong>long-range dependencies</strong>.</p>
 <p>However, a single-head Self-Attention mechanism has a limitation:<br><strong>It can only focus on one type of relationship or pattern in the data.</strong>  </p>
-<p>Multi-Head Attention overcomes this by <strong>using multiple attention heads</strong> that capture different aspects of the input, improving the model’s expressiveness.</p>
-<h1 id="Single-Head-Self-Attention"><a href="#Single-Head-Self-Attention" class="headerlink" title="Single-Head Self-Attention"></a>Single-Head Self-Attention</h1><p>Before diving into Multi-Head Attention, let’s first understand how a single-head Self-Attention works.</p>
-<h2 id="Query-Key-Value"><a href="#Query-Key-Value" class="headerlink" title="Query, Key, Value"></a>Query, Key, Value</h2><p>In Self-Attention, each input vector is mapped into three vectors:</p>
-<ul>
-<li><strong>Query (Q)</strong>: Represents the feature to search for.</li>
-<li><strong>Key (K)</strong>: Represents candidate features.</li>
-<li><strong>Value (V)</strong>: Represents the actual information to be aggregated.</li>
-</ul>
-<p>Each token in the input has a corresponding $(Q, K, V)$ triplet.</p>
-<h2 id="Computing-Attention-Scores"><a href="#Computing-Attention-Scores" class="headerlink" title="Computing Attention Scores"></a>Computing Attention Scores</h2><p>For a given Query $Q$ and Key $K$, we compute a similarity score using <strong>scaled dot-product attention</strong>:</p>
-<p>$$<br>\text{Attention}(Q, K, V) &#x3D; \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V<br>$$</p>
-<p>where:</p>
-<ul>
-<li>$QK^T$ computes similarity between Query and Key.</li>
-<li>$\sqrt{d_k}$ scales down the values to prevent large gradients.</li>
-<li><code>softmax</code> ensures that attention weights sum to 1.</li>
-<li>The weights are applied to the Value $V$.</li>
-</ul>
-<p><img src="/blog/./img/Transformer2-1.png" alt="https://arxiv.org/pdf/1706.03762"></p>
-<h1 id="Multi-Head-Attention-Mechanism"><a href="#Multi-Head-Attention-Mechanism" class="headerlink" title="Multi-Head Attention Mechanism"></a>Multi-Head Attention Mechanism</h1><p>A single-head Self-Attention mechanism <strong>only captures one perspective</strong> of the input relationships. Multi-Head Attention <strong>uses multiple heads</strong> to process different aspects of the sequence in parallel.</p>
-<h2 id="Computation-Process-of-Multi-Head-Attention"><a href="#Computation-Process-of-Multi-Head-Attention" class="headerlink" title="Computation Process of Multi-Head Attention"></a>Computation Process of Multi-Head Attention</h2><p>Multi-Head Attention follows these steps:</p>
-<ol>
-<li><p><strong>Linear Projections</strong>:  </p>
-<ul>
-<li><p>The input embedding $X$ has a dimension of $d_{\text{model}}$ (e.g., 512).  </p>
-</li>
-<li><p>For each attention head, separate <strong>Query, Key, and Value</strong> vectors are computed using different linear transformations:</p>
-<p>$$<br>Q_i &#x3D; X W_i^Q, \quad K_i &#x3D; X W_i^K, \quad V_i &#x3D; X W_i^V<br>$$</p>
-<p>where $W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d_{\text{model}} \times d_k}$ are learnable parameters.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Compute Attention for Each Head</strong>:<br>Each attention head performs scaled dot-product attention:</p>
-<p>$$<br>\text{head}_i &#x3D; \text{Attention}(Q_i, K_i, V_i) &#x3D; \text{softmax}\left(\frac{Q_i K_i^T}{\sqrt{d_k}}\right) V_i<br>$$</p>
-</li>
-<li><p><strong>Concatenation &amp; Final Transformation</strong>:<br>The outputs from all heads are concatenated and passed through a final linear transformation:</p>
-<p>$$<br>\text{MultiHead}(Q, K, V) &#x3D; \text{Concat}(\text{head}_1, …, \text{head}_h) W^O<br>$$</p>
-<p>where $W^O \in \mathbb{R}^{h d_k \times d_{\text{model}}}$ is a trainable projection matrix.</p>
-</li>
-</ol>
-<p><img src="/blog/./img/Transformer2-2.png" alt="https://poloclub.github.io/transformer-explainer/"></p>
-<h2 id="Trainable-Projection-Matrix-W-O"><a href="#Trainable-Projection-Matrix-W-O" class="headerlink" title="Trainable Projection Matrix $W^O$"></a>Trainable Projection Matrix $W^O$</h2><p>The final output of Multi-Head Attention is obtained by concatenating the outputs of all attention heads and applying a <strong>linear transformation</strong> using a projection matrix $W^O$. The matrix $W^O \in \mathbb{R}^{h d_k \times d_{\text{model}}}$ is a learnable parameter, meaning it is updated during training. Let’s break down what this means:</p>
-<ul>
-<li><strong>$h$</strong> represents the number of attention heads in the Multi-Head Attention mechanism. Each attention head processes the input in parallel, and having multiple heads allows the model to capture various relationships and features from the data. </li>
-<li><strong>$d_k$</strong> is the dimension of each attention head. Since the attention mechanism splits the model dimension ($d_{\text{model}}$) evenly across all heads, $d_k &#x3D; \frac{d_{\text{model}}}{h}$.</li>
-<li><strong>$\mathbb{R}$</strong> refers to the set of real numbers. The notation $\mathbb{R}^{h d_k \times d_{\text{model}}}$ indicates that $W^O$ is a matrix with dimensions $h d_k$ by $d_{\text{model}}$, where the number of rows is the total dimension of all attention heads concatenated together, and the number of columns is the original model dimension.</li>
-</ul>
-<p><strong>Why is this Computation Necessary?</strong></p>
-<p>After the attention scores are computed and applied to the Values for each head, the outputs of all heads are concatenated. This concatenated output has a shape of $L \times h d_k$, where $L$ is the sequence length and $h d_k$ is the combined dimension of all attention heads. However, we want the final output of Multi-Head Attention to have the same dimension as the original input, $d_{\text{model}}$.</p>
-<p>To achieve this, we use the projection matrix $W^O$, which transforms the concatenated vector back to the desired $d_{\text{model}}$ dimension. This ensures that the output from the Multi-Head Attention layer has the same dimension as the input, allowing it to be passed on to subsequent layers in the Transformer network without any dimension mismatch.</p>
-<p>In short, the projection matrix $W^O$ enables the transformation of the concatenated attention head outputs into a final output with the same dimensionality as the input, ensuring consistency throughout the model.</p>
-<h2 id="Summary-of-Multi-Head-Attention-Formula"><a href="#Summary-of-Multi-Head-Attention-Formula" class="headerlink" title="Summary of Multi-Head Attention Formula"></a>Summary of Multi-Head Attention Formula</h2><p>$$<br>\text{MultiHead}(Q, K, V) &#x3D; \text{Concat}(\text{head}_1, …, \text{head}_h) W^O<br>$$</p>
-<p>$$<br>\text{head}_i &#x3D; \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)<br>$$</p>
-<p>where:</p>
-<ul>
-<li>$h$ is the number of attention heads.</li>
-<li>$d_k &#x3D; d_{\text{model}} &#x2F; h$ is the dimension of each head.</li>
-<li>$W^Q, W^K, W^V, W^O$ are learnable parameters.</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-09T21:03:49.000Z" title="2/9/2025, 9:03:49 PM">2025-02-09</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/09/Transformer-1/">Transformer ( Part 1: Word Embedding )</a></p><div class="content"><p>Word Embedding is one of the most fundamental techniques in Natural Language Processing (NLP). It represents words as continuous vectors in a high-dimensional space, capturing semantic relationships between them.  </p>
+<p>Multi-Head Attention overcomes this by <strong>using multiple attention heads</strong> that capture different aspects of the input, improving the model’s expressiveness.</p></div><a class="article-more button is-small is-size-7" href="/blog/2025/03/01/Transformer-2/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-09T21:03:49.000Z" title="2/9/2025, 9:03:49 PM">2025-02-09</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:14:09.241Z" title="3/12/2025, 1:14:09 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/09/Transformer-1/">Transformer ( Part 1: Word Embedding )</a></p><div class="content"><p>Word Embedding is one of the most fundamental techniques in Natural Language Processing (NLP). It represents words as continuous vectors in a high-dimensional space, capturing semantic relationships between them.  </p>
 <h2 id="Why-Do-We-Need-Word-Embeddings"><a href="#Why-Do-We-Need-Word-Embeddings" class="headerlink" title="Why Do We Need Word Embeddings?"></a>Why Do We Need Word Embeddings?</h2><p>Before word embeddings, one common method to represent words was <strong>One-Hot Encoding</strong>. In this approach, each word is represented as a high-dimensional sparse vector.  </p>
 <p>For example, if our vocabulary has 10,000 words, we encode each word as:<br>$$<br>\text{dog} &#x3D; [0, 1, 0, 0, \dots, 0]<br>$$<br>However, this method has significant drawbacks:  </p>
 <ol>
@@ -154,69 +45,7 @@
 <li><strong>No semantic similarity</strong> – “dog” and “cat” are conceptually related, but their one-hot vectors are completely different.</li>
 </ol>
 <p>Word embeddings solve these issues by <strong>learning low-dimensional, dense representations</strong> that encode semantic relationships between words.  </p>
-<p><img src="/blog/./img/Transformer1-1.png" alt="https://corpling.hypotheses.org/495"></p>
-<hr>
-<h2 id="Word-Embeddings-and-Dot-Product-A-Geometric-Perspective"><a href="#Word-Embeddings-and-Dot-Product-A-Geometric-Perspective" class="headerlink" title="Word Embeddings and Dot Product: A Geometric Perspective"></a>Word Embeddings and Dot Product: A Geometric Perspective</h2><p>Word embeddings map words into a <strong>vector space</strong>, where semantically similar words are placed close to each other.  </p>
-<h3 id="What-is-the-Dot-Product"><a href="#What-is-the-Dot-Product" class="headerlink" title="What is the Dot Product?"></a><strong>What is the Dot Product?</strong></h3><p>For two vectors $\mathbf{A}$ and $\mathbf{B}$, the <strong>dot product</strong> is defined as:<br>$$<br>\mathbf{A} \cdot \mathbf{B} &#x3D; | \mathbf{A} | | \mathbf{B} | \cos(\theta)<br>$$<br>where:  </p>
-<ul>
-<li>$| \mathbf{A} |$ and $| \mathbf{B} |$ are the magnitudes (lengths) of the vectors  </li>
-<li>$| \mathbf{A} |$ and $| \mathbf{B} |$ are the magnitudes (lengths) of the vectors  </li>
-<li>$\theta$ is the angle between them</li>
-</ul>
-<p><img src="/blog/./img/Transformer1-2.png" alt="https://www.cuemath.com/algebra/dot-product/"></p>
-<h4 id="Why-is-This-Important-in-Word-Embeddings"><a href="#Why-is-This-Important-in-Word-Embeddings" class="headerlink" title="Why is This Important in Word Embeddings?"></a><strong>Why is This Important in Word Embeddings?</strong></h4><ul>
-<li><strong>When $\theta$ is small</strong>, $\cos(\theta)$ is large, meaning the words are <strong>similar</strong>.  </li>
-<li><strong>When $\theta$ is large</strong>, $\cos(\theta)$ is small or negative, meaning the words are <strong>dissimilar</strong>.</li>
-</ul>
-<p>Thus, in Word2Vec, the similarity between two words is determined by their <strong>dot product</strong>, which aligns with how we measure relationships in a semantic space.  </p>
-<hr>
-<h2 id="Word2Vec-CBOW-and-Skip-Gram"><a href="#Word2Vec-CBOW-and-Skip-Gram" class="headerlink" title="Word2Vec: CBOW and Skip-Gram"></a>Word2Vec: CBOW and Skip-Gram</h2><p>Word2Vec is an algorithm for learning word embeddings. It has two main architectures:  </p>
-<ol>
-<li><strong>Continuous Bag of Words (CBOW)</strong> – Predicts a word given its surrounding context.  </li>
-<li><strong>Skip-Gram</strong> – Predicts context words given a target word.</li>
-</ol>
-<h3 id="CBOW-Model"><a href="#CBOW-Model" class="headerlink" title="CBOW Model"></a><strong>CBOW Model</strong></h3><p>Given surrounding words, we predict the center word. The model uses:<br>$$<br>\mathbf{h} &#x3D; \frac{1}{n} \sum_{i&#x3D;1}^{n} \mathbf{x}_i<br>$$<br>where $\mathbf{x}_i$ are the input word vectors.  </p>
-<p>The probability of the target word $w_t$ is given by the <strong>Softmax function</strong>:<br>$$<br>P(w_t | \text{context}) &#x3D; \frac{\exp(\mathbf{v_{w_t}} \cdot \mathbf{h})}{\sum_{w \in V} \exp(\mathbf{v_w} \cdot \mathbf{h})}<br>$$  </p>
-<h3 id="Skip-Gram-Model"><a href="#Skip-Gram-Model" class="headerlink" title="Skip-Gram Model"></a><strong>Skip-Gram Model</strong></h3><p>Instead of predicting a word from its context, Skip-Gram predicts the <strong>context words given a target word</strong>:<br>$$<br>P(w_c | w_t) &#x3D; \frac{\exp(\mathbf{v_{w_c}} \cdot \mathbf{v_{w_t}})}{\sum_{w \in V} \exp(\mathbf{v_w} \cdot \mathbf{v_{w_t}})}<br>$$  </p>
-<p>The loss function for Skip-Gram is:<br>$$<br>L &#x3D; -\sum_{t} \sum_{-n \leq j \leq n, j \neq 0} \log P(w_{t+j} | w_t)<br>$$  </p>
-<hr>
-<h2 id="Understanding-Softmax-and-Exponential-Function"><a href="#Understanding-Softmax-and-Exponential-Function" class="headerlink" title="Understanding Softmax and Exponential Function"></a>Understanding Softmax and Exponential Function</h2><h3 id="What-is-Softmax"><a href="#What-is-Softmax" class="headerlink" title="What is Softmax?"></a><strong>What is Softmax?</strong></h3><p>Softmax converts raw scores into probabilities. Given a vector $\mathbf{z}$, Softmax is defined as:<br>$$<br>\text{Softmax}(z_i) &#x3D; \frac{\exp(z_i)}{\sum_{j} \exp(z_j)}<br>$$  </p>
-<p>This ensures:  </p>
-<ul>
-<li><strong>Non-negative outputs</strong> (since $\exp(x) &gt; 0$ for all $x$).  </li>
-<li><strong>Probabilities sum to 1</strong> (as a requirement for classification).</li>
-</ul>
-<p>The <strong>exponential function</strong> $\exp(x) &#x3D; e^x$ grows rapidly as $x$ increases. It is useful because:  </p>
-<ul>
-<li>It ensures probabilities never become negative.  </li>
-<li>It amplifies differences between scores, making classification more confident.</li>
-</ul>
-<p><img src="/blog/./img/Transformer1-4.png" alt="https://www.nomidl.com/deep-learning/what-is-the-difference-between-sigmoid-and-softmax-activation-function/"></p>
-<hr>
-<h2 id="Negative-Sampling-Efficient-Training"><a href="#Negative-Sampling-Efficient-Training" class="headerlink" title="Negative Sampling: Efficient Training"></a>Negative Sampling: Efficient Training</h2><p>Since computing Softmax over the <strong>entire vocabulary</strong> is expensive, we use <strong>Negative Sampling</strong>, which simplifies the loss function to:<br>$$<br>L &#x3D; \log \sigma (\mathbf{v_{w_t}} \cdot \mathbf{v_{w_c}}) + \sum_{i&#x3D;1}^{k} \log \sigma (-\mathbf{v_{w_t}} \cdot \mathbf{v_{w_{\text{neg}_i}}})<br>$$<br>where $\sigma(x) &#x3D; \frac{1}{1 + e^{-x}}$ is the <strong>Sigmoid function</strong>.  </p>
-<p>Negative Sampling selects a few “negative examples” to contrast with positive word pairs, making training much faster.  </p>
-<hr>
-<h1 id="Positional-Encoding"><a href="#Positional-Encoding" class="headerlink" title="Positional Encoding"></a>Positional Encoding</h1><p>In Transformer models, <strong>Positional Encoding</strong> is used to compensate for the lack of positional information in the self-attention mechanism. Since self-attention is <strong>order-agnostic</strong>, it does not inherently capture the sequence order, making it necessary to explicitly inject position information.</p>
-<h2 id="Why-Do-We-Need-Positional-Encoding"><a href="#Why-Do-We-Need-Positional-Encoding" class="headerlink" title="Why Do We Need Positional Encoding?"></a>Why Do We Need Positional Encoding?</h2><p>In sequential models like RNNs and LSTMs, inputs are processed step by step, inherently preserving order information. However, the Transformer model processes all tokens <strong>in parallel</strong>, making it unaware of the relative or absolute positions of words in a sequence. <strong>Positional Encoding</strong> helps encode positional information, ensuring the model can distinguish word order.</p>
-<h2 id="How-Positional-Encoding-Works"><a href="#How-Positional-Encoding-Works" class="headerlink" title="How Positional Encoding Works"></a>How Positional Encoding Works</h2><p>The key idea of Positional Encoding is to generate a unique vector for each position in a sequence and add it to the corresponding word embedding. This allows the model to infer positional information.</p>
-<h3 id="Mathematical-Formulation"><a href="#Mathematical-Formulation" class="headerlink" title="Mathematical Formulation"></a>Mathematical Formulation</h3><p>The original Transformer paper <em>Attention Is All You Need</em> (Vaswani et al., 2017) defines positional encoding using <strong>sine and cosine functions</strong>:</p>
-<p>$$<br>PE_{(pos, 2i)} &#x3D; \sin\left(\frac{pos}{10000^{\frac{2i}{d_{\text{model}}}}}\right)<br>$$</p>
-<p>$$<br>PE_{(pos, 2i+1)} &#x3D; \cos\left(\frac{pos}{10000^{\frac{2i}{d_{\text{model}}}}}\right)<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>$pos$ represents the token position in the sequence.</li>
-<li>$i$ is the dimension index (even indices use sine, odd indices use cosine).</li>
-<li>$d_{\text{model}}$ is the embedding dimension, equal to the Transformer model’s hidden size.</li>
-<li>$10000$ is a scaling factor chosen empirically to spread the encoding values over different frequencies.</li>
-</ul>
-<h3 id="Why-Use-Sine-and-Cosine"><a href="#Why-Use-Sine-and-Cosine" class="headerlink" title="Why Use Sine and Cosine?"></a>Why Use Sine and Cosine?</h3><p>The choice of sine and cosine functions is motivated by several factors:</p>
-<ol>
-<li><strong>Periodicity</strong>: These functions provide a smooth, repeating pattern that captures relative positional relationships.</li>
-<li><strong>Smooth Transitions</strong>: The values change gradually as $pos$ increases, helping the model learn sequential dependencies.</li>
-<li><strong>Multi-Scale Representation</strong>: The denominator ensures different dimensions have different wavelengths, allowing the encoding to capture both local and global position information.</li>
-</ol>
-<p><img src="/blog/./img/Transformer1-3.png" alt="https://www.researchgate.net/figure/Positional-encoding-for-the-feature-representations-Top-Sinusoidal-representation-for_fig2_372249718"></p>
-</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Cheng"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cheng</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">34</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Cheng&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Cheng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+<p><img src="/blog/./img/Transformer1-1.png" alt="https://corpling.hypotheses.org/495"></p></div><a class="article-more button is-small is-size-7" href="/blog/2025/02/09/Transformer-1/#more">Read more</a></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Cheng"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cheng</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">34</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Cheng&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Cheng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,

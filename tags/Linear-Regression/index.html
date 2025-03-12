@@ -29,7 +29,7 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Cheng&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Linear Regression</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-07T16:41:21.000Z" title="1/7/2025, 4:41:21 PM">2025-01-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.937Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/07/Machine-Learning-2/">About Machine Learning ( Part 2: Linear Regression )</a></p><div class="content"><h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><p>In prediction tasks, we often use independent features to predict a dependent variable. If we have a dataset:</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Cheng&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Linear Regression</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-07T16:41:21.000Z" title="1/7/2025, 4:41:21 PM">2025-01-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:14:09.240Z" title="3/12/2025, 1:14:09 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/07/Machine-Learning-2/">About Machine Learning ( Part 2: Linear Regression )</a></p><div class="content"><h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><p>In prediction tasks, we often use independent features to predict a dependent variable. If we have a dataset:</p>
 <p>$$<br>{ x_d^{(i)}, t^{(i)} }<br>$$</p>
 <p>where:</p>
 <ul>
@@ -40,148 +40,7 @@
 </ul>
 <p>Each feature in the dataset can be expressed as:</p>
 <p>$$<br>x_d^{(i)}<br>$$</p>
-<p>For simplicity, the following focuses on a <strong>single feature</strong> $x$, meaning $D &#x3D; 1$.</p>
-<h2 id="Polynomial"><a href="#Polynomial" class="headerlink" title="Polynomial"></a>Polynomial</h2><p>This is a <strong>curve fitting</strong> problem, where we aim to fit a polynomial function to model the relationship between the independent variable $x$ and the dependent variable $t$.</p>
-<p>A polynomial model is expressed as:</p>
-<p>$$<br>h(x, \omega) &#x3D; \omega_0 + \omega_1 x + \omega_2 x^2 + \cdots + \omega_M x^M<br>$$</p>
-<ul>
-<li>$h(x, \omega)$: The predicted output (dependent variable) for a given input $x$.</li>
-<li>$\omega_0, \omega_1, \dots, \omega_M$: The coefficients (parameters) of the polynomial.</li>
-<li>$M$: The order of the polynomial, which represents the highest power of $x$ used in the model.</li>
-</ul>
-<p>This expanded form explicitly shows all terms of the polynomial up to order $M$.</p>
-<p>It can also be written in a more compact form using summation:</p>
-<p>$$<br>h(x, \omega) &#x3D; \omega_0 + \sum_{j&#x3D;1}^{M} \omega_j x^j<br>$$</p>
-<p>Here:</p>
-<ul>
-<li>The summation $\sum_{j&#x3D;1}^{M} \omega_j x^j$ compactly represents all terms from $j &#x3D; 1$ (first-order) to $j &#x3D; M$ (highest-order).</li>
-<li>$\omega_0$: The constant term (bias), which is excluded from the summation since it is independent of $x$.</li>
-</ul>
-<h2 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2><p>For a straight line, the model is a linear function of the form:</p>
-<p>$$<br>f(x, \omega) &#x3D; \omega_0 + \omega_1 x<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>$M &#x3D; 1$, indicating that the polynomial is of degree 1 (a straight line).</li>
-<li>$f(x, \omega) &#x3D; \omega_0 + \omega_1 x$ is the equation of the line.</li>
-<li>$\omega_1$ represents the slope of the line, and $\omega_0$ represents the y-intercept in the equation.</li>
-</ul>
-<p>We can use optimization to minimize the overall error. The cost function $J(\omega)$ is defined as:</p>
-<p>$$<br>J(\omega) &#x3D; \frac{1}{2} \sum_{n&#x3D;1}^{N} \left(t_n - f(x_n, \omega)\right)^2<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>$J(\omega)$ is the cost function that we aim to minimize ( MSE ).</li>
-<li>$t_n$ is the target value (actual value) for the $n$-th data point.</li>
-<li>$f(x_n, \omega)$ is the predicted value from the model for the $n$-th data point.</li>
-<li>$N$ is the total number of data points in the dataset.</li>
-</ul>
-<h2 id="Gradient-Descent"><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><p>Gradient Descent is an optimization algorithm used to minimize the cost function. The idea is to adjust the parameters ($\omega_0$, $\omega_1$, etc.) in the direction of the <strong>negative gradient</strong> of the cost function to reduce the error. The general update rule is:</p>
-<p>$$<br>\omega \leftarrow \omega - \lambda \nabla J(\omega)<br>$$</p>
-<p>Here:</p>
-<ul>
-<li>$\omega$ represents the model parameters (e.g., $\omega_0, \omega_1$).</li>
-<li>$\lambda$ is the learning rate, controlling the step size in each update.</li>
-<li>$\nabla J(\omega)$ is the gradient of the cost function with respect to $\omega$.</li>
-</ul>
-<hr>
-<p>The cost function for linear regression is:</p>
-<p>$$<br>J(\omega) &#x3D; \frac{1}{2} \sum_{n&#x3D;1}^N \left( (\omega_0 + \omega_1 x_n) - t_n \right)^2<br>$$</p>
-<p>We compute the partial derivatives of $J(\omega)$ with respect to each parameter:</p>
-<ol>
-<li><p><strong>Gradient with respect to $\omega_0$</strong>:</p>
-<p>$$<br>\frac{\partial J(\omega)}{\partial \omega_0} &#x3D; \sum_{n&#x3D;1}^N \left( (\omega_0 + \omega_1 x_n) - t_n \right)<br>$$</p>
-</li>
-<li><p><strong>Gradient with respect to $\omega_1$</strong>:<br>$$<br>\frac{\partial J(\omega)}{\partial \omega_1} &#x3D; \sum_{n&#x3D;1}^N \left( (\omega_0 + \omega_1 x_n) - t_n \right) x_n<br>$$</p>
-</li>
-</ol>
-<hr>
-<p>Using the gradients, the parameters are updated as follows:</p>
-<ol>
-<li><p><strong>For $\omega_0$</strong>:</p>
-<p>$$<br>\omega_0 \leftarrow \omega_0 - \lambda \sum_{n&#x3D;1}^N \left( (\omega_0 + \omega_1 x_n) - t_n \right)<br>$$</p>
-</li>
-<li><p><strong>For $\omega_1$</strong>:<br>$$<br>\omega_1 \leftarrow \omega_1 - \lambda \sum_{n&#x3D;1}^N \left( (\omega_0 + \omega_1 x_n) - t_n \right) x_n<br>$$</p>
-</li>
-</ol>
-<hr>
-<ol>
-<li>Initialize $\omega_0$ and $\omega_1$ with some random values (e.g., $0$).</li>
-<li>Compute the gradients $\frac{\partial J(\omega)}{\partial \omega_0}$ and $\frac{\partial J(\omega)}{\partial \omega_1}$.</li>
-<li>Update $\omega_0$ and $\omega_1$ using the update rules.</li>
-<li>Repeat the process until:<ul>
-<li>The cost function $J(\omega)$ converges to a minimum, or</li>
-<li>The number of iterations reaches a predefined limit.</li>
-</ul>
-</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://github.com/kongchenglc/Machine-Learning-Examples/blob/master/linear-regression1.py">Demo Code</a></p>
-<p><img src="/blog/./img/ML2-1.png"></p>
-<h2 id="Linear-Regression-with-Multiple-Features"><a href="#Linear-Regression-with-Multiple-Features" class="headerlink" title="Linear Regression with Multiple Features"></a>Linear Regression with Multiple Features</h2><p>The model can be written as:</p>
-<p>$$<br>\hat{y} &#x3D; \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \dots + \theta_D x_D<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>$D$ is the number of attributes (features) in the dataset.</li>
-<li>$x_1, x_2, \dots, x_D$ are the features of the data.</li>
-<li>$\theta_0$ is the intercept (bias term).</li>
-<li>$\theta_1, \theta_2, \dots, \theta_D$ are the weights (coefficients) corresponding to each feature.</li>
-</ul>
-<p>This equation can also be expressed in <strong>matrix form</strong> for computational efficiency.</p>
-<hr>
-<p>In matrix form, the prediction $\hat{y}$ is expressed as:</p>
-<p>$$<br>\hat{y} &#x3D; X \theta<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>$X$ is the design matrix of size $N \times (D+1)$, where:<ul>
-<li>$N$ is the number of instances (data points).</li>
-<li>The first column of $X$ is all ones, representing the bias term ($\theta_0$).</li>
-<li>The remaining columns correspond to the feature values.</li>
-</ul>
-</li>
-</ul>
-<p>For example, $X$ can look like this:</p>
-<p>$$<br>X &#x3D;<br>\begin{bmatrix}<br>1 &amp; x_1^{(1)} &amp; x_2^{(1)} &amp; \dots &amp; x_D^{(1)} \newline<br>1 &amp; x_1^{(2)} &amp; x_2^{(2)} &amp; \dots &amp; x_D^{(2)} \newline<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \newline<br>1 &amp; x_1^{(N)} &amp; x_2^{(N)} &amp; \dots &amp; x_D^{(N)}<br>\end{bmatrix}<br>$$</p>
-<ul>
-<li>$\theta$ is the vector of coefficients:<br>$$<br>\theta &#x3D;<br>\begin{bmatrix}<br>\theta_0 \newline<br>\theta_1 \newline<br>\theta_2 \newline<br>\vdots \newline<br>\theta_D<br>\end{bmatrix}<br>$$</li>
-</ul>
-<hr>
-<p>To find the optimal values of $\theta$, we minimize the cost function, which is typically the <strong>Mean Squared Error (MSE)</strong>:</p>
-<p>$$<br>J(\theta) &#x3D; \frac{1}{2N} \sum_{i&#x3D;1}^N \left( \hat{y}^{(i)} - t^{(i)} \right)^2<br>$$</p>
-<p>In matrix form, this is written as:</p>
-<p>$$<br>J(\theta) &#x3D; \frac{1}{2N} | X \theta - t |^2<br>$$</p>
-<p>Where $t$ is the vector of true target values:</p>
-<p>$$<br>t &#x3D;<br>\begin{bmatrix}<br>t^{(1)} \newline<br>t^{(2)} \newline<br>\vdots \newline<br>t^{(N)}<br>\end{bmatrix}<br>$$</p>
-<hr>
-<p>By setting the gradient of $J(\theta)$ with respect to $\theta$ to zero, we derive the <strong>closed-form solution</strong>:<br>$$<br>\hat{\theta} &#x3D; (X^T X)^{-1} X^T t<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>$X^T$ is the transpose of the design matrix.</li>
-<li>$(X^T X)^{-1}$ is the inverse of the matrix product $X^T X$.</li>
-</ul>
-<h2 id="Higher-Order-Polynomials"><a href="#Higher-Order-Polynomials" class="headerlink" title="Higher Order Polynomials"></a>Higher Order Polynomials</h2><p>In polynomial regression, we model the relationship between the input variable $x$ and output $f(x, \omega)$ using a higher degree polynomial:</p>
-<p>$$<br>f(x, \omega) &#x3D; \omega_0 + \omega_1 x + \omega_2 x^2 + \dots + \omega_M x^M &#x3D; \sum_{j&#x3D;0}^{M} \omega_j x^j<br>$$</p>
-<ul>
-<li><strong>$x$</strong> is the input feature, and <strong>$\omega_j$</strong> are the coefficients.</li>
-<li><strong>$M$</strong> is the degree of the polynomial, which determines the complexity of the model.</li>
-</ul>
-<p>Choosing $M$ (Degree of Polynomial):</p>
-<ul>
-<li><strong>Small $M$</strong>: Captures simple relationships; less prone to overfitting.</li>
-<li><strong>Large $M$</strong>: Can overfit the data by capturing noise.</li>
-<li><strong>Selection</strong>: Cross-validation is used to determine the best $M$ to balance fit and generalization.</li>
-</ul>
-<p><img src="/blog/./img/ML2-2.png"></p>
-<h2 id="Overfitting-Regularization"><a href="#Overfitting-Regularization" class="headerlink" title="Overfitting &amp; Regularization"></a>Overfitting &amp; Regularization</h2><p>In linear regression, <strong>overfitting</strong> occurs when the model becomes too complex and starts to fit noise in the training data. To prevent overfitting, we use <strong>regularization</strong> to penalize large coefficients and simplify the model.</p>
-<p>The regularized cost function is:</p>
-<p>$$<br>E(\omega) &#x3D; \frac{1}{2} \sum_{n&#x3D;1}^{N} (f(x_n, \omega) - t_n)^2 + \frac{\lambda}{2} |\omega|^2<br>$$</p>
-<p>Where:</p>
-<ul>
-<li><strong>$f(x_n, \omega)$</strong> is the model’s prediction for the $n$-th data point.</li>
-<li><strong>$t_n$</strong> is the true target for the $n$-th data point.</li>
-<li><strong>$\lambda$</strong> is the regularization parameter that controls the strength of the penalty.</li>
-<li><strong>$|\omega|^2$</strong> is the squared <strong>L2 norm</strong> of the weights, i.e., the sum of the squares of the coefficients.</li>
-</ul>
-<p>The <strong>$\lambda$</strong> parameter allows you to control the trade-off between fitting the data well and keeping the model simple.</p>
-<p><img src="/blog/./img/ML2-3.png"></p>
-</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Cheng"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cheng</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">34</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Cheng&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Cheng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+<p>For simplicity, the following focuses on a <strong>single feature</strong> $x$, meaning $D &#x3D; 1$.</p></div><a class="article-more button is-small is-size-7" href="/blog/2025/01/07/Machine-Learning-2/#more">Read more</a></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Cheng"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cheng</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">34</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Cheng&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Cheng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
