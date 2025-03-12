@@ -29,8 +29,64 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Cheng&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Machine Learning</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-07T20:01:59.000Z" title="3/7/2025, 8:01:59 PM">2025-03-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.811Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/07/Machine-Learning-10/">About Machine Learning ( Part 10: Feature Engineering )</a></p><div class="content"></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-07T20:01:59.000Z" title="3/7/2025, 8:01:59 PM">2025-03-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.811Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/07/Machine-Learning-11/">About Machine Learning ( Part 11: Reinforcement Learning )</a></p><div class="content"><p>reinforcement learning</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-01T14:51:44.000Z" title="3/1/2025, 2:51:44 PM">2025-03-01</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.812Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/01/Transformer-2/">Transformer ( Part 2: Multi-Head Attention )</a></p><div class="content"><p>Before the Transformer, sequence models like RNNs and LSTMs suffered from <strong>long-term dependency issues</strong> and <strong>low parallelization efficiency</strong>. Self-Attention was introduced as an alternative, allowing for <strong>parallel computation</strong> and capturing <strong>long-range dependencies</strong>.</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Cheng&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Machine Learning</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-11T21:05:34.000Z" title="3/11/2025, 9:05:34 PM">2025-03-11</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/11/Transformer-3/">Transformer ( Part 3: Transformer Architecture )</a></p><div class="content"><h1 id="Encoder-Decoder"><a href="#Encoder-Decoder" class="headerlink" title="Encoder &amp; Decoder"></a>Encoder &amp; Decoder</h1><p>The Transformer consists of two main parts: an <strong>encoder</strong> and a <strong>decoder</strong>. They are connected by Cross-Attention.</p>
+<ul>
+<li><strong>Encoder</strong>: Processes the input sequence using multiple layers of self-attention and feed-forward networks.</li>
+<li><strong>Decoder</strong>: Takes the encoder’s output and generates the target sequence using self-attention and cross-attention mechanisms.</li>
+</ul>
+<p>The Transformer Architecture:</p>
+<p><img src="/blog/./img/Transformer3-1.png" alt="https://arxiv.org/pdf/1706.03762"></p>
+<h1 id="Token-Embedding"><a href="#Token-Embedding" class="headerlink" title="Token Embedding"></a>Token Embedding</h1><ul>
+<li>Converts input tokens into dense vector representations.</li>
+<li>Typically implemented using <strong>word embeddings</strong>.</li>
+<li>Works alongside <strong>positional encoding</strong> to maintain sequence order.</li>
+</ul>
+<p><a href="https://kongchenglc.github.io/blog/2025/02/09/Transformer-1/">More details</a></p>
+<h1 id="Positional-Encoding"><a href="#Positional-Encoding" class="headerlink" title="Positional Encoding"></a>Positional Encoding</h1><p>Since Transformers do not process sequences sequentially like RNNs, positional encodings add order information to embeddings.</p>
+<p>The formula for positional encoding is:</p>
+<p>$$<br>PE_{(pos, 2i)} &#x3D; \sin(pos &#x2F; 10000^{2i&#x2F;d})<br>$$</p>
+<p>$$<br>PE_{(pos, 2i+1)} &#x3D; \cos(pos &#x2F; 10000^{2i&#x2F;d})<br>$$</p>
+<p>where $pos$ is the position in the sequence, $i$ is the dimension index, and $d$ is the embedding size.</p>
+<h1 id="Self-Attention-Mechanism"><a href="#Self-Attention-Mechanism" class="headerlink" title="Self-Attention Mechanism"></a>Self-Attention Mechanism</h1><p>The core of the Transformer is the <strong>self-attention mechanism</strong>, which computes relationships between tokens within a sequence.</p>
+<ol>
+<li><p>The input embeddings are transformed into <strong>Query (Q), Key (K), and Value (V)</strong> matrices:</p>
+<p>$$<br>Q &#x3D; XW^Q, \quad K &#x3D; XW^K, \quad V &#x3D; XW^V<br>$$</p>
+</li>
+<li><p>The attention scores are computed using the <strong>scaled dot-product attention</strong>:</p>
+<p>$$<br>\text{Attention}(Q, K, V) &#x3D; \text{softmax} \left(\frac{QK^T}{\sqrt{d_k}}\right) V<br>$$</p>
+<p>where $\sqrt{d_k}$ is a scaling factor to prevent large gradients.</p>
+</li>
+<li><p>The result is a weighted sum of the values $V$.</p>
+</li>
+</ol>
+<p><a href="https://kongchenglc.github.io/blog/2025/03/01/Transformer-2/?t=1741741190500">More details</a></p>
+<h1 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h1><p>Instead of a single attention function, Transformers use <strong>multi-head attention</strong>, which allows the model to learn multiple attention patterns.</p>
+<p>$$<br>\text{MultiHead}(Q, K, V) &#x3D; \text{Concat}(\text{head}_1, …, \text{head}_h) W^O<br>$$</p>
+<p>Each attention head captures different aspects of relationships in the sequence.</p>
+<h1 id="Feed-Forward-Network-FFN"><a href="#Feed-Forward-Network-FFN" class="headerlink" title="Feed-Forward Network (FFN)"></a>Feed-Forward Network (FFN)</h1><p>Each Transformer layer contains a <strong>feed-forward network</strong>:</p>
+<p>$$<br>FFN(x) &#x3D; \max(0, xW_1 + b_1) W_2 + b_2<br>$$</p>
+<p>This introduces non-linearity and improves representation power.</p>
+<h1 id="Residual-Connections-Layer-Normalization"><a href="#Residual-Connections-Layer-Normalization" class="headerlink" title="Residual Connections &amp; Layer Normalization"></a>Residual Connections &amp; Layer Normalization</h1><ul>
+<li><p><strong>Residual connections</strong> help prevent vanishing gradients:</p>
+<p>$$<br>\text{Layer Output} &#x3D; \text{LayerNorm}(x + \text{SubLayer}(x))<br>$$</p>
+</li>
+<li><p><strong>Layer Normalization</strong> stabilizes training and ensures consistent distribution across different batches.</p>
+</li>
+</ul>
+<h1 id="Cross-Attention-in-Decoder"><a href="#Cross-Attention-in-Decoder" class="headerlink" title="Cross-Attention in Decoder"></a>Cross-Attention in Decoder</h1><p>The decoder has an additional attention layer:</p>
+<ul>
+<li>The <strong>Query</strong> comes from the decoder.</li>
+<li>The <strong>Key</strong> and <strong>Value</strong> come from the encoder output.</li>
+<li>This enables the decoder to focus on relevant encoded information.</li>
+</ul>
+<h1 id="Masking-Mechanisms"><a href="#Masking-Mechanisms" class="headerlink" title="Masking Mechanisms"></a>Masking Mechanisms</h1><ul>
+<li><strong>Padding Mask</strong>: Prevents attention from being applied to padding tokens. (Encoder)</li>
+<li><strong>Look-Ahead Mask</strong>: Ensures that the decoder only attends to previous tokens, maintaining <strong>auto-regressive</strong> generation. (Decoder)</li>
+</ul>
+<h1 id="GPT’s-Decoder-Only-Architecture"><a href="#GPT’s-Decoder-Only-Architecture" class="headerlink" title="GPT’s Decoder-Only Architecture"></a>GPT’s Decoder-Only Architecture</h1><p>Unlike the standard Transformer model, GPT removes the encoder and relies solely on <strong>stacked decoder layers</strong>. This makes it an <strong>autoregressive model</strong>, meaning it generates text token by token, predicting each next token based on previous ones. This <strong>decoder-only Transformer</strong> is designed for autoregressive text generation, making it highly effective for applications like chatbots, code generation, and creative writing.</p>
+<p><a target="_blank" rel="noopener" href="https://poloclub.github.io/transformer-explainer/">Visualization</a></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-07T20:01:59.000Z" title="3/7/2025, 8:01:59 PM">2025-03-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.937Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/07/Machine-Learning-10/">About Machine Learning ( Part 10: Feature Engineering )</a></p><div class="content"></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-07T20:01:59.000Z" title="3/7/2025, 8:01:59 PM">2025-03-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.937Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/07/Machine-Learning-11/">About Machine Learning ( Part 11: Reinforcement Learning )</a></p><div class="content"><p>reinforcement learning</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-03-01T14:51:44.000Z" title="3/1/2025, 2:51:44 PM">2025-03-01</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/03/01/Transformer-2/">Transformer ( Part 2: Multi-Head Attention )</a></p><div class="content"><p>Before the Transformer, sequence models like RNNs and LSTMs suffered from <strong>long-term dependency issues</strong> and <strong>low parallelization efficiency</strong>. Self-Attention was introduced as an alternative, allowing for <strong>parallel computation</strong> and capturing <strong>long-range dependencies</strong>.</p>
 <p>However, a single-head Self-Attention mechanism has a limitation:<br><strong>It can only focus on one type of relationship or pattern in the data.</strong>  </p>
 <p>Multi-Head Attention overcomes this by <strong>using multiple attention heads</strong> that capture different aspects of the input, improving the model’s expressiveness.</p>
 <h1 id="Single-Head-Self-Attention"><a href="#Single-Head-Self-Attention" class="headerlink" title="Single-Head Self-Attention"></a>Single-Head Self-Attention</h1><p>Before diving into Multi-Head Attention, let’s first understand how a single-head Self-Attention works.</p>
@@ -91,7 +147,7 @@
 <li>$d_k &#x3D; d_{\text{model}} &#x2F; h$ is the dimension of each head.</li>
 <li>$W^Q, W^K, W^V, W^O$ are learnable parameters.</li>
 </ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-12T17:00:56.000Z" title="2/12/2025, 5:00:56 PM">2025-02-12</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.812Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/12/Machine-Learning-9/">About Machine Learning ( Part 9: Recurrent Neural Network )</a></p><div class="content"><p>Recurrent Neural Networks (RNNs) are a class of neural networks designed for <strong>sequential data</strong>, making them highly effective for tasks like <strong>natural language processing (NLP), time series prediction, and speech recognition</strong>. Unlike traditional feedforward networks, RNNs maintain a hidden state that captures <strong>temporal dependencies</strong>.</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-12T17:00:56.000Z" title="2/12/2025, 5:00:56 PM">2025-02-12</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/12/Machine-Learning-9/">About Machine Learning ( Part 9: Recurrent Neural Network )</a></p><div class="content"><p>Recurrent Neural Networks (RNNs) are a class of neural networks designed for <strong>sequential data</strong>, making them highly effective for tasks like <strong>natural language processing (NLP), time series prediction, and speech recognition</strong>. Unlike traditional feedforward networks, RNNs maintain a hidden state that captures <strong>temporal dependencies</strong>.</p>
 <h2 id="How-RNNs-Work"><a href="#How-RNNs-Work" class="headerlink" title="How RNNs Work"></a>How RNNs Work</h2><p>A traditional <strong>feedforward neural network</strong> processes inputs independently. However, for sequential tasks, the <strong>order</strong> of the data is crucial. <strong>RNNs address this by maintaining a memory of previous inputs through hidden states.</strong></p>
 <h3 id="Mathematical-Representation"><a href="#Mathematical-Representation" class="headerlink" title="Mathematical Representation"></a>Mathematical Representation</h3><p>At each time step $t$, an RNN takes the <strong>current input</strong> $x_t$ and the <strong>previous hidden state</strong> $h_{t-1}$ to compute the <strong>new hidden state</strong> $h_t$:</p>
 <p>$$<br>h_t &#x3D; f(W_h h_{t-1} + W_x x_t + b_h)<br>$$</p>
@@ -228,7 +284,7 @@
 <ul>
 <li>AI-generated compositions</li>
 </ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-12T16:33:49.000Z" title="2/12/2025, 4:33:49 PM">2025-02-12</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.812Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/12/Machine-Learning-8/">About Machine Learning ( Part 8: Convolution Neural Networks )</a></p><div class="content"><p>Convolutional Neural Networks (CNNs) have revolutionized the field of computer vision, enabling significant advancements in image recognition, object detection, and segmentation tasks. This blog will explore the key concepts behind CNNs and their working principles.</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-12T16:33:49.000Z" title="2/12/2025, 4:33:49 PM">2025-02-12</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/12/Machine-Learning-8/">About Machine Learning ( Part 8: Convolution Neural Networks )</a></p><div class="content"><p>Convolutional Neural Networks (CNNs) have revolutionized the field of computer vision, enabling significant advancements in image recognition, object detection, and segmentation tasks. This blog will explore the key concepts behind CNNs and their working principles.</p>
 <h2 id="What-is-a-CNN"><a href="#What-is-a-CNN" class="headerlink" title="What is a CNN?"></a>What is a CNN?</h2><p>A Convolutional Neural Network (CNN) is a type of deep learning model specifically designed for processing structured grid data, such as images. Unlike traditional fully connected neural networks, CNNs leverage <strong>convolutional layers</strong> to capture spatial hierarchies in the data.</p>
 <h2 id="Architecture-of-a-CNN"><a href="#Architecture-of-a-CNN" class="headerlink" title="Architecture of a CNN"></a>Architecture of a CNN</h2><p>A typical CNN consists of the following layers:<br><img src="/blog/./img/ML8-1.png" alt="https://www.sciencedirect.com/topics/mathematics/pooling-layer"></p>
 <ol>
@@ -270,7 +326,7 @@
 <li><strong>Medical Image Analysis</strong> (e.g., detecting tumors in X-rays)</li>
 <li><strong>Facial Recognition</strong> (e.g., biometric authentication)</li>
 </ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-09T21:03:49.000Z" title="2/9/2025, 9:03:49 PM">2025-02-09</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.812Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/09/Transformer-1/">Transformer ( Part 1: Word Embedding )</a></p><div class="content"><p>Word Embedding is one of the most fundamental techniques in Natural Language Processing (NLP). It represents words as continuous vectors in a high-dimensional space, capturing semantic relationships between them.  </p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-09T21:03:49.000Z" title="2/9/2025, 9:03:49 PM">2025-02-09</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/09/Transformer-1/">Transformer ( Part 1: Word Embedding )</a></p><div class="content"><p>Word Embedding is one of the most fundamental techniques in Natural Language Processing (NLP). It represents words as continuous vectors in a high-dimensional space, capturing semantic relationships between them.  </p>
 <h2 id="Why-Do-We-Need-Word-Embeddings"><a href="#Why-Do-We-Need-Word-Embeddings" class="headerlink" title="Why Do We Need Word Embeddings?"></a>Why Do We Need Word Embeddings?</h2><p>Before word embeddings, one common method to represent words was <strong>One-Hot Encoding</strong>. In this approach, each word is represented as a high-dimensional sparse vector.  </p>
 <p>For example, if our vocabulary has 10,000 words, we encode each word as:<br>$$<br>\text{dog} &#x3D; [0, 1, 0, 0, \dots, 0]<br>$$<br>However, this method has significant drawbacks:  </p>
 <ol>
@@ -340,7 +396,7 @@
 <li><strong>Multi-Scale Representation</strong>: The denominator ensures different dimensions have different wavelengths, allowing the encoding to capture both local and global position information.</li>
 </ol>
 <p><img src="/blog/./img/Transformer1-3.png" alt="https://www.researchgate.net/figure/Positional-encoding-for-the-feature-representations-Top-Sinusoidal-representation-for_fig2_372249718"></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-06T21:43:39.000Z" title="2/6/2025, 9:43:39 PM">2025-02-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.812Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/06/Machine-Learning-7/">About Machine Learning ( Part 7: Artificial Neural Network )</a></p><div class="content"><h1 id="Bayes’-theorem"><a href="#Bayes’-theorem" class="headerlink" title="Bayes’ theorem"></a>Bayes’ theorem</h1><p>$$<br>P(y|X) &#x3D; \frac{P(X|y) P(y)}{P(X)}<br>$$</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-06T21:43:39.000Z" title="2/6/2025, 9:43:39 PM">2025-02-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/06/Machine-Learning-7/">About Machine Learning ( Part 7: Artificial Neural Network )</a></p><div class="content"><h1 id="Bayes’-theorem"><a href="#Bayes’-theorem" class="headerlink" title="Bayes’ theorem"></a>Bayes’ theorem</h1><p>$$<br>P(y|X) &#x3D; \frac{P(X|y) P(y)}{P(X)}<br>$$</p>
 <p>where:</p>
 <ul>
 <li>$P(y|X)$: Posterior probability of class $y$ given input $X$.</li>
@@ -581,7 +637,7 @@
 <li><strong>Gradient Clipping</strong>: Limits the gradient value to prevent explosion.</li>
 <li><strong>Xavier&#x2F;He Initialization</strong>: Properly initializes weights to keep gradients stable.</li>
 </ol>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-02T18:20:57.000Z" title="2/2/2025, 6:20:57 PM">2025-02-02</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.812Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/02/Machine-Learning-6/">About Machine Learning ( Part 6: KNN vs. K-means )</a></p><div class="content"><p>In machine learning, <strong>K-Nearest Neighbors (KNN)</strong> and <strong>K-means Clustering</strong> are two commonly used algorithms. Despite their similar names, they serve <strong>different purposes</strong> and have <strong>distinct working principles</strong>.  </p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-02T18:20:57.000Z" title="2/2/2025, 6:20:57 PM">2025-02-02</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/02/Machine-Learning-6/">About Machine Learning ( Part 6: KNN vs. K-means )</a></p><div class="content"><p>In machine learning, <strong>K-Nearest Neighbors (KNN)</strong> and <strong>K-means Clustering</strong> are two commonly used algorithms. Despite their similar names, they serve <strong>different purposes</strong> and have <strong>distinct working principles</strong>.  </p>
 <h1 id="KNN-K-Nearest-Neighbors"><a href="#KNN-K-Nearest-Neighbors" class="headerlink" title="KNN (K-Nearest Neighbors)"></a>KNN (K-Nearest Neighbors)</h1><p>KNN is a <strong>supervised learning</strong> algorithm used for <strong>classification</strong> and <strong>regression</strong> tasks.  </p>
 <p>The core idea of KNN is:</p>
 <blockquote>
@@ -719,7 +775,7 @@
 <td>Market segmentation, image compression</td>
 </tr>
 </tbody></table>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-02T15:50:57.000Z" title="2/2/2025, 3:50:57 PM">2025-02-02</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.812Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/02/Machine-Learning-5/">About Machine Learning ( Part 5: Support Vector Machine )</a></p><div class="content"><h1 id="Support-Vector-Machine-SVM"><a href="#Support-Vector-Machine-SVM" class="headerlink" title="Support Vector Machine (SVM)"></a>Support Vector Machine (SVM)</h1><p>Support Vector Machines (SVM) are one of the most powerful supervised learning algorithms used for classification and regression tasks.</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-02T15:50:57.000Z" title="2/2/2025, 3:50:57 PM">2025-02-02</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/02/02/Machine-Learning-5/">About Machine Learning ( Part 5: Support Vector Machine )</a></p><div class="content"><h1 id="Support-Vector-Machine-SVM"><a href="#Support-Vector-Machine-SVM" class="headerlink" title="Support Vector Machine (SVM)"></a>Support Vector Machine (SVM)</h1><p>Support Vector Machines (SVM) are one of the most powerful supervised learning algorithms used for classification and regression tasks.</p>
 <h2 id="The-Hyperplane"><a href="#The-Hyperplane" class="headerlink" title="The Hyperplane"></a>The Hyperplane</h2><p>In a binary classification problem, the goal of SVM is to find a <strong>hyperplane</strong> that best separates two classes. Given a training dataset:</p>
 <p>$$<br>D &#x3D; { (\mathbf{x}_1, y_1), (\mathbf{x}_2, y_2), \dots, (\mathbf{x}_n, y_n) }, \quad \mathbf{x}_i \in \mathbb{R}^d, \quad y_i \in {-1, +1}<br>$$</p>
 <ul>
@@ -847,192 +903,7 @@ $$
 <li>Produce positive semi-definite Gram matrix</li>
 </ol>
 <p><strong>Practical Check</strong>: If SVM training converges, your kernel is valid.</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-21T15:50:57.000Z" title="1/21/2025, 3:50:57 PM">2025-01-21</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.812Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/21/Machine-Learning-4/">About Machine Learning ( Part 4: Decision Tree )</a></p><div class="content"><p>A Decision Tree is a supervised learning algorithm used for both classification and regression tasks. It organizes data into a tree-like structure, where each internal node represents a decision based on a feature, and each leaf node provides a prediction. Decision trees are simple, interpretable, and capable of handling both categorical and numerical data.</p>
-<h1 id="Classification-Tree"><a href="#Classification-Tree" class="headerlink" title="Classification Tree"></a>Classification Tree</h1><p>A <strong>Classification Tree</strong> is a decision tree used for classifying data into distinct categories or classes. The main objective of a classification tree is to predict the category or class to which a given input belongs based on various features.</p>
-<p><img src="/blog/./img/ML4-1.png"></p>
-<h2 id="How-Does-a-Classification-Tree-Work"><a href="#How-Does-a-Classification-Tree-Work" class="headerlink" title="How Does a Classification Tree Work?"></a>How Does a Classification Tree Work?</h2><p>The tree is constructed in the following steps:</p>
-<ol>
-<li><strong>Select the best feature</strong>: The first step is to choose the feature that best splits the data. This is usually done by calculating the <strong>Entropy</strong>, such as Information Gain, or Gini Index.</li>
-<li><strong>Split the data</strong>: The chosen feature is used to split the dataset into two or more subsets. The splitting process continues recursively until the stopping criteria are met (e.g., maximum depth reached or all data in a node belong to the same class).</li>
-<li><strong>Predict the class</strong>: The leaf nodes represent the predicted class labels, which are determined based on the majority class in that node.</li>
-</ol>
-<h2 id="Entropy"><a href="#Entropy" class="headerlink" title="Entropy"></a>Entropy</h2><p><strong>Entropy</strong> measures the disorder or uncertainty in a dataset. It quantifies the impurity of a dataset. If the dataset is perfectly pure (i.e., all samples belong to the same class), <strong>the entropy is 0</strong>. If the dataset has an equal distribution of all possible classes, the entropy reaches its maximum value.</p>
-<p>The formula for entropy $H(S)$ of a set $S$ is:</p>
-<p>$$<br>H(S) &#x3D; - \sum_{x \in S} p(x) \log_2 p(x)<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>$S$ is the dataset.</li>
-<li>$p(x)$ is the proportion of instances in $S$ that belong to class $x$.</li>
-</ul>
-<p>For binary classification (i.e., two classes, say “Yes” and “No”), the entropy simplifies to:</p>
-<p>$$<br>H(S) &#x3D; - p(+) \log_2 p(+) - p(-) \log_2 p(-)<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>$p(+)$ is the proportion of “Yes” labels in the dataset.</li>
-<li>$p(-)$ is the proportion of “No” labels in the dataset.</li>
-</ul>
-<p>Interpretation of Entropy:</p>
-<ul>
-<li>If the entire dataset belongs to one class (e.g., all “Yes” or all “No”), then the entropy is 0 because there is no uncertainty.</li>
-<li>If the dataset has an equal distribution of both classes (e.g., $p(+) &#x3D; p(-) &#x3D; 0.5$), the entropy is 1 because there is maximum uncertainty.</li>
-</ul>
-<p>For example, in the case of a <strong>Tennis Playing</strong> dataset, if the target variable (whether a person will play tennis or not) is evenly split between “Yes” and “No”, the entropy will be:</p>
-<p>$$<br>H(S) &#x3D; - 0.5 \log_2 0.5 - 0.5 \log_2 0.5 &#x3D; 1<br>$$</p>
-<p>This means the data is maximally <strong>uncertain</strong> (a 50&#x2F;50 chance of playing or not playing).</p>
-<p><img src="/blog/./img/ML4-2.png" alt="https://en.wikipedia.org/wiki/Binary_entropy_function"></p>
-<h2 id="Information-Gain"><a href="#Information-Gain" class="headerlink" title="Information Gain"></a>Information Gain</h2><p><strong>Information Gain (IG)</strong> measures how well an attribute (or feature) separates the dataset into distinct classes. It is based on the difference in <strong>entropy</strong> before and after the split. The goal is to reduce uncertainty or disorder in the data as much as possible by selecting the attribute.</p>
-<p>The formula for <strong>Information Gain</strong> when splitting a dataset $S$ based on an attribute $A$ is:</p>
-<p>$$<br>IG(S, A) &#x3D; H(S) - \sum_{v \in V(A)} \frac{|S_v|}{|S|} H(S_v)<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>$H(S)$ is the entropy of the dataset $S$ before the split.</li>
-<li>$H(S_v)$ is the entropy of the subset $S_v$.</li>
-<li>$V(A)$ is the set of all possible values for attribute $A$.</li>
-<li>$\frac{|S_v|}{|S|}$ is the proportion of the data in subset $S_v$ relative to the entire dataset $S$. ( Weighted )</li>
-</ul>
-<p>The higher the information gain, the better the attribute is at reducing uncertainty and distinguishing between different classes. A high information gain indicates that the attribute is good at separating the data into pure subsets.</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/kongchenglc/Machine-Learning-Examples/blob/master/decision-tree1.py">Code Demo</a></p>
-<h2 id="Gini-Index"><a href="#Gini-Index" class="headerlink" title="Gini Index"></a>Gini Index</h2><p><strong>Gini Index</strong> is another measure used to evaluate the quality of a split in a decision tree. It measures the impurity or disorder of a dataset, with a lower Gini index indicating a purer dataset.</p>
-<p>The <strong>Gini index</strong> for a dataset ( S ) is calculated as:</p>
-<p>$$<br>Gini(S) &#x3D; 1 - \sum_{i&#x3D;1}^{C} p_i^2<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>( C ) is the number of classes in the target variable.</li>
-<li>( p_i ) is the proportion of the samples in the dataset ( S ) that belong to class ( i ).</li>
-</ul>
-<p>Interpretation:</p>
-<ul>
-<li>If all the data points belong to a single class, the Gini index is 0, indicating a pure node.</li>
-<li>If the data points are evenly distributed among all classes, the Gini index is maximized (impure node). For binary classification, the maximum value is 0.5.</li>
-</ul>
-<h2 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h2><p><strong>Overfitting</strong> occurs when a decision tree becomes too complex, capturing noise in the data instead of general patterns. It performs well on training data but poorly on new data.</p>
-<blockquote>
-<p>Given a hypothesis space $H$, a hypothesis $h \in H$ is said to overfit the training data if there exists some alternative hypothesis $h’ \in H$, such that $h$ has a smaller error than $h’$ over the training examples, but $h’$ has a smaller error than $h$ over the entire distribution of instances.<br>– Tom Mitchell</p>
-</blockquote>
-<p><strong>Causes:</strong> Noisy data or insufficient data can lead to overfitting.</p>
-<p><strong>Solutions</strong>:</p>
-<ol>
-<li><strong>Stop growing</strong> the tree once it reaches a certain depth.</li>
-<li><strong>Prune</strong> the tree by removing branches with little importance.</li>
-</ol>
-<h2 id="Pruning"><a href="#Pruning" class="headerlink" title="Pruning"></a>Pruning</h2><p>Pruning reduces tree complexity by removing unnecessary nodes.</p>
-<p><strong>Process</strong>:</p>
-<ol>
-<li>Turn a node into a leaf with the most common value in that subset.</li>
-<li>Test the accuracy of the pruned tree.</li>
-<li>If accuracy improves, keep the change; if not, restore the node.</li>
-</ol>
-<p><strong>Data Splits</strong>:</p>
-<ul>
-<li><strong>Training set</strong> for building the tree.</li>
-<li><strong>Testing set</strong> for evaluating performance.</li>
-<li><strong>Pruning set</strong> for pruning decisions.</li>
-</ul>
-<p><strong>Benefits</strong>:</p>
-<ul>
-<li>Simplifies the model.</li>
-<li>Reduces overfitting and improves generalization.</li>
-<li>Results in better test data performance.</li>
-</ul>
-<h1 id="Regression-Tree"><a href="#Regression-Tree" class="headerlink" title="Regression Tree"></a>Regression Tree</h1><p>A <strong>Regression Tree</strong> is a type of decision tree used for predicting continuous target variables. Unlike classification trees that predict discrete labels, regression trees predict numerical values. Here’s how the process works:</p>
-<ol>
-<li><p><strong>Choosing Features and Split Values</strong></p>
-<ul>
-<li>The goal is to find the best feature and threshold to split the data. This is done by minimizing the variance or mean squared error (MSE) within each subset after the split.</li>
-<li>For example, given a feature $X$ and target $Y$, we want to find a threshold $t$ to split the data into two subsets: $X \leq t$ and $X &gt; t$. The split that minimizes the variance within each subset is chosen.</li>
-</ul>
-</li>
-<li><p><strong>Splitting the Data</strong></p>
-<ul>
-<li>Once the best feature and threshold are identified, the data is split into two subsets based on this threshold.</li>
-<li>This is a recursive process, where each subset is further split until a stopping condition (e.g., maximum depth or minimum sample size) is met.</li>
-</ul>
-</li>
-<li><p><strong>Recursive Splitting</strong></p>
-<ul>
-<li>At each node, the algorithm continues splitting based on the feature that minimizes the variance.</li>
-<li>For example, a tree might first split the data based on $X &#x3D; 5$, then further split the subset $X &gt; 5$ based on $X &#x3D; 7$.</li>
-</ul>
-</li>
-<li><p><strong>Leaf Nodes and Predictions</strong></p>
-<ul>
-<li>When the tree reaches the stopping condition, each leaf node represents a final prediction, which is the mean target value of the data points in that node.</li>
-<li>For instance, if a leaf node contains values $Y &#x3D; 10, 12, 14$, the prediction for that leaf would be the average $12$.</li>
-</ul>
-</li>
-<li><p><strong>Prediction for New Data</strong></p>
-<ul>
-<li>For new data, the tree traverses from the root to a leaf node, where the predicted value is the mean of the target values in that leaf.</li>
-</ul>
-</li>
-</ol>
-<h1 id="Bagging-vs-Boosting"><a href="#Bagging-vs-Boosting" class="headerlink" title="Bagging vs Boosting"></a>Bagging vs Boosting</h1><p>In machine learning, <strong>Bagging</strong> and <strong>Boosting</strong> are two popular ensemble techniques used to improve the performance of models. These methods <strong>combine the predictions of multiple base learners to form a stronger model</strong>, but they approach this goal in different ways.</p>
-<h2 id="Bagging-Bootstrap-Aggregating"><a href="#Bagging-Bootstrap-Aggregating" class="headerlink" title="Bagging (Bootstrap Aggregating)"></a>Bagging (Bootstrap Aggregating)</h2><p><strong>Bagging</strong> is an ensemble technique that reduces variance by training multiple base learners independently on different subsets of the data and then combining their predictions.</p>
-<h3 id="1-How-Bagging-Works"><a href="#1-How-Bagging-Works" class="headerlink" title="1. How Bagging Works"></a>1. <strong>How Bagging Works</strong></h3><ol>
-<li><strong>Data Sampling</strong>: Multiple subsets of the training data are created by random sampling with replacement (bootstrap sampling).</li>
-<li><strong>Train Multiple Models</strong>: Each subset is used to train a separate model, typically the same type of model (e.g., decision trees).</li>
-<li><strong>Combine Predictions</strong>: For classification problems, the final prediction is the class that receives the most votes from all base learners (majority voting). For regression problems, the final prediction is the average of all base learner predictions.</li>
-</ol>
-<h3 id="2-Advantages"><a href="#2-Advantages" class="headerlink" title="2. Advantages"></a>2. <strong>Advantages</strong></h3><ul>
-<li>Reduces overfitting, particularly with high-variance models (e.g., decision trees).</li>
-<li>Works well with unstable base learners.</li>
-</ul>
-<h3 id="3-Disadvantages"><a href="#3-Disadvantages" class="headerlink" title="3. Disadvantages"></a>3. <strong>Disadvantages</strong></h3><ul>
-<li>Doesn’t perform as well when base learners are weak or the model complexity is too high.</li>
-</ul>
-<h3 id="4-Example-Algorithm"><a href="#4-Example-Algorithm" class="headerlink" title="4. Example Algorithm"></a>4. <strong>Example Algorithm</strong></h3><ul>
-<li><strong>Random Forest</strong>: A popular implementation of Bagging, where base learners are decision trees trained on random subsets of features.</li>
-</ul>
-<h2 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h2><p><strong>Boosting</strong> is an ensemble technique that improves weak learners by iteratively training them on the data and adjusting the weights to focus on the mistakes of previous models.</p>
-<h3 id="1-How-Boosting-Works"><a href="#1-How-Boosting-Works" class="headerlink" title="1. How Boosting Works"></a>1. <strong>How Boosting Works</strong></h3><ol>
-<li><strong>Train the First Model</strong>: Train a base learner on the training data.</li>
-<li><strong>Calculate Error</strong>: Calculate the errors made by the first model.</li>
-<li><strong>Adjust Weights</strong>: Increase the weights of the misclassified data points, so that the next model will focus more on them.</li>
-<li><strong>Train Subsequent Models</strong>: Train the next model using the updated weights.</li>
-<li><strong>Combine Predictions</strong>: The final prediction is a weighted average (regression) or a weighted vote (classification) of all base learners.</li>
-</ol>
-<h3 id="2-Advantages-1"><a href="#2-Advantages-1" class="headerlink" title="2. Advantages"></a>2. <strong>Advantages</strong></h3><ul>
-<li>Reduces bias, improving model accuracy by focusing on hard-to-predict examples.</li>
-<li>Works well with weak learners that have high bias.</li>
-</ul>
-<h3 id="3-Disadvantages-1"><a href="#3-Disadvantages-1" class="headerlink" title="3. Disadvantages"></a>3. <strong>Disadvantages</strong></h3><ul>
-<li>Can overfit if data is noisy or contains outliers.</li>
-<li>Computationally expensive since models are trained sequentially.</li>
-</ul>
-<h3 id="4-Example-Algorithms"><a href="#4-Example-Algorithms" class="headerlink" title="4. Example Algorithms"></a>4. <strong>Example Algorithms</strong></h3><ul>
-<li><p><strong>AdaBoost</strong>: Adaptive Boosting is an ensemble learning method that combines multiple weak learners (usually decision trees) to create a strong learner. The goal is to improve predictive performance by focusing on the most difficult samples and iteratively adjusting the weights of misclassified samples.</p>
-<ol>
-<li><p><strong>Initialization</strong>:<br>AdaBoost begins by assigning equal weights to all training samples. If there are $N$ samples, each sample gets a weight of $\omega_i &#x3D; \frac{1}{N}$.</p>
-</li>
-<li><p><strong>Train Weak Learner</strong>:<br>A weak learner (a simple model, like a decision tree) is trained on the data. After each iteration, AdaBoost evaluates the classifier’s error rate.</p>
-</li>
-<li><p><strong>Error Rate and Classifier Weight</strong>:<br>The error rate is calculated as the weighted sum of misclassified samples. The classifier’s weight ($\alpha$) is computed based on its error rate:</p>
-<p>$$ \alpha &#x3D; \frac{1}{2} \ln\left( \frac{1 - \text{Error}}{\text{Error}} \right) $$</p>
-</li>
-<li><p><strong>Update Sample Weights</strong>:<br>Based on the classifier’s performance, the weights of the training samples are updated:</p>
-<ul>
-<li>For correctly classified samples, their weights are <strong>decreased</strong>.</li>
-<li>For misclassified samples, their weights are <strong>increased</strong>.</li>
-</ul>
-<p>This makes the algorithm focus more on the samples that are hard to classify.</p>
-<p>The weight updates are:</p>
-<ul>
-<li>Correct samples: $\omega_i \rightarrow \omega_i \times e^{-\alpha}$</li>
-<li>Misclassified samples: $\omega_i \rightarrow \omega_i \times e^{\alpha}$</li>
-<li>$\alpha$ is the weight assigned to the classifier based on its performance (error rate).</li>
-</ul>
-</li>
-<li><p><strong>Final Prediction</strong>:<br>In the final prediction phase, the predictions of all weak learners are combined, with each learner’s prediction weighted according to its performance ($\alpha$). The final model is a weighted sum of all weak classifiers.</p>
-</li>
-</ol>
-</li>
-<li><p><strong>Gradient Boosting</strong>: An improved version of Boosting that optimizes the model using gradient descent.</p>
-</li>
-<li><p><strong>XGBoost</strong>: A highly efficient implementation of Gradient Boosting, popular in machine learning competitions.</p>
-</li>
-</ul>
-<p><img src="/blog/./img/ML4-3.png"></p>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous is-invisible is-hidden-mobile"><a href="/blog/tags/Machine-Learning/page/0/">Previous</a></div><div class="pagination-next"><a href="/blog/tags/Machine-Learning/page/2/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link is-current" href="/blog/tags/Machine-Learning/">1</a></li><li><a class="pagination-link" href="/blog/tags/Machine-Learning/page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Cheng"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cheng</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">32</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Cheng&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Cheng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous is-invisible is-hidden-mobile"><a href="/blog/tags/Machine-Learning/page/0/">Previous</a></div><div class="pagination-next"><a href="/blog/tags/Machine-Learning/page/2/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link is-current" href="/blog/tags/Machine-Learning/">1</a></li><li><a class="pagination-link" href="/blog/tags/Machine-Learning/page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Cheng"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cheng</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">34</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Cheng&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Cheng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,

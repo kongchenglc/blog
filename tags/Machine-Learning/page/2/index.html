@@ -29,7 +29,192 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Cheng&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Machine Learning</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-16T18:50:05.000Z" title="1/16/2025, 6:50:05 PM">2025-01-16</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.811Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/16/Machine-Learning-3/">About Machine Learning ( Part 3: Logistic Regression )</a></p><div class="content"><h2 id="Classification-Problem"><a href="#Classification-Problem" class="headerlink" title="Classification Problem"></a>Classification Problem</h2><p>In machine learning, when we are predicting a discrete label, such as determining whether an email is spam or not, we are dealing with a classification problem. Logistic regression is commonly used for <strong>binary classification</strong> tasks, where the goal is to predict one of two classes, typically represented as 0 or 1.</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Cheng&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Machine Learning</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-21T15:50:57.000Z" title="1/21/2025, 3:50:57 PM">2025-01-21</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.938Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/21/Machine-Learning-4/">About Machine Learning ( Part 4: Decision Tree )</a></p><div class="content"><p>A Decision Tree is a supervised learning algorithm used for both classification and regression tasks. It organizes data into a tree-like structure, where each internal node represents a decision based on a feature, and each leaf node provides a prediction. Decision trees are simple, interpretable, and capable of handling both categorical and numerical data.</p>
+<h1 id="Classification-Tree"><a href="#Classification-Tree" class="headerlink" title="Classification Tree"></a>Classification Tree</h1><p>A <strong>Classification Tree</strong> is a decision tree used for classifying data into distinct categories or classes. The main objective of a classification tree is to predict the category or class to which a given input belongs based on various features.</p>
+<p><img src="/blog/./img/ML4-1.png"></p>
+<h2 id="How-Does-a-Classification-Tree-Work"><a href="#How-Does-a-Classification-Tree-Work" class="headerlink" title="How Does a Classification Tree Work?"></a>How Does a Classification Tree Work?</h2><p>The tree is constructed in the following steps:</p>
+<ol>
+<li><strong>Select the best feature</strong>: The first step is to choose the feature that best splits the data. This is usually done by calculating the <strong>Entropy</strong>, such as Information Gain, or Gini Index.</li>
+<li><strong>Split the data</strong>: The chosen feature is used to split the dataset into two or more subsets. The splitting process continues recursively until the stopping criteria are met (e.g., maximum depth reached or all data in a node belong to the same class).</li>
+<li><strong>Predict the class</strong>: The leaf nodes represent the predicted class labels, which are determined based on the majority class in that node.</li>
+</ol>
+<h2 id="Entropy"><a href="#Entropy" class="headerlink" title="Entropy"></a>Entropy</h2><p><strong>Entropy</strong> measures the disorder or uncertainty in a dataset. It quantifies the impurity of a dataset. If the dataset is perfectly pure (i.e., all samples belong to the same class), <strong>the entropy is 0</strong>. If the dataset has an equal distribution of all possible classes, the entropy reaches its maximum value.</p>
+<p>The formula for entropy $H(S)$ of a set $S$ is:</p>
+<p>$$<br>H(S) &#x3D; - \sum_{x \in S} p(x) \log_2 p(x)<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$S$ is the dataset.</li>
+<li>$p(x)$ is the proportion of instances in $S$ that belong to class $x$.</li>
+</ul>
+<p>For binary classification (i.e., two classes, say “Yes” and “No”), the entropy simplifies to:</p>
+<p>$$<br>H(S) &#x3D; - p(+) \log_2 p(+) - p(-) \log_2 p(-)<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$p(+)$ is the proportion of “Yes” labels in the dataset.</li>
+<li>$p(-)$ is the proportion of “No” labels in the dataset.</li>
+</ul>
+<p>Interpretation of Entropy:</p>
+<ul>
+<li>If the entire dataset belongs to one class (e.g., all “Yes” or all “No”), then the entropy is 0 because there is no uncertainty.</li>
+<li>If the dataset has an equal distribution of both classes (e.g., $p(+) &#x3D; p(-) &#x3D; 0.5$), the entropy is 1 because there is maximum uncertainty.</li>
+</ul>
+<p>For example, in the case of a <strong>Tennis Playing</strong> dataset, if the target variable (whether a person will play tennis or not) is evenly split between “Yes” and “No”, the entropy will be:</p>
+<p>$$<br>H(S) &#x3D; - 0.5 \log_2 0.5 - 0.5 \log_2 0.5 &#x3D; 1<br>$$</p>
+<p>This means the data is maximally <strong>uncertain</strong> (a 50&#x2F;50 chance of playing or not playing).</p>
+<p><img src="/blog/./img/ML4-2.png" alt="https://en.wikipedia.org/wiki/Binary_entropy_function"></p>
+<h2 id="Information-Gain"><a href="#Information-Gain" class="headerlink" title="Information Gain"></a>Information Gain</h2><p><strong>Information Gain (IG)</strong> measures how well an attribute (or feature) separates the dataset into distinct classes. It is based on the difference in <strong>entropy</strong> before and after the split. The goal is to reduce uncertainty or disorder in the data as much as possible by selecting the attribute.</p>
+<p>The formula for <strong>Information Gain</strong> when splitting a dataset $S$ based on an attribute $A$ is:</p>
+<p>$$<br>IG(S, A) &#x3D; H(S) - \sum_{v \in V(A)} \frac{|S_v|}{|S|} H(S_v)<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$H(S)$ is the entropy of the dataset $S$ before the split.</li>
+<li>$H(S_v)$ is the entropy of the subset $S_v$.</li>
+<li>$V(A)$ is the set of all possible values for attribute $A$.</li>
+<li>$\frac{|S_v|}{|S|}$ is the proportion of the data in subset $S_v$ relative to the entire dataset $S$. ( Weighted )</li>
+</ul>
+<p>The higher the information gain, the better the attribute is at reducing uncertainty and distinguishing between different classes. A high information gain indicates that the attribute is good at separating the data into pure subsets.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/kongchenglc/Machine-Learning-Examples/blob/master/decision-tree1.py">Code Demo</a></p>
+<h2 id="Gini-Index"><a href="#Gini-Index" class="headerlink" title="Gini Index"></a>Gini Index</h2><p><strong>Gini Index</strong> is another measure used to evaluate the quality of a split in a decision tree. It measures the impurity or disorder of a dataset, with a lower Gini index indicating a purer dataset.</p>
+<p>The <strong>Gini index</strong> for a dataset ( S ) is calculated as:</p>
+<p>$$<br>Gini(S) &#x3D; 1 - \sum_{i&#x3D;1}^{C} p_i^2<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>( C ) is the number of classes in the target variable.</li>
+<li>( p_i ) is the proportion of the samples in the dataset ( S ) that belong to class ( i ).</li>
+</ul>
+<p>Interpretation:</p>
+<ul>
+<li>If all the data points belong to a single class, the Gini index is 0, indicating a pure node.</li>
+<li>If the data points are evenly distributed among all classes, the Gini index is maximized (impure node). For binary classification, the maximum value is 0.5.</li>
+</ul>
+<h2 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h2><p><strong>Overfitting</strong> occurs when a decision tree becomes too complex, capturing noise in the data instead of general patterns. It performs well on training data but poorly on new data.</p>
+<blockquote>
+<p>Given a hypothesis space $H$, a hypothesis $h \in H$ is said to overfit the training data if there exists some alternative hypothesis $h’ \in H$, such that $h$ has a smaller error than $h’$ over the training examples, but $h’$ has a smaller error than $h$ over the entire distribution of instances.<br>– Tom Mitchell</p>
+</blockquote>
+<p><strong>Causes:</strong> Noisy data or insufficient data can lead to overfitting.</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li><strong>Stop growing</strong> the tree once it reaches a certain depth.</li>
+<li><strong>Prune</strong> the tree by removing branches with little importance.</li>
+</ol>
+<h2 id="Pruning"><a href="#Pruning" class="headerlink" title="Pruning"></a>Pruning</h2><p>Pruning reduces tree complexity by removing unnecessary nodes.</p>
+<p><strong>Process</strong>:</p>
+<ol>
+<li>Turn a node into a leaf with the most common value in that subset.</li>
+<li>Test the accuracy of the pruned tree.</li>
+<li>If accuracy improves, keep the change; if not, restore the node.</li>
+</ol>
+<p><strong>Data Splits</strong>:</p>
+<ul>
+<li><strong>Training set</strong> for building the tree.</li>
+<li><strong>Testing set</strong> for evaluating performance.</li>
+<li><strong>Pruning set</strong> for pruning decisions.</li>
+</ul>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Simplifies the model.</li>
+<li>Reduces overfitting and improves generalization.</li>
+<li>Results in better test data performance.</li>
+</ul>
+<h1 id="Regression-Tree"><a href="#Regression-Tree" class="headerlink" title="Regression Tree"></a>Regression Tree</h1><p>A <strong>Regression Tree</strong> is a type of decision tree used for predicting continuous target variables. Unlike classification trees that predict discrete labels, regression trees predict numerical values. Here’s how the process works:</p>
+<ol>
+<li><p><strong>Choosing Features and Split Values</strong></p>
+<ul>
+<li>The goal is to find the best feature and threshold to split the data. This is done by minimizing the variance or mean squared error (MSE) within each subset after the split.</li>
+<li>For example, given a feature $X$ and target $Y$, we want to find a threshold $t$ to split the data into two subsets: $X \leq t$ and $X &gt; t$. The split that minimizes the variance within each subset is chosen.</li>
+</ul>
+</li>
+<li><p><strong>Splitting the Data</strong></p>
+<ul>
+<li>Once the best feature and threshold are identified, the data is split into two subsets based on this threshold.</li>
+<li>This is a recursive process, where each subset is further split until a stopping condition (e.g., maximum depth or minimum sample size) is met.</li>
+</ul>
+</li>
+<li><p><strong>Recursive Splitting</strong></p>
+<ul>
+<li>At each node, the algorithm continues splitting based on the feature that minimizes the variance.</li>
+<li>For example, a tree might first split the data based on $X &#x3D; 5$, then further split the subset $X &gt; 5$ based on $X &#x3D; 7$.</li>
+</ul>
+</li>
+<li><p><strong>Leaf Nodes and Predictions</strong></p>
+<ul>
+<li>When the tree reaches the stopping condition, each leaf node represents a final prediction, which is the mean target value of the data points in that node.</li>
+<li>For instance, if a leaf node contains values $Y &#x3D; 10, 12, 14$, the prediction for that leaf would be the average $12$.</li>
+</ul>
+</li>
+<li><p><strong>Prediction for New Data</strong></p>
+<ul>
+<li>For new data, the tree traverses from the root to a leaf node, where the predicted value is the mean of the target values in that leaf.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Bagging-vs-Boosting"><a href="#Bagging-vs-Boosting" class="headerlink" title="Bagging vs Boosting"></a>Bagging vs Boosting</h1><p>In machine learning, <strong>Bagging</strong> and <strong>Boosting</strong> are two popular ensemble techniques used to improve the performance of models. These methods <strong>combine the predictions of multiple base learners to form a stronger model</strong>, but they approach this goal in different ways.</p>
+<h2 id="Bagging-Bootstrap-Aggregating"><a href="#Bagging-Bootstrap-Aggregating" class="headerlink" title="Bagging (Bootstrap Aggregating)"></a>Bagging (Bootstrap Aggregating)</h2><p><strong>Bagging</strong> is an ensemble technique that reduces variance by training multiple base learners independently on different subsets of the data and then combining their predictions.</p>
+<h3 id="1-How-Bagging-Works"><a href="#1-How-Bagging-Works" class="headerlink" title="1. How Bagging Works"></a>1. <strong>How Bagging Works</strong></h3><ol>
+<li><strong>Data Sampling</strong>: Multiple subsets of the training data are created by random sampling with replacement (bootstrap sampling).</li>
+<li><strong>Train Multiple Models</strong>: Each subset is used to train a separate model, typically the same type of model (e.g., decision trees).</li>
+<li><strong>Combine Predictions</strong>: For classification problems, the final prediction is the class that receives the most votes from all base learners (majority voting). For regression problems, the final prediction is the average of all base learner predictions.</li>
+</ol>
+<h3 id="2-Advantages"><a href="#2-Advantages" class="headerlink" title="2. Advantages"></a>2. <strong>Advantages</strong></h3><ul>
+<li>Reduces overfitting, particularly with high-variance models (e.g., decision trees).</li>
+<li>Works well with unstable base learners.</li>
+</ul>
+<h3 id="3-Disadvantages"><a href="#3-Disadvantages" class="headerlink" title="3. Disadvantages"></a>3. <strong>Disadvantages</strong></h3><ul>
+<li>Doesn’t perform as well when base learners are weak or the model complexity is too high.</li>
+</ul>
+<h3 id="4-Example-Algorithm"><a href="#4-Example-Algorithm" class="headerlink" title="4. Example Algorithm"></a>4. <strong>Example Algorithm</strong></h3><ul>
+<li><strong>Random Forest</strong>: A popular implementation of Bagging, where base learners are decision trees trained on random subsets of features.</li>
+</ul>
+<h2 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h2><p><strong>Boosting</strong> is an ensemble technique that improves weak learners by iteratively training them on the data and adjusting the weights to focus on the mistakes of previous models.</p>
+<h3 id="1-How-Boosting-Works"><a href="#1-How-Boosting-Works" class="headerlink" title="1. How Boosting Works"></a>1. <strong>How Boosting Works</strong></h3><ol>
+<li><strong>Train the First Model</strong>: Train a base learner on the training data.</li>
+<li><strong>Calculate Error</strong>: Calculate the errors made by the first model.</li>
+<li><strong>Adjust Weights</strong>: Increase the weights of the misclassified data points, so that the next model will focus more on them.</li>
+<li><strong>Train Subsequent Models</strong>: Train the next model using the updated weights.</li>
+<li><strong>Combine Predictions</strong>: The final prediction is a weighted average (regression) or a weighted vote (classification) of all base learners.</li>
+</ol>
+<h3 id="2-Advantages-1"><a href="#2-Advantages-1" class="headerlink" title="2. Advantages"></a>2. <strong>Advantages</strong></h3><ul>
+<li>Reduces bias, improving model accuracy by focusing on hard-to-predict examples.</li>
+<li>Works well with weak learners that have high bias.</li>
+</ul>
+<h3 id="3-Disadvantages-1"><a href="#3-Disadvantages-1" class="headerlink" title="3. Disadvantages"></a>3. <strong>Disadvantages</strong></h3><ul>
+<li>Can overfit if data is noisy or contains outliers.</li>
+<li>Computationally expensive since models are trained sequentially.</li>
+</ul>
+<h3 id="4-Example-Algorithms"><a href="#4-Example-Algorithms" class="headerlink" title="4. Example Algorithms"></a>4. <strong>Example Algorithms</strong></h3><ul>
+<li><p><strong>AdaBoost</strong>: Adaptive Boosting is an ensemble learning method that combines multiple weak learners (usually decision trees) to create a strong learner. The goal is to improve predictive performance by focusing on the most difficult samples and iteratively adjusting the weights of misclassified samples.</p>
+<ol>
+<li><p><strong>Initialization</strong>:<br>AdaBoost begins by assigning equal weights to all training samples. If there are $N$ samples, each sample gets a weight of $\omega_i &#x3D; \frac{1}{N}$.</p>
+</li>
+<li><p><strong>Train Weak Learner</strong>:<br>A weak learner (a simple model, like a decision tree) is trained on the data. After each iteration, AdaBoost evaluates the classifier’s error rate.</p>
+</li>
+<li><p><strong>Error Rate and Classifier Weight</strong>:<br>The error rate is calculated as the weighted sum of misclassified samples. The classifier’s weight ($\alpha$) is computed based on its error rate:</p>
+<p>$$ \alpha &#x3D; \frac{1}{2} \ln\left( \frac{1 - \text{Error}}{\text{Error}} \right) $$</p>
+</li>
+<li><p><strong>Update Sample Weights</strong>:<br>Based on the classifier’s performance, the weights of the training samples are updated:</p>
+<ul>
+<li>For correctly classified samples, their weights are <strong>decreased</strong>.</li>
+<li>For misclassified samples, their weights are <strong>increased</strong>.</li>
+</ul>
+<p>This makes the algorithm focus more on the samples that are hard to classify.</p>
+<p>The weight updates are:</p>
+<ul>
+<li>Correct samples: $\omega_i \rightarrow \omega_i \times e^{-\alpha}$</li>
+<li>Misclassified samples: $\omega_i \rightarrow \omega_i \times e^{\alpha}$</li>
+<li>$\alpha$ is the weight assigned to the classifier based on its performance (error rate).</li>
+</ul>
+</li>
+<li><p><strong>Final Prediction</strong>:<br>In the final prediction phase, the predictions of all weak learners are combined, with each learner’s prediction weighted according to its performance ($\alpha$). The final model is a weighted sum of all weak classifiers.</p>
+</li>
+</ol>
+</li>
+<li><p><strong>Gradient Boosting</strong>: An improved version of Boosting that optimizes the model using gradient descent.</p>
+</li>
+<li><p><strong>XGBoost</strong>: A highly efficient implementation of Gradient Boosting, popular in machine learning competitions.</p>
+</li>
+</ul>
+<p><img src="/blog/./img/ML4-3.png"></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-16T18:50:05.000Z" title="1/16/2025, 6:50:05 PM">2025-01-16</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.937Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/16/Machine-Learning-3/">About Machine Learning ( Part 3: Logistic Regression )</a></p><div class="content"><h2 id="Classification-Problem"><a href="#Classification-Problem" class="headerlink" title="Classification Problem"></a>Classification Problem</h2><p>In machine learning, when we are predicting a discrete label, such as determining whether an email is spam or not, we are dealing with a classification problem. Logistic regression is commonly used for <strong>binary classification</strong> tasks, where the goal is to predict one of two classes, typically represented as 0 or 1.</p>
 <p>The logistic function (also called the <strong>sigmoid function</strong>) is the core of logistic regression, as it maps input features to probabilities between 0 and 1. These probabilities represent the likelihood of the sample belonging to a particular class.</p>
 <p>The logistic function is defined as:</p>
 <p>$$<br>\sigma(z) &#x3D; \frac{1}{1 + e^{-z}}<br>$$</p>
@@ -165,7 +350,7 @@ $$
 <li><strong>F1-Score</strong> provides a balanced measure when both Precision and Recall are important.</li>
 </ul>
 <p>By carefully analyzing the confusion matrix and the derived metrics, you can fine-tune your model for optimal performance, depending on the specific requirements of your application.</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-07T16:41:21.000Z" title="1/7/2025, 4:41:21 PM">2025-01-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.811Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/07/Machine-Learning-2/">About Machine Learning ( Part 2: Linear Regression )</a></p><div class="content"><h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><p>In prediction tasks, we often use independent features to predict a dependent variable. If we have a dataset:</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-07T16:41:21.000Z" title="1/7/2025, 4:41:21 PM">2025-01-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.937Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/07/Machine-Learning-2/">About Machine Learning ( Part 2: Linear Regression )</a></p><div class="content"><h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><p>In prediction tasks, we often use independent features to predict a dependent variable. If we have a dataset:</p>
 <p>$$<br>{ x_d^{(i)}, t^{(i)} }<br>$$</p>
 <p>where:</p>
 <ul>
@@ -317,7 +502,7 @@ $$
 </ul>
 <p>The <strong>$\lambda$</strong> parameter allows you to control the trade-off between fitting the data well and keeping the model simple.</p>
 <p><img src="/blog/./img/ML2-3.png"></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-06T11:29:21.000Z" title="1/6/2025, 11:29:21 AM">2025-01-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-09T04:58:24.811Z" title="3/9/2025, 4:58:24 AM">2025-03-09</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/06/Machine-Learning-1/">About Machine Learning ( Part 1: Gradient Descent )</a></p><div class="content"><h1 id="Data-Science"><a href="#Data-Science" class="headerlink" title="Data Science"></a>Data Science</h1><h2 id="Target-Variable"><a href="#Target-Variable" class="headerlink" title="Target Variable"></a>Target Variable</h2><p>The target variable is the variable the model aims to predict or explain. It’s also called the dependent variable or label.</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-06T11:29:21.000Z" title="1/6/2025, 11:29:21 AM">2025-01-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-03-12T01:10:36.937Z" title="3/12/2025, 1:10:36 AM">2025-03-12</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/01/06/Machine-Learning-1/">About Machine Learning ( Part 1: Gradient Descent )</a></p><div class="content"><h1 id="Data-Science"><a href="#Data-Science" class="headerlink" title="Data Science"></a>Data Science</h1><h2 id="Target-Variable"><a href="#Target-Variable" class="headerlink" title="Target Variable"></a>Target Variable</h2><p>The target variable is the variable the model aims to predict or explain. It’s also called the dependent variable or label.</p>
 <h2 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h2><p>Attributes are the features or variables that describe each instance in a dataset. They are also known as features, columns, or independent variables.</p>
 <h2 id="Instances"><a href="#Instances" class="headerlink" title="Instances"></a>Instances</h2><p>Instances represent individual samples or data points in a dataset. They are also referred to as samples, rows, or observations.</p>
 <h1 id="Design-of-Experiments"><a href="#Design-of-Experiments" class="headerlink" title="Design of Experiments"></a>Design of Experiments</h1><h2 id="Strategy-of-Experiments"><a href="#Strategy-of-Experiments" class="headerlink" title="Strategy of Experiments"></a>Strategy of Experiments</h2><ol>
@@ -436,7 +621,7 @@ $$
 <li><strong>Slow Convergence</strong>: Compared to deterministic methods, GA can be slower, especially for problems with a clear gradient or simpler structure.</li>
 </ol>
 <p><img src="/blog/./img/ML1-5.png"></p>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/blog/tags/Machine-Learning/">Previous</a></div><div class="pagination-next is-invisible is-hidden-mobile"><a href="/blog/tags/Machine-Learning/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/blog/tags/Machine-Learning/">1</a></li><li><a class="pagination-link is-current" href="/blog/tags/Machine-Learning/page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Cheng"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cheng</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">32</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Cheng&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Cheng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/blog/tags/Machine-Learning/">Previous</a></div><div class="pagination-next is-invisible is-hidden-mobile"><a href="/blog/tags/Machine-Learning/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/blog/tags/Machine-Learning/">1</a></li><li><a class="pagination-link is-current" href="/blog/tags/Machine-Learning/page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Cheng"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cheng</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">34</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Defunct Chinese Blog" href="https://kongchenglc.github.io/blog/"><i class="fa-solid fa-link"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Cheng&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Cheng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
