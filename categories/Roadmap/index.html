@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Category: Roadmap - Mike&#039;s Blog</title><link rel="manifest" href="/blog/manifest.json"><meta name="application-name" content="Mike&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Mike&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Mike&#039;s Blog"><meta property="og:url" content="https://kongchenglc.github.io/blog"><meta property="og:site_name" content="Mike&#039;s Blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kongchenglc.github.io/blog/img/og_image.png"><meta property="article:author" content="Cheng (Mike)"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://kongchenglc.github.io/blog/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kongchenglc.github.io/blog"},"headline":"Mike's Blog","image":["https://kongchenglc.github.io/blog/img/og_image.png"],"author":{"@type":"Person","name":"Cheng (Mike)"},"publisher":{"@type":"Organization","name":"Mike's Blog","logo":{"@type":"ImageObject","url":{"text":"Mike's Blog"}}},"description":""}</script><link rel="icon" href="/blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Mike&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/blog/categories">Categories</a></li><li class="is-active"><a href="#" aria-current="page">Roadmap</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-07-24T21:50:04.000Z" title="7/24/2025, 9:50:04 PM">2025-07-24</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Roadmap/">Roadmap</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/07/24/FrontEnd-Atlas/">FrontEnd Atlas</a></p><div class="content"><h1 id="Fundamentals"><a href="#Fundamentals" class="headerlink" title="Fundamentals"></a>Fundamentals</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="SEO-Search-Engine-Optimization"><a href="#SEO-Search-Engine-Optimization" class="headerlink" title="SEO (Search Engine Optimization)"></a>SEO (Search Engine Optimization)</h3><ul>
+<li>Use semantic HTML elements (<code>&lt;article&gt;, &lt;section&gt;, &lt;nav&gt;, &lt;header&gt;, &lt;h1&gt;&lt;h2&gt;</code> etc.)</li>
+<li>Set meaningful <code>&lt;title&gt;</code> and <code>&lt;meta name=&quot;description&quot; content=&quot;xxx&quot;&gt;</code> for each page.</li>
+<li>Use of <code>&lt;alt&gt;</code> Attributes on Images</li>
+<li>Use <code>&lt;meta name=&quot;robots&quot;&gt;</code> or <code>robots.txt</code> to control indexing.</li>
+</ul>
+<h3 id="Render-Process"><a href="#Render-Process" class="headerlink" title="Render Process"></a>Render Process</h3><p>DOM + CSSOM &#x3D;&gt; Render Tree<br>Layout(Size, Position) &#x3D;&gt; Paint(Color, Background) &#x3D;&gt; Composite<br>Recalculate Style &#x3D;&gt; Reflow &#x3D;&gt; Repaint &#x3D;&gt; Compositing</p>
+<h3 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h3><ul>
+<li>localStorage<ul>
+<li>Persistent: Data persists even after browser&#x2F;tab is closed.</li>
+<li>Scope: Same-origin (same domain + port + protocol).</li>
+<li>Capacity: About 5MB.</li>
+</ul>
+</li>
+<li>sessionStorage<ul>
+<li>Session-based: Data is cleared when the browser&#x2F;tab is closed.</li>
+<li>Scope: Same-origin, and only within the same tab.</li>
+<li>Capacity: About 5MB.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Accessibility-a11y"><a href="#Accessibility-a11y" class="headerlink" title="Accessibility (a11y)"></a>Accessibility (a11y)</h3><p>Use ARIA (Accessible Rich Internet Applications)</p>
+<h3 id="Script-Tags"><a href="#Script-Tags" class="headerlink" title="Script Tags"></a>Script Tags</h3><ul>
+<li><code>&lt;script src=&quot;...&quot;&gt;&lt;/script&gt;</code>: Downloads and executes the script immediately, blocking the HTML parsing.</li>
+<li><code>&lt;script src=&quot;...&quot; async&gt;&lt;/script&gt;</code>: Loads the script asynchronously, allowing HTML parsing to continue. The script executes as soon as it is loaded.</li>
+<li><code>&lt;script src=&quot;...&quot; defer&gt;&lt;/script&gt;</code>: Loads the script in the background and executes it after the HTML parsing is complete.</li>
+</ul>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><h3 id="Flexbox-Grid"><a href="#Flexbox-Grid" class="headerlink" title="Flexbox &#x2F; Grid"></a>Flexbox &#x2F; Grid</h3><h3 id="Responsive-Design"><a href="#Responsive-Design" class="headerlink" title="Responsive Design"></a>Responsive Design</h3><p>rem+viewport</p>
+<h3 id="Adaptive-Design"><a href="#Adaptive-Design" class="headerlink" title="Adaptive Design"></a>Adaptive Design</h3><p>Media Queries: <code>@media (max-width: 600px) &#123; ... &#125;</code></p>
+<!-- 
+# CSS
+Responsive Design, Flex & Grid
+移动端rem等解决方案
+
+
+# JavaScript
+## Event Loop & Callbacks & Promises
+### microtasks & macrotasks
+## Async/Await
+## Closures & Scope
+
+## Debounce & Throttle
+
+## Modules & Imports
+
+# Typescript
+
+# React
+## Redux & Context API & MobX & Recoil
+## React Router
+## React Hooks
+### useRef
+## HOC & Render Props
+## React Performance
+
+## react-Native
+
+
+# Testing
+## Jest & React Testing Library
+
+# Webpack & Vite
+Babel
+Polyfill
+
+# Node.js
+## Express.js & Koa.js 
+
+## Nest.js
+
+## Next.js
+Server Components
+
+## kafka
+## redis
+
+
+# 网络
+## GraphQL & REST API
+缓存策略（强缓存、协商缓存）
+Cookies max-age=3600; path
+post/get区别
+跨域（CORS、JSONP、代理）
+## HTTP/2 & HTTP/3
+## WebSocket & SSE (Server-Sent Events)
+
+
+# Performance
+## Web Vitals & Lighthouse
+## Code Splitting & Lazy Loading
+tree-shaking
+## Caching & CDN
+## FCP & LCP & TTFB
+
+团队协作/开发规范/文档/eslint
+# ESLint
+# CI/CD
+# Monorepo
+Review Checklist
+
+# Security
+## XSS & CSRF
+## CORS
+## Content Security Policy (CSP)
+
+# Error
+## Error Boundaries
+## Logging & Monitoring
+## Sentry
+白屏检测与灾难恢复方案
+
+
+# 业务
+# 登录
+OAuth / JWT / Cookie & Token / SSO
+
+# deployment
+CDN / nginx load balancing / Docker / Kubernetes
+
+# Systems Design & Architecture
+## Scalability
+## reliability & resilience & recovery
+## Maintainability
+## Performance
+
+## Microservices
+## Monolith vs Microservices
+## Serverless Architecture
+## Event-Driven Architecture
+## API Design
+## Design Patterns
+
+TDD
+Agile
+ -->
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-05-31T03:18:23.000Z" title="5/31/2025, 3:18:23 AM">2025-05-31</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Roadmap/">Roadmap</a><span> / </span><a class="link-muted" href="/blog/categories/Roadmap/Learning-Notes/">Learning Notes</a></span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/blog/2025/05/31/algorithm-methodology/">Algorithms</a></p><div class="content"><h1 id="Problem-Solving-Steps"><a href="#Problem-Solving-Steps" class="headerlink" title="Problem Solving Steps"></a>Problem Solving Steps</h1><ol>
+<li><strong>Communication</strong>: The goal is to solve real-world problems collaboratively with the interviewer.</li>
+<li><strong>Clarify the Objective</strong>: Confirming what is asked is very important. For example, if the problem requires returning values instead of indices, then storing index information is meaningless.<ul>
+<li>Identify boundary cases.</li>
+<li>Ask valuable questions.</li>
+<li>Don’t rush to code; first confirm you are solving the correct problem.</li>
+</ul>
+</li>
+<li><strong>Formulate the Problem</strong>: To solve algorithm questions, you need to build a formula that describes how to get the result. Then look at all known conditions (such as whether the data is sorted, or any useful data characteristics). This helps decide how the formula converges and whether to use loops or recursion.</li>
+<li><strong>Explain Your Approach</strong>: Before coding, explain your thought process to the interviewer and get confirmation.</li>
+<li><strong>Test Your Code</strong>: After coding, run several test cases including edge cases.</li>
+<li><strong>Optimize</strong>: Improve time and space complexity if possible. Dont forget that.</li>
+</ol></div><a class="article-more button is-small is-size-7" href="/blog/2025/05/31/algorithm-methodology/#more">Read more</a></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/profile-pic.jpg" alt="Cheng (Mike)"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cheng (Mike)</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">24</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">40</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Linkedin" href="https://www.linkedin.com/in/kongchenglc/"><i class="fab fa-linkedin"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Mike&#039;s Blog</a><p class="is-size-7"><span>&copy; 2025 Cheng (Mike)</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/blog/js/column.js"></script><script src="/blog/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/blog/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><script data-pjax src="/blog/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/blog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/blog/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo injector body_end start -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var tocElement = document.querySelector('#toc');
+    if (tocElement) {
+      tocElement.classList.add('is-sticky');
+    }
+  });
+</script>
+  <!-- hexo injector body_end end --></body></html>
