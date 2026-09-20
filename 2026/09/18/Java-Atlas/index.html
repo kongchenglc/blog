@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Java Atlas for Full-Stack Engineers - Chili&#039;s Blog</title><link rel="manifest" href="/blog/manifest.json"><meta name="application-name" content="Chili&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Chili&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="FundamentalsPrimitive Types vs Wrapper TypesPrimitive types store raw values, while wrapper types are objects that can be null and are required by generics&amp;#x2F;collections. 1234int age &amp;#x3D; 18;Integer n"><meta property="og:type" content="blog"><meta property="og:title" content="Java Atlas for Full-Stack Engineers"><meta property="og:url" content="https://kongchenglc.github.io/blog/2026/09/18/Java-Atlas/"><meta property="og:site_name" content="Chili&#039;s Blog"><meta property="og:description" content="FundamentalsPrimitive Types vs Wrapper TypesPrimitive types store raw values, while wrapper types are objects that can be null and are required by generics&amp;#x2F;collections. 1234int age &amp;#x3D; 18;Integer n"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kongchenglc.github.io/blog/img/og_image.png"><meta property="article:published_time" content="2026-09-18T12:00:00.000Z"><meta property="article:modified_time" content="2026-09-20T04:41:49.378Z"><meta property="article:author" content="Chili"><meta property="article:tag" content="Java"><meta property="article:tag" content="Spring Boot"><meta property="article:tag" content="Interview"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://kongchenglc.github.io/blog/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kongchenglc.github.io/blog/2026/09/18/Java-Atlas/"},"headline":"Java Atlas for Full-Stack Engineers","image":["https://kongchenglc.github.io/blog/img/og_image.png"],"datePublished":"2026-09-18T12:00:00.000Z","dateModified":"2026-09-20T04:41:49.378Z","author":{"@type":"Person","name":"Chili"},"publisher":{"@type":"Organization","name":"Chili's Blog","logo":{"@type":"ImageObject","url":{"text":"Chili's Blog"}}},"description":"FundamentalsPrimitive Types vs Wrapper TypesPrimitive types store raw values, while wrapper types are objects that can be null and are required by generics&#x2F;collections. 1234int age &#x3D; 18;Integer n"}</script><link rel="canonical" href="https://kongchenglc.github.io/blog/2026/09/18/Java-Atlas/"><link rel="icon" href="/blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Java Atlas for Full-Stack Engineers - Chili&#039;s Blog</title><link rel="manifest" href="/blog/manifest.json"><meta name="application-name" content="Chili&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Chili&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="FundamentalsPrimitive Types vs Wrapper TypesPrimitive types store raw values, while wrapper types are objects that can be null and are required by generics&amp;#x2F;collections. 1234int age &amp;#x3D; 18;Integer n"><meta property="og:type" content="blog"><meta property="og:title" content="Java Atlas for Full-Stack Engineers"><meta property="og:url" content="https://kongchenglc.github.io/blog/2026/09/18/Java-Atlas/"><meta property="og:site_name" content="Chili&#039;s Blog"><meta property="og:description" content="FundamentalsPrimitive Types vs Wrapper TypesPrimitive types store raw values, while wrapper types are objects that can be null and are required by generics&amp;#x2F;collections. 1234int age &amp;#x3D; 18;Integer n"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kongchenglc.github.io/blog/img/og_image.png"><meta property="article:published_time" content="2026-09-18T12:00:00.000Z"><meta property="article:modified_time" content="2026-09-20T05:30:26.001Z"><meta property="article:author" content="Chili"><meta property="article:tag" content="Java"><meta property="article:tag" content="Spring Boot"><meta property="article:tag" content="Interview"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://kongchenglc.github.io/blog/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kongchenglc.github.io/blog/2026/09/18/Java-Atlas/"},"headline":"Java Atlas for Full-Stack Engineers","image":["https://kongchenglc.github.io/blog/img/og_image.png"],"datePublished":"2026-09-18T12:00:00.000Z","dateModified":"2026-09-20T05:30:26.001Z","author":{"@type":"Person","name":"Chili"},"publisher":{"@type":"Organization","name":"Chili's Blog","logo":{"@type":"ImageObject","url":{"text":"Chili's Blog"}}},"description":"FundamentalsPrimitive Types vs Wrapper TypesPrimitive types store raw values, while wrapper types are objects that can be null and are required by generics&#x2F;collections. 1234int age &#x3D; 18;Integer n"}</script><link rel="canonical" href="https://kongchenglc.github.io/blog/2026/09/18/Java-Atlas/"><link rel="icon" href="/blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
   (function () {
       function switchTab() {
           if (!location.hash) {
@@ -31,6 +31,8 @@
   })();
   </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Chili&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2026-09-18T12:00:00.000Z" title="9/18/2026, 12:00:00 PM">2026-09-18</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Roadmap/">Roadmap</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Java Atlas for Full-Stack Engineers</h1><div class="content"><h2 id="Fundamentals"><a href="#Fundamentals" class="headerlink" title="Fundamentals"></a>Fundamentals</h2><h3 id="Primitive-Types-vs-Wrapper-Types"><a href="#Primitive-Types-vs-Wrapper-Types" class="headerlink" title="Primitive Types vs Wrapper Types"></a>Primitive Types vs Wrapper Types</h3><p>Primitive types store raw values, while wrapper types are objects that can be <code>null</code> and are required by generics&#x2F;collections.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">18</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">nullableAge</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; numbers = List.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <h3 id="vs-equals"><a href="#vs-equals" class="headerlink" title="== vs equals()"></a><code>==</code> vs <code>equals()</code></h3><p><code>==</code> compares primitive values or object references, while <code>equals()</code> compares object content when the class implements it accordingly.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">b</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"></span><br><span class="line">a == b;      <span class="comment">// false</span></span><br><span class="line">a.equals(b); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
@@ -159,142 +161,171 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./mvnw package</span><br></pre></td></tr></table></figure>
 
 <p>This avoids requiring every developer to install the same Maven version globally.</p>
-<!-- 
----
+<h2 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h2><h3 id="Spring-Boot-Application-Structure"><a href="#Spring-Boot-Application-Structure" class="headerlink" title="Spring Boot Application Structure"></a>Spring Boot Application Structure</h3><p>A typical Spring Boot application is organized into layers such as <code>controller</code>, <code>service</code>, and <code>repository</code>.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">src/main/java/com/example/app/</span><br><span class="line">├── Application.java</span><br><span class="line">├── controller/</span><br><span class="line">├── service/</span><br><span class="line">├── repository/</span><br><span class="line">├── entity/</span><br><span class="line">├── dto/</span><br><span class="line">└── config/</span><br></pre></td></tr></table></figure>
 
-1. Spring Boot Fundamentals
-    - Spring Boot Application Structure
-    - Application Startup
-    - IoC Container
-    - Dependency Injection
-    - Spring Beans
-    - Component Scanning
-    - @Component
-    - @Service
-    - @Repository
-    - @Configuration
-    - application.yml
-    - Profiles
-    - Starters
-    - Auto-Configuration
-2. Spring Web / MVC
-    - Controllers
-    - Request Mapping
-    - Path Variables
-    - Query Parameters
-    - Request Bodies
-    - DTOs
-    - Validation
-    - Response Handling
-    - Global Exception Handling
-    - JSON Serialization with Jackson
-    - Filters
-    - Interceptors
-    - Request Lifecycle
-3. JPA and Hibernate
-    - ORM Basics
-    - JPA vs Hibernate
-    - Entities
-    - Primary Keys
-    - Repositories
-    - Spring Data JPA
-    - Entity Relationships
-    - One-to-One
-    - One-to-Many
-    - Many-to-One
-    - Lazy Loading
-    - Eager Loading
-    - N+1 Query Problem
-    - Persistence Context
-    - Dirty Checking
-    - Pagination
-4. Transactions
-    - Transaction Basics
-    - @Transactional
-    - Commit and Rollback
-    - Transaction Boundaries
-    - Transaction Propagation
-    - Rollback Rules
-    - Common @Transactional Pitfalls
-    - Database Connections and Transactions
-5. Spring Security Basics
-    - Authentication
-    - Authorization
-    - Security Filter Chain
-    - SecurityContext
-    - Password Hashing
-    - JWT Authentication
-    - Method-Level Security
-    - CORS
-    - CSRF
-6. Testing
-    - JUnit
-    - Assertions
-    - Mockito
-    - Mocking Dependencies
-    - Unit Tests
-    - Integration Tests
-    - @SpringBootTest
-    - MockMvc
-    - Repository Tests
-7.  Concurrency Basics
-    - Threads
-    - Thread Safety
-    - Race Conditions
-    - synchronized
-    - volatile
-    - Thread Pools
-    - ExecutorService
-    - CompletableFuture
-    - Shared Mutable State
-    - Singleton Bean Thread Safety
-8.  JVM Basics
-    - JVM Memory Model Overview
-    - Stack vs Heap
-    - Object Allocation
-    - Garbage Collection
-    - Class Loading
-    - JVM Memory Settings
-    - Thread Dumps
-    - Heap Dumps
-9.  Production Basics
-    - Logging
-    - Connection Pools
-    - HikariCP
-    - Spring Boot Actuator
-    - Health Checks
-    - Metrics
-    - Environment Configuration
-    - Docker
-    - Graceful Shutdown
-    - Basic Performance Troubleshooting
-10. Full-Stack Interview Focus
-    - Structuring a Spring Boot API
-    - Controller / Service / Repository Separation
-    - Dependency Injection
-    - Error Handling
-    - Database Access
-    - Authentication Flow
-    - Transactions
-    - JPA Performance Issues
-    - N+1 Queries
-    - API Testing
-    - Backend Debugging
-    - Reading an Existing Java Codebase
-    - Frontend–Backend Integration
-11. Topics to Know, Not Deep-Dive
-    - HashMap Internals
-    - ConcurrentHashMap Internals
-    - Garbage Collector Implementations
-    - ClassLoader Internals
-    - AQS
-    - CAS Internals
-    - Lock Upgrades
-    - Spring Bean Circular Dependency Internals
-    - Advanced JVM Tuning
-    - Distributed Transactions
-    - Spring Cloud Internals
-    - Kafka Internals --></div><div class="article-licensing box"><div class="licensing-title"><p>Java Atlas for Full-Stack Engineers</p><p><a href="https://kongchenglc.github.io/blog/2026/09/18/Java-Atlas/">https://kongchenglc.github.io/blog/2026/09/18/Java-Atlas/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Chili</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2026-09-18</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2026-09-20</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/blog/tags/Java/">Java</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/Spring-Boot/">Spring Boot</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/Interview/">Interview</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/blog/2025/07/24/FrontEnd-Atlas/"><span class="level-item">FrontEnd Atlas</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><script src="https://utteranc.es/client.js" repo="kongchenglc/blog" issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/avatar.jpeg" alt="Chili"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Chili</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">25</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">43</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Fundamentals"><span class="level-left"><span class="level-item">1</span><span class="level-item">Fundamentals</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Primitive-Types-vs-Wrapper-Types"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Primitive Types vs Wrapper Types</span></span></a></li><li><a class="level is-mobile" href="#vs-equals"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">== vs equals()</span></span></a></li><li><a class="level is-mobile" href="#hashCode"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">hashCode()</span></span></a></li><li><a class="level is-mobile" href="#String-Immutability"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">String Immutability</span></span></a></li><li><a class="level is-mobile" href="#Exception-Model"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">Exception Model</span></span></a></li><li><a class="level is-mobile" href="#Generics"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">Generics</span></span></a></li><li><a class="level is-mobile" href="#Optional"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">Optional</span></span></a></li><li><a class="level is-mobile" href="#Annotations"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">Annotations</span></span></a></li><li><a class="level is-mobile" href="#record"><span class="level-left"><span class="level-item">1.9</span><span class="level-item">record</span></span></a></li><li><a class="level is-mobile" href="#List-Set-Map"><span class="level-left"><span class="level-item">1.10</span><span class="level-item">List, Set, Map</span></span></a></li><li><a class="level is-mobile" href="#ArrayList"><span class="level-left"><span class="level-item">1.11</span><span class="level-item">ArrayList</span></span></a></li><li><a class="level is-mobile" href="#HashMap"><span class="level-left"><span class="level-item">1.12</span><span class="level-item">HashMap</span></span></a></li><li><a class="level is-mobile" href="#ConcurrentHashMap"><span class="level-left"><span class="level-item">1.13</span><span class="level-item">ConcurrentHashMap</span></span></a></li><li><a class="level is-mobile" href="#Stream-API"><span class="level-left"><span class="level-item">1.14</span><span class="level-item">Stream API</span></span></a></li><li><a class="level is-mobile" href="#Lambda-Expressions"><span class="level-left"><span class="level-item">1.15</span><span class="level-item">Lambda Expressions</span></span></a></li><li><a class="level is-mobile" href="#Functional-Interfaces"><span class="level-left"><span class="level-item">1.16</span><span class="level-item">Functional Interfaces</span></span></a></li><li><a class="level is-mobile" href="#Method-References"><span class="level-left"><span class="level-item">1.17</span><span class="level-item">Method References</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Java-Runtime-and-Build-System"><span class="level-left"><span class="level-item">2</span><span class="level-item">Java Runtime and Build System</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#JDK-JRE-and-JVM"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">JDK, JRE, and JVM</span></span></a></li><li><a class="level is-mobile" href="#Java-Bytecode-and-javac"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Java Bytecode and javac</span></span></a></li><li><a class="level is-mobile" href="#Java-Build-and-Runtime-Flow"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">Java Build and Runtime Flow</span></span></a></li><li><a class="level is-mobile" href="#Maven"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">Maven</span></span></a></li><li><a class="level is-mobile" href="#pom-xml"><span class="level-left"><span class="level-item">2.5</span><span class="level-item">pom.xml</span></span></a></li><li><a class="level is-mobile" href="#Dependency-Management"><span class="level-left"><span class="level-item">2.6</span><span class="level-item">Dependency Management</span></span></a></li><li><a class="level is-mobile" href="#Maven-Wrapper"><span class="level-left"><span class="level-item">2.7</span><span class="level-item">Maven Wrapper</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/blog/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Chili&#039;s Blog</a><p class="is-size-7"><span>&copy; 2026 Chili</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+<p>Typical request flow:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP Request → Controller → Service → Repository → Database</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ol>
+<li>Spring Boot Fundamentals<ul>
+<li>Spring Boot Application Structure</li>
+<li>Application Startup</li>
+<li>IoC Container</li>
+<li>Dependency Injection</li>
+<li>Spring Beans</li>
+<li>Component Scanning</li>
+<li>@Component</li>
+<li>@Service</li>
+<li>@Repository</li>
+<li>@Configuration</li>
+<li>application.yml</li>
+<li>Profiles</li>
+<li>Starters</li>
+<li>Auto-Configuration</li>
+</ul>
+</li>
+<li>Spring Web &#x2F; MVC<ul>
+<li>Controllers</li>
+<li>Request Mapping</li>
+<li>Path Variables</li>
+<li>Query Parameters</li>
+<li>Request Bodies</li>
+<li>DTOs</li>
+<li>Validation</li>
+<li>Response Handling</li>
+<li>Global Exception Handling</li>
+<li>JSON Serialization with Jackson</li>
+<li>Filters</li>
+<li>Interceptors</li>
+<li>Request Lifecycle</li>
+</ul>
+</li>
+<li>JPA and Hibernate<ul>
+<li>ORM Basics</li>
+<li>JPA vs Hibernate</li>
+<li>Entities</li>
+<li>Primary Keys</li>
+<li>Repositories</li>
+<li>Spring Data JPA</li>
+<li>Entity Relationships</li>
+<li>One-to-One</li>
+<li>One-to-Many</li>
+<li>Many-to-One</li>
+<li>Lazy Loading</li>
+<li>Eager Loading</li>
+<li>N+1 Query Problem</li>
+<li>Persistence Context</li>
+<li>Dirty Checking</li>
+<li>Pagination</li>
+</ul>
+</li>
+<li>Transactions<ul>
+<li>Transaction Basics</li>
+<li>@Transactional</li>
+<li>Commit and Rollback</li>
+<li>Transaction Boundaries</li>
+<li>Transaction Propagation</li>
+<li>Rollback Rules</li>
+<li>Common @Transactional Pitfalls</li>
+<li>Database Connections and Transactions</li>
+</ul>
+</li>
+<li>Spring Security Basics<ul>
+<li>Authentication</li>
+<li>Authorization</li>
+<li>Security Filter Chain</li>
+<li>SecurityContext</li>
+<li>Password Hashing</li>
+<li>JWT Authentication</li>
+<li>Method-Level Security</li>
+<li>CORS</li>
+<li>CSRF</li>
+</ul>
+</li>
+<li>Testing<ul>
+<li>JUnit</li>
+<li>Assertions</li>
+<li>Mockito</li>
+<li>Mocking Dependencies</li>
+<li>Unit Tests</li>
+<li>Integration Tests</li>
+<li>@SpringBootTest</li>
+<li>MockMvc</li>
+<li>Repository Tests</li>
+</ul>
+</li>
+<li>Concurrency Basics<ul>
+<li>Threads</li>
+<li>Thread Safety</li>
+<li>Race Conditions</li>
+<li>synchronized</li>
+<li>volatile</li>
+<li>Thread Pools</li>
+<li>ExecutorService</li>
+<li>CompletableFuture</li>
+<li>Shared Mutable State</li>
+<li>Singleton Bean Thread Safety</li>
+</ul>
+</li>
+<li>JVM Basics<ul>
+<li>JVM Memory Model Overview</li>
+<li>Stack vs Heap</li>
+<li>Object Allocation</li>
+<li>Garbage Collection</li>
+<li>Class Loading</li>
+<li>JVM Memory Settings</li>
+<li>Thread Dumps</li>
+<li>Heap Dumps</li>
+</ul>
+</li>
+<li>Production Basics<ul>
+<li>Logging</li>
+<li>Connection Pools</li>
+<li>HikariCP</li>
+<li>Spring Boot Actuator</li>
+<li>Health Checks</li>
+<li>Metrics</li>
+<li>Environment Configuration</li>
+<li>Docker</li>
+<li>Graceful Shutdown</li>
+<li>Basic Performance Troubleshooting</li>
+</ul>
+</li>
+<li>Full-Stack Interview Focus<ul>
+<li>Structuring a Spring Boot API</li>
+<li>Controller &#x2F; Service &#x2F; Repository Separation</li>
+<li>Dependency Injection</li>
+<li>Error Handling</li>
+<li>Database Access</li>
+<li>Authentication Flow</li>
+<li>Transactions</li>
+<li>JPA Performance Issues</li>
+<li>N+1 Queries</li>
+<li>API Testing</li>
+<li>Backend Debugging</li>
+<li>Reading an Existing Java Codebase</li>
+<li>Frontend–Backend Integration</li>
+</ul>
+</li>
+<li>Topics to Know, Not Deep-Dive<ul>
+<li>HashMap Internals</li>
+<li>ConcurrentHashMap Internals</li>
+<li>Garbage Collector Implementations</li>
+<li>ClassLoader Internals</li>
+<li>AQS</li>
+<li>CAS Internals</li>
+<li>Lock Upgrades</li>
+<li>Spring Bean Circular Dependency Internals</li>
+<li>Advanced JVM Tuning</li>
+<li>Distributed Transactions</li>
+<li>Spring Cloud Internals</li>
+<li>Kafka Internals</li>
+</ul>
+</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Java Atlas for Full-Stack Engineers</p><p><a href="https://kongchenglc.github.io/blog/2026/09/18/Java-Atlas/">https://kongchenglc.github.io/blog/2026/09/18/Java-Atlas/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Chili</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2026-09-18</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2026-09-20</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/blog/tags/Java/">Java</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/Spring-Boot/">Spring Boot</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/Interview/">Interview</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/blog/2025/07/24/FrontEnd-Atlas/"><span class="level-item">FrontEnd Atlas</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><script src="https://utteranc.es/client.js" repo="kongchenglc/blog" issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/avatar.jpeg" alt="Chili"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Chili</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">25</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">43</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Fundamentals"><span class="level-left"><span class="level-item">1</span><span class="level-item">Fundamentals</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Primitive-Types-vs-Wrapper-Types"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Primitive Types vs Wrapper Types</span></span></a></li><li><a class="level is-mobile" href="#vs-equals"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">== vs equals()</span></span></a></li><li><a class="level is-mobile" href="#hashCode"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">hashCode()</span></span></a></li><li><a class="level is-mobile" href="#String-Immutability"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">String Immutability</span></span></a></li><li><a class="level is-mobile" href="#Exception-Model"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">Exception Model</span></span></a></li><li><a class="level is-mobile" href="#Generics"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">Generics</span></span></a></li><li><a class="level is-mobile" href="#Optional"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">Optional</span></span></a></li><li><a class="level is-mobile" href="#Annotations"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">Annotations</span></span></a></li><li><a class="level is-mobile" href="#record"><span class="level-left"><span class="level-item">1.9</span><span class="level-item">record</span></span></a></li><li><a class="level is-mobile" href="#List-Set-Map"><span class="level-left"><span class="level-item">1.10</span><span class="level-item">List, Set, Map</span></span></a></li><li><a class="level is-mobile" href="#ArrayList"><span class="level-left"><span class="level-item">1.11</span><span class="level-item">ArrayList</span></span></a></li><li><a class="level is-mobile" href="#HashMap"><span class="level-left"><span class="level-item">1.12</span><span class="level-item">HashMap</span></span></a></li><li><a class="level is-mobile" href="#ConcurrentHashMap"><span class="level-left"><span class="level-item">1.13</span><span class="level-item">ConcurrentHashMap</span></span></a></li><li><a class="level is-mobile" href="#Stream-API"><span class="level-left"><span class="level-item">1.14</span><span class="level-item">Stream API</span></span></a></li><li><a class="level is-mobile" href="#Lambda-Expressions"><span class="level-left"><span class="level-item">1.15</span><span class="level-item">Lambda Expressions</span></span></a></li><li><a class="level is-mobile" href="#Functional-Interfaces"><span class="level-left"><span class="level-item">1.16</span><span class="level-item">Functional Interfaces</span></span></a></li><li><a class="level is-mobile" href="#Method-References"><span class="level-left"><span class="level-item">1.17</span><span class="level-item">Method References</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Java-Runtime-and-Build-System"><span class="level-left"><span class="level-item">2</span><span class="level-item">Java Runtime and Build System</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#JDK-JRE-and-JVM"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">JDK, JRE, and JVM</span></span></a></li><li><a class="level is-mobile" href="#Java-Bytecode-and-javac"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Java Bytecode and javac</span></span></a></li><li><a class="level is-mobile" href="#Java-Build-and-Runtime-Flow"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">Java Build and Runtime Flow</span></span></a></li><li><a class="level is-mobile" href="#Maven"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">Maven</span></span></a></li><li><a class="level is-mobile" href="#pom-xml"><span class="level-left"><span class="level-item">2.5</span><span class="level-item">pom.xml</span></span></a></li><li><a class="level is-mobile" href="#Dependency-Management"><span class="level-left"><span class="level-item">2.6</span><span class="level-item">Dependency Management</span></span></a></li><li><a class="level is-mobile" href="#Maven-Wrapper"><span class="level-left"><span class="level-item">2.7</span><span class="level-item">Maven Wrapper</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Spring-Boot"><span class="level-left"><span class="level-item">3</span><span class="level-item">Spring Boot</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Spring-Boot-Application-Structure"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">Spring Boot Application Structure</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/blog/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Chili&#039;s Blog</a><p class="is-size-7"><span>&copy; 2026 Chili</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
