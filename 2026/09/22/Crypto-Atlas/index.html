@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Crypto-Atlas - Chili&#039;s Blog</title><link rel="manifest" href="/blog/manifest.json"><meta name="application-name" content="Chili&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Chili&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Crypto FundamentalsHash FunctionsA hash function converts arbitrary input data into a fixed-size digest. 123&amp;quot;hello&amp;quot;↓ hash2cf24dba...  Important properties:  The same input always produces th"><meta property="og:type" content="blog"><meta property="og:title" content="Crypto-Atlas"><meta property="og:url" content="https://kongchenglc.github.io/blog/2026/09/22/Crypto-Atlas/"><meta property="og:site_name" content="Chili&#039;s Blog"><meta property="og:description" content="Crypto FundamentalsHash FunctionsA hash function converts arbitrary input data into a fixed-size digest. 123&amp;quot;hello&amp;quot;↓ hash2cf24dba...  Important properties:  The same input always produces th"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://kongchenglc.github.io/blog/img/og_image.png"><meta property="article:published_time" content="2026-09-22T15:18:48.000Z"><meta property="article:modified_time" content="2026-09-24T20:41:13.984Z"><meta property="article:author" content="Chili"><meta property="article:tag" content="Roadmap"><meta property="article:tag" content="Ethereum"><meta property="article:tag" content="Smart Contracts"><meta property="article:tag" content="Web3"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://kongchenglc.github.io/blog/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kongchenglc.github.io/blog/2026/09/22/Crypto-Atlas/"},"headline":"Crypto-Atlas","image":["https://kongchenglc.github.io/blog/img/og_image.png"],"datePublished":"2026-09-22T15:18:48.000Z","dateModified":"2026-09-24T20:41:13.984Z","author":{"@type":"Person","name":"Chili"},"publisher":{"@type":"Organization","name":"Chili's Blog","logo":{"@type":"ImageObject","url":{"text":"Chili's Blog"}}},"description":"Crypto FundamentalsHash FunctionsA hash function converts arbitrary input data into a fixed-size digest. 123&quot;hello&quot;↓ hash2cf24dba...  Important properties:  The same input always produces th"}</script><link rel="canonical" href="https://kongchenglc.github.io/blog/2026/09/22/Crypto-Atlas/"><link rel="icon" href="/blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/">Chili&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2026-09-22T15:18:48.000Z" title="9/22/2026, 3:18:48 PM">2026-09-22</time></span><span class="level-item"><a class="link-muted" href="/blog/categories/Blockchain/">Blockchain</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Crypto-Atlas</h1><div class="content"><h2 id="Crypto-Fundamentals"><a href="#Crypto-Fundamentals" class="headerlink" title="Crypto Fundamentals"></a>Crypto Fundamentals</h2><h3 id="Hash-Functions"><a href="#Hash-Functions" class="headerlink" title="Hash Functions"></a>Hash Functions</h3><p>A hash function converts arbitrary input data into a fixed-size digest.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;hello&quot;</span><br><span class="line">↓ hash</span><br><span class="line">2cf24dba...</span><br></pre></td></tr></table></figure>
+
+<p>Important properties:</p>
+<ul>
+<li>The same input always produces the same hash.</li>
+<li>A tiny input change produces a very different hash.</li>
+<li>Recovering the original input from the hash should be computationally infeasible.</li>
+<li>Finding two different inputs with the same hash should be extremely difficult.</li>
+</ul>
+<p>Blockchains use hashes for transaction IDs, block linking, Merkle trees, and data integrity.</p>
+<span id="more"></span>
+
+<h3 id="Public-Private-Keys"><a href="#Public-Private-Keys" class="headerlink" title="Public &#x2F; Private Keys"></a>Public &#x2F; Private Keys</h3><p>Public&#x2F;private key pairs come from <strong>asymmetric cryptography</strong>.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Private Key</span><br><span class="line">    ↓ derive</span><br><span class="line">Public Key</span><br><span class="line">    ↓ derive</span><br><span class="line">Address</span><br></pre></td></tr></table></figure>
+
+<p>In blockchain systems, keys are mainly used for <strong>digital signatures</strong> rather than encrypting transaction data.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Private Key → sign</span><br><span class="line">Public Key  → verify</span><br></pre></td></tr></table></figure>
+
+<p>The private key must remain secret. Whoever controls it can authorize transactions from the corresponding account.</p>
+<h3 id="Digital-Signatures"><a href="#Digital-Signatures" class="headerlink" title="Digital Signatures"></a>Digital Signatures</h3><p>A digital signature proves that a transaction or message was authorized by the holder of a private key without exposing that key.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Transaction</span><br><span class="line">+</span><br><span class="line">Private Key</span><br><span class="line">↓</span><br><span class="line">Signature</span><br></pre></td></tr></table></figure>
+
+<p>Other participants can cryptographically verify the signature.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Transaction</span><br><span class="line">+</span><br><span class="line">Signature</span><br><span class="line">+</span><br><span class="line">Public Key</span><br><span class="line">↓</span><br><span class="line">Valid / Invalid</span><br></pre></td></tr></table></figure>
+
+<p>Digital signatures provide <strong>authorization and authenticity</strong>, not secrecy: transaction data itself is generally public.</p>
+<h3 id="Addresses"><a href="#Addresses" class="headerlink" title="Addresses"></a>Addresses</h3><p>An address is a public on-chain identifier derived from cryptographic key material.</p>
+<p>Conceptually:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Private Key</span><br><span class="line">→ Public Key</span><br><span class="line">→ Address</span><br></pre></td></tr></table></figure>
+
+<p>An address is <strong>not the same as a public key</strong>.</p>
+<p>It is mainly used as an identifier:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">address → account</span><br><span class="line">address → asset ownership</span><br><span class="line">address → transaction destination</span><br><span class="line">address → permissions</span><br></pre></td></tr></table></figure>
+
+<p>For example:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from: 0xAlice...</span><br><span class="line">to:   0xBob...</span><br></pre></td></tr></table></figure>
+
+<p>The address itself normally does not perform cryptographic authorization; keys and signatures do.</p>
+<p>An address also does not necessarily represent one unique human. One person can control many addresses, and an address may represent a smart contract rather than a user.</p>
+<h3 id="Wallets"><a href="#Wallets" class="headerlink" title="Wallets"></a>Wallets</h3><p>A wallet manages cryptographic keys and signs blockchain operations.</p>
+<p>It does <strong>not literally store cryptocurrency</strong>.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Blockchain</span><br><span class="line">└── records ownership / balances / state</span><br><span class="line"></span><br><span class="line">Wallet</span><br><span class="line">├── manages private keys</span><br><span class="line">├── derives addresses</span><br><span class="line">├── signs transactions</span><br><span class="line">└── reads blockchain state</span><br></pre></td></tr></table></figure>
+
+<p>The wallet is therefore mainly an interface for controlling blockchain accounts.</p>
+<h3 id="Seed-Phrases"><a href="#Seed-Phrases" class="headerlink" title="Seed Phrases"></a>Seed Phrases</h3><p>A seed phrase is a human-readable backup from which a wallet can derive many private keys and addresses.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Seed Phrase</span><br><span class="line">↓</span><br><span class="line">Master Key</span><br><span class="line">↓</span><br><span class="line">Private Keys</span><br><span class="line">↓</span><br><span class="line">Public Keys</span><br><span class="line">↓</span><br><span class="line">Addresses</span><br></pre></td></tr></table></figure>
+
+<p>One seed phrase may control many accounts.</p>
+<p>Anyone who obtains the seed phrase can usually recreate the wallet and control those accounts.</p>
+<h3 id="Merkle-Trees"><a href="#Merkle-Trees" class="headerlink" title="Merkle Trees"></a>Merkle Trees</h3><p>A Merkle tree combines many pieces of data into a single root hash.</p>
+<p>For four transactions:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">       Merkle Root</span><br><span class="line">       /         \</span><br><span class="line">    H12           H34</span><br><span class="line">   /   \         /   \</span><br><span class="line"> H1     H2     H3     H4</span><br><span class="line"> |      |      |      |</span><br><span class="line">Tx1    Tx2    Tx3    Tx4</span><br></pre></td></tr></table></figure>
+
+<p>Where:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">H1  = hash(Tx1)</span><br><span class="line">H12 = hash(H1 + H2)</span><br><span class="line">Root = hash(H12 + H34)</span><br></pre></td></tr></table></figure>
+
+<p>The Merkle root acts as a compact cryptographic commitment to the entire dataset.</p>
+<p>A major benefit is that a node can prove that one item belongs to a large dataset without sending the entire dataset.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Tx2</span><br><span class="line">+</span><br><span class="line">H1</span><br><span class="line">+</span><br><span class="line">H34</span><br><span class="line">↓</span><br><span class="line">recompute Merkle Root</span><br></pre></td></tr></table></figure>
+
+<p>If the calculated root matches the expected root, the transaction’s inclusion can be verified.</p>
+<h3 id="Transactions"><a href="#Transactions" class="headerlink" title="Transactions"></a>Transactions</h3><p>A transaction is a cryptographically signed instruction submitted to a blockchain.</p>
+<p>It may represent actions such as:</p>
+<ul>
+<li>transferring assets;</li>
+<li>calling application logic;</li>
+<li>changing blockchain state.</li>
+</ul>
+<p>Typical flow:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create transaction</span><br><span class="line">→ sign with private key</span><br><span class="line">→ send to a node</span><br><span class="line">→ validate</span><br><span class="line">→ wait as pending</span><br><span class="line">→ included in a block</span><br><span class="line">→ executed</span><br><span class="line">→ confirmed / finalized</span><br></pre></td></tr></table></figure>
+
+<p>A valid signature proves authorization, but transaction validity may also depend on protocol rules and current blockchain state.</p>
+<hr>
+<h2 id="Blockchain-Basics"><a href="#Blockchain-Basics" class="headerlink" title="Blockchain Basics"></a>Blockchain Basics</h2><h3 id="Blocks"><a href="#Blocks" class="headerlink" title="Blocks"></a>Blocks</h3><p>A block contains a batch of transactions plus protocol metadata.</p>
+<p>Conceptually:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Block</span><br><span class="line">├── transactions</span><br><span class="line">├── previous block reference</span><br><span class="line">├── cryptographic commitments</span><br><span class="line">└── protocol metadata</span><br></pre></td></tr></table></figure>
+
+<p>Blocks form an ordered blockchain history:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Block 100</span><br><span class="line">   ↓</span><br><span class="line">Block 101</span><br><span class="line">   ↓</span><br><span class="line">Block 102</span><br></pre></td></tr></table></figure>
+
+<p>Each block is cryptographically connected to earlier blockchain data, making historical modification detectable.</p>
+<h3 id="Nodes"><a href="#Nodes" class="headerlink" title="Nodes"></a>Nodes</h3><p>A node is a computer running blockchain software and participating in the peer-to-peer network.</p>
+<p>Nodes may:</p>
+<ul>
+<li>receive transactions;</li>
+<li>validate transactions;</li>
+<li>receive and validate blocks;</li>
+<li>maintain blockchain state;</li>
+<li>communicate with other nodes;</li>
+<li>expose blockchain data through APIs.</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Application</span><br><span class="line">    ↓</span><br><span class="line">Node</span><br><span class="line"> ↙  ↓  ↘</span><br><span class="line">Node Node Node</span><br></pre></td></tr></table></figure>
+
+<p>A node does not blindly trust a newly received block.</p>
+<p>It can independently verify:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">receive block</span><br><span class="line">→ verify block rules</span><br><span class="line">→ verify transactions</span><br><span class="line">→ verify state transition</span><br><span class="line">→ accept or reject</span><br></pre></td></tr></table></figure>
+
+<p>This independent verification is one of the key properties of blockchain systems.</p>
+<h3 id="Mempool"><a href="#Mempool" class="headerlink" title="Mempool"></a>Mempool</h3><p>A mempool is a node’s temporary collection of valid pending transactions that have not yet been included in a block.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">transaction submitted</span><br><span class="line">→ node validates it</span><br><span class="line">→ mempool</span><br><span class="line">→ block producer selects it</span><br><span class="line">→ block</span><br></pre></td></tr></table></figure>
+
+<p>There is not necessarily one global mempool.</p>
+<p>Because transactions propagate through a peer-to-peer network, different nodes can temporarily have slightly different pending transaction sets.</p>
+<p>This is why an application may show:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pending...</span><br></pre></td></tr></table></figure>
+
+<p>after a user has already submitted a transaction.</p>
+<h3 id="Block-Producers"><a href="#Block-Producers" class="headerlink" title="Block Producers"></a>Block Producers</h3><p>A block producer is the participant responsible for proposing the next block.</p>
+<p>It typically:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reads pending transactions</span><br><span class="line">→ chooses transactions</span><br><span class="line">→ orders them</span><br><span class="line">→ builds candidate block</span><br><span class="line">→ proposes block</span><br></pre></td></tr></table></figure>
+
+<p>The mechanism used to determine who becomes the block producer depends on the consensus system.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Proof of Work  → miner</span><br><span class="line">Proof of Stake → selected validator</span><br></pre></td></tr></table></figure>
+
+<p>After a block is proposed, other nodes still independently validate it.</p>
+<h3 id="Consensus"><a href="#Consensus" class="headerlink" title="Consensus"></a>Consensus</h3><p>Consensus is how independent participants converge on one canonical blockchain history without a central authority.</p>
+<p>It needs to answer questions such as:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Is this block valid?</span><br><span class="line">Which valid chain should nodes follow?</span><br><span class="line">What is the current canonical state?</span><br></pre></td></tr></table></figure>
+
+<p>Consensus does <strong>not</strong> mean that nodes simply vote on whether each transaction looks acceptable.</p>
+<p>First, each node can independently apply deterministic protocol rules:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">same previous state</span><br><span class="line">+</span><br><span class="line">same transactions</span><br><span class="line">+</span><br><span class="line">same execution rules</span><br><span class="line">=</span><br><span class="line">same resulting state</span><br></pre></td></tr></table></figure>
+
+<p>Consensus becomes especially important when multiple valid candidate blocks or chains temporarily exist.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">            Block A</span><br><span class="line">           /</span><br><span class="line">Previous Block</span><br><span class="line">           \</span><br><span class="line">            Block B</span><br></pre></td></tr></table></figure>
+
+<p>The consensus protocol defines how the network eventually converges on one canonical history.</p>
+<h3 id="Proof-of-Work"><a href="#Proof-of-Work" class="headerlink" title="Proof of Work"></a>Proof of Work</h3><p>Proof of Work (PoW) uses computational work to determine who can produce a valid block.</p>
+<p>In Bitcoin, miners repeatedly try different values until the block hash satisfies the network’s difficulty requirement.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">candidate block</span><br><span class="line">+</span><br><span class="line">changing nonce</span><br><span class="line">↓</span><br><span class="line">hash</span><br><span class="line">↓</span><br><span class="line">does it satisfy difficulty?</span><br><span class="line">    ├── no  → try again</span><br><span class="line">    └── yes → valid PoW</span><br></pre></td></tr></table></figure>
+
+<p>This creates an important asymmetry:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">finding valid Proof of Work → expensive</span><br><span class="line">verifying Proof of Work     → cheap</span><br></pre></td></tr></table></figure>
+
+<p>The successful miner can propose the block, but other nodes independently verify both the Proof of Work and the block contents before accepting it.</p>
+<p>PoW therefore helps:</p>
+<ul>
+<li>select block producers;</li>
+<li>make block production costly;</li>
+<li>make rewriting blockchain history economically expensive.</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Block Producer = role</span><br><span class="line">Proof of Work  = one mechanism for selecting/securing that role</span><br></pre></td></tr></table></figure>
+
+<h3 id="Proof-of-Stake"><a href="#Proof-of-Stake" class="headerlink" title="Proof of Stake"></a>Proof of Stake</h3><p>Proof of Stake (PoS) uses economic stake rather than computational mining to secure the network.</p>
+<p>Participants lock assets to become validators.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">stake assets</span><br><span class="line">→ become validator</span><br><span class="line">→ participate in block production / validation</span><br><span class="line">→ earn rewards</span><br></pre></td></tr></table></figure>
+
+<p>Validators have economic value at risk.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">honest participation</span><br><span class="line">→ rewards</span><br><span class="line"></span><br><span class="line">protocol violations</span><br><span class="line">→ penalties</span><br><span class="line">→ potentially slashing</span><br></pre></td></tr></table></figure>
+
+<p>The important distinction is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PoW → security through computational cost</span><br><span class="line">PoS → security through economic stake</span><br></pre></td></tr></table></figure>
+
+<p>Stake does not allow validators to arbitrarily decide whether transactions are valid. Transactions and blocks still need to follow deterministic protocol rules.</p>
+<h3 id="PoS-Consensus"><a href="#PoS-Consensus" class="headerlink" title="PoS Consensus"></a>PoS Consensus</h3><p>A simplified PoS flow looks like:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">validator selected to propose block</span><br><span class="line">↓</span><br><span class="line">proposes candidate block</span><br><span class="line">↓</span><br><span class="line">other validators independently verify it</span><br><span class="line">↓</span><br><span class="line">validators attest to the valid chain</span><br><span class="line">↓</span><br><span class="line">protocol applies fork-choice rules</span><br><span class="line">↓</span><br><span class="line">network converges on canonical chain</span><br><span class="line">↓</span><br><span class="line">eventual finality</span><br></pre></td></tr></table></figure>
+
+<p>Consensus therefore combines several ideas:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">validity rules</span><br><span class="line">+</span><br><span class="line">validator participation</span><br><span class="line">+</span><br><span class="line">fork-choice rules</span><br><span class="line">+</span><br><span class="line">finality rules</span><br></pre></td></tr></table></figure>
+
+<h3 id="Finality"><a href="#Finality" class="headerlink" title="Finality"></a>Finality</h3><p>A transaction being included in a block does not always mean it is immediately irreversible.</p>
+<p>Typical lifecycle:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">submitted</span><br><span class="line">→ pending</span><br><span class="line">→ included</span><br><span class="line">→ confirmed</span><br><span class="line">→ finalized</span><br></pre></td></tr></table></figure>
+
+<p><strong>Finality</strong> means the protocol considers that part of blockchain history effectively irreversible under its security assumptions.</p>
+<p>Applications may use different confirmation thresholds depending on risk.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">small UI update</span><br><span class="line">→ may react after inclusion</span><br><span class="line"></span><br><span class="line">high-value settlement</span><br><span class="line">→ may wait for stronger finality</span><br></pre></td></tr></table></figure>
+
+<h3 id="Transaction-Fees"><a href="#Transaction-Fees" class="headerlink" title="Transaction Fees"></a>Transaction Fees</h3><p>Blockchain computation and block space are limited resources, so transactions generally pay fees.</p>
+<p>Fees serve several purposes:</p>
+<ul>
+<li>compensate network participants;</li>
+<li>prioritize access to limited block space;</li>
+<li>discourage spam and resource abuse.</li>
+</ul>
+<p>The exact fee mechanism depends on the blockchain.</p>
+<p>Ethereum-specific gas mechanics are covered separately in the Ethereum section.</p>
+<h3 id="On-Chain-vs-Off-Chain"><a href="#On-Chain-vs-Off-Chain" class="headerlink" title="On-Chain vs Off-Chain"></a>On-Chain vs Off-Chain</h3><p><strong>On-chain</strong> operations are recorded, executed, or verified by the blockchain.</p>
+<p>Examples:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">asset ownership</span><br><span class="line">transfers</span><br><span class="line">contract state</span><br><span class="line">transaction history</span><br></pre></td></tr></table></figure>
+
+<p>On-chain operations inherit blockchain guarantees but tend to be slower and more expensive than traditional server&#x2F;database operations.</p>
+<p><strong>Off-chain</strong> systems operate outside the blockchain.</p>
+<p>Examples:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">backend APIs</span><br><span class="line">databases</span><br><span class="line">caches</span><br><span class="line">search</span><br><span class="line">analytics</span><br><span class="line">indexers</span><br><span class="line">notifications</span><br></pre></td></tr></table></figure>
+
+<p>Most production Web3 applications combine both:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Blockchain</span><br><span class="line">├── ownership</span><br><span class="line">├── settlement</span><br><span class="line">└── verifiable state</span><br><span class="line"></span><br><span class="line">Off-Chain Systems</span><br><span class="line">├── indexing</span><br><span class="line">├── search</span><br><span class="line">├── caching</span><br><span class="line">├── notifications</span><br><span class="line">└── application metadata</span><br></pre></td></tr></table></figure>
+
+<h3 id="End-to-End-Blockchain-Flow"><a href="#End-to-End-Blockchain-Flow" class="headerlink" title="End-to-End Blockchain Flow"></a>End-to-End Blockchain Flow</h3><p>At a high level:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">User</span><br><span class="line">↓</span><br><span class="line">Wallet creates + signs transaction</span><br><span class="line">↓</span><br><span class="line">Node validates transaction</span><br><span class="line">↓</span><br><span class="line">Mempool</span><br><span class="line">↓</span><br><span class="line">Block Producer</span><br><span class="line">↓</span><br><span class="line">Candidate Block</span><br><span class="line">↓</span><br><span class="line">Other Nodes Validate</span><br><span class="line">↓</span><br><span class="line">Consensus</span><br><span class="line">↓</span><br><span class="line">Canonical Chain</span><br><span class="line">↓</span><br><span class="line">Finality</span><br></pre></td></tr></table></figure>
+
+<p>The major responsibilities are:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Private Key / Signature</span><br><span class="line">→ Who authorized the transaction?</span><br><span class="line"></span><br><span class="line">Address</span><br><span class="line">→ Which account or destination is referenced?</span><br><span class="line"></span><br><span class="line">Transaction Validation</span><br><span class="line">→ Does the transaction obey blockchain rules?</span><br><span class="line"></span><br><span class="line">Mempool</span><br><span class="line">→ Where does a valid pending transaction wait?</span><br><span class="line"></span><br><span class="line">Block Producer</span><br><span class="line">→ Who proposes the next block?</span><br><span class="line"></span><br><span class="line">Node Validation</span><br><span class="line">→ Is the proposed block actually valid?</span><br><span class="line"></span><br><span class="line">Consensus</span><br><span class="line">→ Which valid blockchain history becomes canonical?</span><br><span class="line"></span><br><span class="line">Finality</span><br><span class="line">→ When is that history effectively irreversible?</span><br></pre></td></tr></table></figure>
+
+<h2 id="Ethereum-Basics"><a href="#Ethereum-Basics" class="headerlink" title="Ethereum Basics"></a>Ethereum Basics</h2><h3 id="EOA-vs-Contract-Accounts"><a href="#EOA-vs-Contract-Accounts" class="headerlink" title="EOA vs Contract Accounts"></a>EOA vs Contract Accounts</h3><p>Ethereum has two main account types:</p>
+<ul>
+<li><strong>EOA (Externally Owned Account)</strong>: controlled by a private key.</li>
+<li><strong>Contract Account</strong>: controlled by smart contract code.</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">EOA</span><br><span class="line">→ controlled by private key</span><br><span class="line">→ can initiate transactions</span><br><span class="line"></span><br><span class="line">Contract Account</span><br><span class="line">→ controlled by code</span><br><span class="line">→ executes when called</span><br></pre></td></tr></table></figure>
+
+<p>A contract account does not independently initiate transactions like an EOA. Its code runs when triggered by an external transaction or another contract.</p>
+<hr>
+<h3 id="EVM"><a href="#EVM" class="headerlink" title="EVM"></a>EVM</h3><p>The EVM (Ethereum Virtual Machine) is the execution environment that runs smart contract bytecode.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Solidity source</span><br><span class="line">↓ compile</span><br><span class="line">EVM bytecode</span><br><span class="line">↓</span><br><span class="line">EVM executes</span><br></pre></td></tr></table></figure>
+
+<p>Ethereum nodes execute the same contract code with the same input and previous state, allowing them to independently verify the resulting state.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">same state</span><br><span class="line">+</span><br><span class="line">same transaction</span><br><span class="line">+</span><br><span class="line">same contract code</span><br><span class="line">=</span><br><span class="line">same result</span><br></pre></td></tr></table></figure>
+
+<p>This deterministic execution is a key part of Ethereum’s trust model.</p>
+<hr>
+<h3 id="Nonce"><a href="#Nonce" class="headerlink" title="Nonce"></a>Nonce</h3><p>For an Ethereum EOA, the nonce is essentially the account’s transaction sequence number.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nonce 0</span><br><span class="line">nonce 1</span><br><span class="line">nonce 2</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>It helps:</p>
+<ul>
+<li>preserve transaction ordering;</li>
+<li>prevent replaying the same signed transaction;</li>
+<li>identify the next valid transaction from an account.</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Alice current nonce = 5</span><br><span class="line"></span><br><span class="line">next transaction</span><br><span class="line">→ nonce = 5</span><br><span class="line"></span><br><span class="line">after execution</span><br><span class="line">→ Alice nonce = 6</span><br></pre></td></tr></table></figure>
+
+<p>Bitcoin does not use this account-level nonce model.</p>
+<p>Bitcoin instead uses the <strong>UTXO model</strong>.</p>
+<h4 id="UTXO"><a href="#UTXO" class="headerlink" title="UTXO"></a>UTXO</h4><p>UTXO stands for <strong>Unspent Transaction Output</strong>.</p>
+<p>Bitcoin tracks spendable outputs rather than maintaining a simple account balance.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Alice owns:</span><br><span class="line"></span><br><span class="line">UTXO A = 2 BTC</span><br><span class="line">UTXO B = 3 BTC</span><br><span class="line"></span><br><span class="line">Balance = 5 BTC</span><br></pre></td></tr></table></figure>
+
+<p>To send 4 BTC:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Inputs:</span><br><span class="line">2 BTC + 3 BTC</span><br><span class="line"></span><br><span class="line">Outputs:</span><br><span class="line">4 BTC → Bob</span><br><span class="line">1 BTC → Alice (change)</span><br></pre></td></tr></table></figure>
+
+<p>The original UTXOs become spent, while the new outputs become new UTXOs.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ethereum</span><br><span class="line">→ account balance + nonce</span><br><span class="line"></span><br><span class="line">Bitcoin</span><br><span class="line">→ UTXO set</span><br></pre></td></tr></table></figure>
+
+<p>Because a spent UTXO cannot be spent again, Bitcoin does not need Ethereum’s account nonce mechanism for replay prevention.</p>
+<hr>
+<h3 id="Gas"><a href="#Gas" class="headerlink" title="Gas"></a>Gas</h3><p>Gas measures the computational resources consumed by Ethereum operations.</p>
+<p>Different EVM operations consume different amounts of gas.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">simple ETH transfer</span><br><span class="line">→ relatively low gas</span><br><span class="line"></span><br><span class="line">complex smart contract call</span><br><span class="line">→ higher gas</span><br></pre></td></tr></table></figure>
+
+<p>A simplified fee model is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">transaction fee</span><br><span class="line">≈</span><br><span class="line">gas used × effective gas price</span><br></pre></td></tr></table></figure>
+
+<p>Gas serves two important purposes:</p>
+<ul>
+<li>users pay for limited blockchain computation and block space;</li>
+<li>contracts cannot execute unlimited computation for free.</li>
+</ul>
+<p>Gas is not limited to smart contracts. Even a normal ETH transfer consumes gas.</p>
+<p>Bitcoin also has transaction fees, but it does not use Ethereum-style gas accounting.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Bitcoin fee</span><br><span class="line">≈ transaction size × fee rate</span><br><span class="line"></span><br><span class="line">Ethereum fee</span><br><span class="line">≈ gas used × gas price</span><br></pre></td></tr></table></figure>
+
+<p>Bitcoin primarily charges for block space, while Ethereum also explicitly meters computation.</p>
+<hr>
+<h3 id="Transactions-Ethereum"><a href="#Transactions-Ethereum" class="headerlink" title="Transactions ( Ethereum )"></a>Transactions ( Ethereum )</h3><p>An Ethereum transaction is a signed instruction sent from an EOA.</p>
+<p>It may:</p>
+<ul>
+<li>transfer ETH;</li>
+<li>call a smart contract;</li>
+<li>deploy a smart contract.</li>
+</ul>
+<p>Conceptually:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Transaction</span><br><span class="line">├── to</span><br><span class="line">├── value</span><br><span class="line">├── data</span><br><span class="line">├── nonce</span><br><span class="line">├── gas settings</span><br><span class="line">└── signature</span><br></pre></td></tr></table></figure>
+
+<p>The sender is cryptographically derived&#x2F;verified from the transaction signature rather than simply trusted from a user-provided <code>from</code> field.</p>
+<p>For a contract call, the <code>data</code> field contains encoded information describing which function to execute and what arguments to pass.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">EOA</span><br><span class="line">↓ signed transaction</span><br><span class="line">Contract Address</span><br><span class="line">↓</span><br><span class="line">function + arguments encoded in data</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Smart-Contracts"><a href="#Smart-Contracts" class="headerlink" title="Smart Contracts"></a>Smart Contracts</h3><p>A smart contract is deterministic code stored and executed on the blockchain.</p>
+<p>It can be thought of as shared application logic whose execution can be independently verified by network participants.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">transaction</span><br><span class="line">→ contract code executes</span><br><span class="line">→ state transition produced</span><br><span class="line">→ other nodes verify the same execution</span><br><span class="line">→ consensus accepts canonical state</span><br></pre></td></tr></table></figure>
+
+<p>The trust does not come from trusting one application server.</p>
+<p>Instead, it comes from:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">shared contract code</span><br><span class="line">+</span><br><span class="line">deterministic execution</span><br><span class="line">+</span><br><span class="line">independent verification</span><br><span class="line">+</span><br><span class="line">blockchain consensus</span><br></pre></td></tr></table></figure>
+
+<p>For example, an escrow contract could enforce:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Buyer deposits ETH</span><br><span class="line">↓</span><br><span class="line">contract holds funds</span><br><span class="line">↓</span><br><span class="line">agreed condition is satisfied</span><br><span class="line">↓</span><br><span class="line">contract allows Seller to receive funds</span><br></pre></td></tr></table></figure>
+
+<p>Every validating node applies the same rules.</p>
+<p>Smart contracts can:</p>
+<ul>
+<li>store persistent state;</li>
+<li>transfer assets;</li>
+<li>enforce application rules;</li>
+<li>call other contracts;</li>
+<li>emit events.</li>
+</ul>
+<hr>
+<h3 id="Events-Logs"><a href="#Events-Logs" class="headerlink" title="Events &#x2F; Logs"></a>Events &#x2F; Logs</h3><p>Smart contracts can emit events during execution.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">event Transfer(</span><br><span class="line">    address from,</span><br><span class="line">    address to,</span><br><span class="line">    uint256 amount</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>These become transaction logs:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Smart Contract</span><br><span class="line">→ emit event</span><br><span class="line">→ transaction receipt / logs</span><br><span class="line">→ frontend / backend / indexer reads them</span><br></pre></td></tr></table></figure>
+
+<p>Events are commonly used for:</p>
+<ul>
+<li>token transfers;</li>
+<li>order creation;</li>
+<li>ownership changes;</li>
+<li>application indexing;</li>
+<li>notifications.</li>
+</ul>
+<p>Events are especially useful because applications can observe what happened without repeatedly scanning all contract storage.</p>
+<hr>
+<h3 id="Storage-Memory-Calldata"><a href="#Storage-Memory-Calldata" class="headerlink" title="Storage &#x2F; Memory &#x2F; Calldata"></a>Storage &#x2F; Memory &#x2F; Calldata</h3><p>Solidity uses different data locations depending on how long the data should live and how it is used.</p>
+<p>Example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">contract UserRegistry &#123;</span><br><span class="line">    string public ownerName; // storage</span><br><span class="line"></span><br><span class="line">    function updateName(</span><br><span class="line">        string calldata newName</span><br><span class="line">    ) external &#123;</span><br><span class="line">        string memory temp = newName;</span><br><span class="line"></span><br><span class="line">        ownerName = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h4><p><code>storage</code> is persistent blockchain state.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string public ownerName;</span><br></pre></td></tr></table></figure>
+
+<p>If:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ownerName = &quot;Alice&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>then the value survives after the transaction finishes.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Block N</span><br><span class="line">ownerName = Alice</span><br><span class="line"></span><br><span class="line">Block N+1</span><br><span class="line">ownerName = Alice</span><br></pre></td></tr></table></figure>
+
+<p>A useful analogy:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">storage ≈ database</span><br></pre></td></tr></table></figure>
+
+<p>Changing storage is relatively expensive because the resulting state must be persisted by the blockchain.</p>
+<h4 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h4><p><code>memory</code> contains temporary data used during one EVM execution.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string memory temp = newName;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function starts</span><br><span class="line">→ memory created</span><br><span class="line">→ temp used</span><br><span class="line">→ function ends</span><br><span class="line">→ memory discarded</span><br></pre></td></tr></table></figure>
+
+<p>A useful analogy:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">memory ≈ local variables / temporary RAM</span><br></pre></td></tr></table></figure>
+
+<h4 id="Calldata"><a href="#Calldata" class="headerlink" title="Calldata"></a>Calldata</h4><p><code>calldata</code> contains read-only input passed into an external contract call.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function updateName(</span><br><span class="line">    string calldata newName</span><br><span class="line">) external</span><br></pre></td></tr></table></figure>
+
+<p>If a frontend calls:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">contract.<span class="title function_">updateName</span>(<span class="string">&quot;Bob&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>the function selector and <code>&quot;Bob&quot;</code> are encoded into transaction&#x2F;call data.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Frontend</span><br><span class="line">→ contract.updateName(&quot;Bob&quot;)</span><br><span class="line">→ encoded calldata</span><br><span class="line">→ EVM</span><br></pre></td></tr></table></figure>
+
+<p>A useful analogy:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calldata ≈ request body / function arguments</span><br></pre></td></tr></table></figure>
+
+<p>So the practical mental model is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Storage</span><br><span class="line">= persistent blockchain state</span><br><span class="line">≈ database</span><br><span class="line"></span><br><span class="line">Memory</span><br><span class="line">= temporary execution data</span><br><span class="line">≈ local variables</span><br><span class="line"></span><br><span class="line">Calldata</span><br><span class="line">= read-only external input</span><br><span class="line">≈ request body</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Ethereum-Transaction-Execution-Flow"><a href="#Ethereum-Transaction-Execution-Flow" class="headerlink" title="Ethereum Transaction Execution Flow"></a>Ethereum Transaction Execution Flow</h3><p>Putting everything together:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">EOA</span><br><span class="line">↓</span><br><span class="line">create transaction</span><br><span class="line">↓</span><br><span class="line">include nonce + gas + to + value + data</span><br><span class="line">↓</span><br><span class="line">sign with private key</span><br><span class="line">↓</span><br><span class="line">broadcast to network</span><br><span class="line">↓</span><br><span class="line">transaction included in block</span><br><span class="line">↓</span><br><span class="line">EVM executes transaction</span><br><span class="line">↓</span><br><span class="line">contract state may change</span><br><span class="line">↓</span><br><span class="line">events / logs may be emitted</span><br><span class="line">↓</span><br><span class="line">nodes verify resulting state</span><br><span class="line">↓</span><br><span class="line">new canonical Ethereum state</span><br></pre></td></tr></table></figure>
+
+<p>A useful summary:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">EOA</span><br><span class="line">→ who initiates the transaction?</span><br><span class="line"></span><br><span class="line">Nonce</span><br><span class="line">→ which transaction in this account&#x27;s sequence?</span><br><span class="line"></span><br><span class="line">Gas</span><br><span class="line">→ how much computation/resource usage is allowed and paid for?</span><br><span class="line"></span><br><span class="line">EVM</span><br><span class="line">→ where contract code executes?</span><br><span class="line"></span><br><span class="line">Smart Contract</span><br><span class="line">→ what deterministic application logic runs?</span><br><span class="line"></span><br><span class="line">Storage</span><br><span class="line">→ what persistent state changes?</span><br><span class="line"></span><br><span class="line">Events</span><br><span class="line">→ what observable logs are emitted?</span><br></pre></td></tr></table></figure>
+
+<!-- 
+
+## 4. Smart Contract Development
+- Solidity Basics
+- Contract State
+- Functions
+- Modifiers
+- Events
+- `msg.sender`
+- `msg.value`
+- `payable`
+- Contract Deployment
+- ABI
+- Contract Addresses
+
+## 5. Tokens
+- ERC-20
+- ERC-721
+- ERC-1155
+- Mint / Burn
+- Approve / Allowance
+- Stablecoins
+- Wrapped Tokens
+
+## 6. Wallet Integration
+- Browser Wallets
+- Wallet Connection
+- Chain / Network Switching
+- Account Detection
+- Signing Messages
+- Signing Transactions
+- WalletConnect
+- SIWE (Sign-In with Ethereum)
+
+## 7. Web3 Frontend
+- ethers.js / viem
+- RPC Providers
+- Reading Contract State
+- Writing Contract State
+- Transaction Lifecycle
+- Waiting for Confirmations
+- Event Listening
+- Handling Wallet Errors
+- Handling Network Changes
+
+## 8. Web3 Backend
+- JSON-RPC
+- RPC Nodes / Providers
+- Reading On-Chain Data
+- Sending Transactions from Backend
+- Private Key Management
+- Event Indexing
+- Webhooks
+- Background Transaction Processing
+- Nonce Management
+
+## 9. Data and Indexing
+- Blockchain Explorers
+- Events / Logs
+- Indexers
+- The Graph
+- Off-Chain Databases
+- Caching On-Chain Data
+- Syncing Blockchain State
+
+## 10. DeFi Essentials
+- DEX
+- AMM
+- Liquidity Pools
+- Slippage
+- Approvals
+- Lending / Borrowing
+- Collateral
+- Liquidation
+- Oracles
+- Staking
+
+## 11. Scaling and Networks
+- Layer 1 vs Layer 2
+- Rollups
+- Optimistic Rollups
+- ZK Rollups
+- Bridges
+- Cross-Chain Transactions
+- Testnets
+- Chain IDs
+
+## 12. Security Essentials
+- Private Key Security
+- Reentrancy
+- Access Control
+- Front-Running / MEV
+- Approval Risks
+- Signature Replay
+- Oracle Manipulation
+- Bridge Risk
+- Smart Contract Audits
+- Never Trust Frontend Input
+
+## 13. Testing and Development Workflow
+- Local Blockchain
+- Hardhat / Foundry
+- Contract Unit Tests
+- Fork Testing
+- Testnets
+- Deployment Scripts
+- Environment Variables
+- Contract Verification
+
+## 14. Production Architecture
+- Frontend
+- Wallet
+- RPC Provider
+- Smart Contracts
+- Backend API
+- Indexer
+- Database
+- Queue / Worker
+- Monitoring
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Frontend</span><br><span class="line">   ↓</span><br><span class="line">Wallet / RPC</span><br><span class="line">   ↓</span><br><span class="line">Smart Contract</span><br><span class="line">   ↓</span><br><span class="line">Blockchain</span><br><span class="line"></span><br><span class="line">Events</span><br><span class="line">   ↓</span><br><span class="line">Indexer / Backend</span><br><span class="line">   ↓</span><br><span class="line">Database</span><br><span class="line">   ↓</span><br><span class="line">Frontend</span><br></pre></td></tr></table></figure>
+
+<h2 id="15-Practical-Interview-Focus"><a href="#15-Practical-Interview-Focus" class="headerlink" title="15. Practical &#x2F; Interview Focus"></a>15. Practical &#x2F; Interview Focus</h2><ul>
+<li>How Wallet Signing Works</li>
+<li>How a Transaction Reaches the Blockchain</li>
+<li>How Gas Works</li>
+<li>How a Frontend Calls a Smart Contract</li>
+<li>How a Backend Reads Blockchain Data</li>
+<li>How ERC-20 Approvals Work</li>
+<li>How Events Are Indexed</li>
+<li>How to Handle Pending &#x2F; Failed Transactions</li>
+<li>How to Secure Private Keys</li>
+<li>How to Design a Web3 Full-Stack Application –&gt;</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Crypto-Atlas</p><p><a href="https://kongchenglc.github.io/blog/2026/09/22/Crypto-Atlas/">https://kongchenglc.github.io/blog/2026/09/22/Crypto-Atlas/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Chili</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2026-09-22</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2026-09-24</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/blog/tags/Roadmap/">Roadmap</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/Ethereum/">Ethereum</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/Smart-Contracts/">Smart Contracts</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/Web3/">Web3</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/blog/2026/09/18/Java-Atlas/"><span class="level-item">Java Atlas for Full-Stack Engineers</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><script src="https://utteranc.es/client.js" repo="kongchenglc/blog" issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/blog/img/avatar.jpeg" alt="Chili"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Chili</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Canada</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/blog/archives"><p class="title">26</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/blog/categories"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/blog/tags"><p class="title">67</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kongchenglc" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Crypto-Fundamentals"><span class="level-left"><span class="level-item">1</span><span class="level-item">Crypto Fundamentals</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Hash-Functions"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Hash Functions</span></span></a></li><li><a class="level is-mobile" href="#Public-Private-Keys"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">Public / Private Keys</span></span></a></li><li><a class="level is-mobile" href="#Digital-Signatures"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Digital Signatures</span></span></a></li><li><a class="level is-mobile" href="#Addresses"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">Addresses</span></span></a></li><li><a class="level is-mobile" href="#Wallets"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">Wallets</span></span></a></li><li><a class="level is-mobile" href="#Seed-Phrases"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">Seed Phrases</span></span></a></li><li><a class="level is-mobile" href="#Merkle-Trees"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">Merkle Trees</span></span></a></li><li><a class="level is-mobile" href="#Transactions"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">Transactions</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Blockchain-Basics"><span class="level-left"><span class="level-item">2</span><span class="level-item">Blockchain Basics</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Blocks"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">Blocks</span></span></a></li><li><a class="level is-mobile" href="#Nodes"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Nodes</span></span></a></li><li><a class="level is-mobile" href="#Mempool"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">Mempool</span></span></a></li><li><a class="level is-mobile" href="#Block-Producers"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">Block Producers</span></span></a></li><li><a class="level is-mobile" href="#Consensus"><span class="level-left"><span class="level-item">2.5</span><span class="level-item">Consensus</span></span></a></li><li><a class="level is-mobile" href="#Proof-of-Work"><span class="level-left"><span class="level-item">2.6</span><span class="level-item">Proof of Work</span></span></a></li><li><a class="level is-mobile" href="#Proof-of-Stake"><span class="level-left"><span class="level-item">2.7</span><span class="level-item">Proof of Stake</span></span></a></li><li><a class="level is-mobile" href="#PoS-Consensus"><span class="level-left"><span class="level-item">2.8</span><span class="level-item">PoS Consensus</span></span></a></li><li><a class="level is-mobile" href="#Finality"><span class="level-left"><span class="level-item">2.9</span><span class="level-item">Finality</span></span></a></li><li><a class="level is-mobile" href="#Transaction-Fees"><span class="level-left"><span class="level-item">2.10</span><span class="level-item">Transaction Fees</span></span></a></li><li><a class="level is-mobile" href="#On-Chain-vs-Off-Chain"><span class="level-left"><span class="level-item">2.11</span><span class="level-item">On-Chain vs Off-Chain</span></span></a></li><li><a class="level is-mobile" href="#End-to-End-Blockchain-Flow"><span class="level-left"><span class="level-item">2.12</span><span class="level-item">End-to-End Blockchain Flow</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Ethereum-Basics"><span class="level-left"><span class="level-item">3</span><span class="level-item">Ethereum Basics</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#EOA-vs-Contract-Accounts"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">EOA vs Contract Accounts</span></span></a></li><li><a class="level is-mobile" href="#EVM"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">EVM</span></span></a></li><li><a class="level is-mobile" href="#Nonce"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">Nonce</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#UTXO"><span class="level-left"><span class="level-item">3.3.1</span><span class="level-item">UTXO</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Gas"><span class="level-left"><span class="level-item">3.4</span><span class="level-item">Gas</span></span></a></li><li><a class="level is-mobile" href="#Transactions-Ethereum"><span class="level-left"><span class="level-item">3.5</span><span class="level-item">Transactions ( Ethereum )</span></span></a></li><li><a class="level is-mobile" href="#Smart-Contracts"><span class="level-left"><span class="level-item">3.6</span><span class="level-item">Smart Contracts</span></span></a></li><li><a class="level is-mobile" href="#Events-Logs"><span class="level-left"><span class="level-item">3.7</span><span class="level-item">Events / Logs</span></span></a></li><li><a class="level is-mobile" href="#Storage-Memory-Calldata"><span class="level-left"><span class="level-item">3.8</span><span class="level-item">Storage / Memory / Calldata</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Storage"><span class="level-left"><span class="level-item">3.8.1</span><span class="level-item">Storage</span></span></a></li><li><a class="level is-mobile" href="#Memory"><span class="level-left"><span class="level-item">3.8.2</span><span class="level-item">Memory</span></span></a></li><li><a class="level is-mobile" href="#Calldata"><span class="level-left"><span class="level-item">3.8.3</span><span class="level-item">Calldata</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Ethereum-Transaction-Execution-Flow"><span class="level-left"><span class="level-item">3.9</span><span class="level-item">Ethereum Transaction Execution Flow</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/blog/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/">Chili&#039;s Blog</a><p class="is-size-7"><span>&copy; 2026 Chili</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2024</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/kongchenglc"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/blog/js/column.js"></script><script src="/blog/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/blog/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><script data-pjax src="/blog/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/blog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/blog/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo injector body_end start -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var tocElement = document.querySelector('#toc');
+    if (tocElement) {
+      tocElement.classList.add('is-sticky');
+    }
+  });
+</script>
+  <!-- hexo injector body_end end --></body></html>
